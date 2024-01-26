@@ -1,8 +1,11 @@
+'use client';
 import React from 'react';
 import styles from './NavBarContent.module.scss';
-import SecondaryNav from '../Molecules/SecondaryNav/SecondaryNav';
-import MainNav from '../Molecules/MainNav/MainNav';
+import SecondaryNav from '../../Molecules/SecondaryNav/SecondaryNav';
+import MainNav from '../../Molecules/MainNav/MainNav.client';
 import Image from 'next/image';
+
+
 
 const NavBarContent = () => {
     return (
@@ -13,7 +16,7 @@ const NavBarContent = () => {
                     alt='espncricketinfo'
                     width={138}
                     height={19}
-                    style={{marginTop:'5px'}}
+                    style={{ marginTop: '5px' }}
                 />
 
                 <MainNav />

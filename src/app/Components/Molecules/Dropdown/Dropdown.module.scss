@@ -1,0 +1,20 @@
+.dropdown__content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 15px, 15px, 15px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 15px;
+
+    width: 250px;
+    border-radius: 10px;
+    color: black;
+}
+
+.dropdown__content--text {
+    text-decoration: none;
+    padding: 12px;
+}
