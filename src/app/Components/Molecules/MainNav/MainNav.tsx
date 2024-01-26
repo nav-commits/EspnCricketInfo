@@ -4,7 +4,7 @@ import { mainNavArray } from './MainNav.types';
 
 const MainNav = () => {
     return (
-        <div className={styles.main_nav_container}>
+        <div className={styles.main__container}>
             {mainNavArray.map((item, idx) => (
                 <div key={idx}>{item}</div>
             ))}

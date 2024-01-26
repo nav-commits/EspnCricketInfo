@@ -6,16 +6,16 @@ import Image from 'next/image';
 
 const NavBarContent = () => {
     return (
-        <div className={styles.navbar_content_container}>
-            <div className={styles.navbar_content_inner_container}>
-                <div>
-                    <Image
-                        src='https://wassets.hscicdn.com/static/images/logo.png'
-                        alt='espncricketinfo'
-                        width={138}
-                        height={21}
-                    />
-                </div>
+        <div className={styles.navbar__container}>
+            <div className={styles.navbar__content}>
+                <Image
+                    src='https://wassets.hscicdn.com/static/images/logo.png'
+                    alt='espncricketinfo'
+                    width={138}
+                    height={19}
+                    style={{marginTop:'5px'}}
+                />
+
                 <MainNav />
                 <SecondaryNav />
             </div>
