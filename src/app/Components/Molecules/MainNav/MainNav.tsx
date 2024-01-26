@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './MainNav.module.scss';
-import { mainNavArray } from '../../../Utils/NavBar';
+import { mainNavArray } from './MainNav.types'; 
 
 const MainNav = () => {
     return (

@@ -1,5 +1,4 @@
 import Homepage from './Components/Views/Hompage';
-
 export default function Home() {
     return (
         <main>
