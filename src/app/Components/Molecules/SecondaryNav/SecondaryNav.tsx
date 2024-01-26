@@ -1,13 +1,22 @@
 import React from 'react';
 import styles from './SecondaryNav.module.scss';
-import { secondaryNavArray } from '../../../Utils/NavBar';
+import { SecondaryNavArray } from '../SecondaryNav/Secondary.types';
 
 const MainNav = () => {
     return (
-        <div className={styles.secondary_nav_container}>
-            {secondaryNavArray.map((item, idx) => (
-                <div key={idx}>{item}</div>
-            ))}
+        <div className={styles.secondary__container}>
+            {SecondaryNavArray.map((item, idx) => {
+                const IconComponent = item.value as React.ComponentType;
+                return (
+                    <div key={idx}>
+                        {item.type === 'text' ? (
+                            <span>{typeof item.value === 'string' ? item.value : ''}</span>
+                        ) : (
+                            <IconComponent />
+                        )}
+                    </div>
+                );
+            })}
         </div>
     );
 };
