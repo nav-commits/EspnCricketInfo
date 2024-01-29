@@ -7,9 +7,10 @@ import Image from 'next/image';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
+import { SecondaryItem } from '../../Molecules/SecondaryNav/Secondary.types';
 
 const NavBarContent = () => {
-    const mainNavItems = [
+    const secondaryItemArray: SecondaryItem[] = [
         { type: 'text', value: 'Edition LG' },
         { type: 'icon', value: DarkModeOutlinedIcon },
         { type: 'icon', value: NotificationsNoneOutlinedIcon },
@@ -38,7 +39,7 @@ const NavBarContent = () => {
                 />
 
                 <MainNav items={mainNavArray} />
-                <SecondaryNav items={mainNavItems} />
+                <SecondaryNav items={secondaryItemArray} />
             </div>
         </div>
     );

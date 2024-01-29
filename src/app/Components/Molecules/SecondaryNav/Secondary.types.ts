@@ -1,4 +1,4 @@
-type SecondaryItem = {
+export type SecondaryItem = {
     type: 'icon' | 'text';
     value: string | React.ElementType;
 };
