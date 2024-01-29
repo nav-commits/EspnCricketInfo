@@ -3,4 +3,14 @@
     flex-direction: row;
     gap: 20px;
     align-items: center;
+
+    .main__container--item {
+        padding: 0x 0px 10px 10px;
+        cursor: pointer;
+    }
+    .main__container--active-blue{
+       background-color:#0288C6
+    }
 }
+
+
