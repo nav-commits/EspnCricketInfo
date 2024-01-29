@@ -1,6 +1,5 @@
 type DropdownItem = {
     label: string;
-    url: string;
 };
 
 export interface DropdownProps {

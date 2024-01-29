@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styles from './MainNav.module.scss';
-import { mainNavArray } from './MainNav.types';
+import { MainNavProps } from './MainNav.types';
 import Dropdown from '../Dropdown/Dropdown';
 
-const MainNav = () => {
+const MainNav: React.FC<MainNavProps> = ({ items }) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const handleMouseEnter = (index: number) => {
@@ -15,17 +15,17 @@ const MainNav = () => {
     };
 
     const dropdownItems = [
-        { label: 'Link 1', url: '/link1' },
-        { label: 'Link 2', url: '/link2' },
-        { label: 'Link 3', url: '/link3' },
-        { label: 'Link 4', url: '/link4' },
-        { label: 'Link 5', url: '/link5' },
+        { label: 'Live Score' },
+        { label: 'Results' },
+        { label: 'Season View' },
+        { label: 'Desktop Scoreboard' },
+        { label: 'Schedule' },
     ];
 
     return (
         <>
             <div className={styles.main__container} onMouseLeave={handleMouseLeave}>
-                {mainNavArray.map((item, idx) => (
+                {items.map((item, idx) => (
                     <div
                         style={{
                             cursor: 'pointer',
@@ -34,7 +34,7 @@ const MainNav = () => {
                         key={idx}
                         onMouseEnter={() => handleMouseEnter(idx)}
                     >
-                        {item}
+                        {item.value}
                         {activeIndex === idx && <Dropdown items={dropdownItems} />}
                     </div>
                 ))}

@@ -1,18 +1,17 @@
 import React from 'react';
 import styles from './SecondaryNav.module.scss';
-import { SecondaryNavArray } from '../SecondaryNav/Secondary.types';
+import { SecondaryNavProps } from './Secondary.types';
 
-const MainNav = () => {
+const SecondaryNav: React.FC<SecondaryNavProps> = ({ items }) => {
     return (
         <div className={styles.secondary__container}>
-            {SecondaryNavArray.map((item, idx) => {
-                const IconComponent = item.value as React.ComponentType;
+            {items.map((item, idx) => {
                 return (
                     <div key={idx}>
                         {item.type === 'text' ? (
                             <span>{typeof item.value === 'string' ? item.value : ''}</span>
                         ) : (
-                            <IconComponent />
+                            React.createElement(item.value)
                         )}
                     </div>
                 );
@@ -21,4 +20,5 @@ const MainNav = () => {
     );
 };
 
-export default MainNav;
+
+export default SecondaryNav;
