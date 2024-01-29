@@ -35,7 +35,7 @@ const NavBarContent = () => {
                     alt='espncricketinfo'
                     width={138}
                     height={19}
-                    style={{ marginTop: '17px' }}
+                    style={{ marginTop: '14px' }}
                 />
 
                 <MainNav items={mainNavArray} />

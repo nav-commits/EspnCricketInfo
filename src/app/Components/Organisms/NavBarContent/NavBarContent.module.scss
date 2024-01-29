@@ -1,12 +1,12 @@
-$background_color: #03a9f4;
+@import '../../../styles/main.scss';
 
 .navbar__container {
     display: flex;
     color: white;
     justify-content: center;
     align-items: center;
-    background-color: $background_color;
-   
+    background-color: $main_color;
+    font-weight: 500;
 }
 
 .navbar__content {

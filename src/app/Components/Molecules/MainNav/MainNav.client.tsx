@@ -13,6 +13,7 @@ const MainNav: React.FC<MainNavProps> = ({ items }) => {
     const handleMouseLeave = () => {
         setHoveredItem('');
     };
+    // need to make fixes so that mainNav is the dropdownItems then just filter through that
 
     const dropdownItems = [
         {
