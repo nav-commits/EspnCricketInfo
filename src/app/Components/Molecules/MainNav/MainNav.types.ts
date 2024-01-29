@@ -1,11 +1,7 @@
-type NavItem = string;
+type MainItem = {
+   value: string
+};
 
-export const mainNavArray: NavItem[] = [
-    'LiveScores',
-    'Series',
-    'Teams',
-    'News',
-    'Features',
-    'Videos',
-    'Stats',
-];
+export interface MainNavProps {
+    items: MainItem[];
+}

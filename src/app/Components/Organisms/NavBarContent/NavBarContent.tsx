@@ -4,10 +4,28 @@ import styles from './NavBarContent.module.scss';
 import SecondaryNav from '../../Molecules/SecondaryNav/SecondaryNav';
 import MainNav from '../../Molecules/MainNav/MainNav.client';
 import Image from 'next/image';
-
-
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 
 const NavBarContent = () => {
+    const mainNavItems = [
+        { type: 'text', value: 'Edition LG' },
+        { type: 'icon', value: DarkModeOutlinedIcon },
+        { type: 'icon', value: NotificationsNoneOutlinedIcon },
+        { type: 'icon', value: AppsOutlinedIcon },
+    ];
+
+    const mainNavArray = [
+        { value: 'Live Scores' },
+        { value: 'Series' },
+        { value: 'Teams' },
+        { value: 'News' },
+        { value: 'Features' },
+        { value: 'Videos' },
+        { value: 'Stats' },
+    ];
+
     return (
         <div className={styles.navbar__container}>
             <div className={styles.navbar__content}>
@@ -19,8 +37,8 @@ const NavBarContent = () => {
                     style={{ marginTop: '5px' }}
                 />
 
-                <MainNav />
-                <SecondaryNav />
+                <MainNav items={mainNavArray} />
+                <SecondaryNav items={mainNavItems} />
             </div>
         </div>
     );
