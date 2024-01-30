@@ -1,8 +1,19 @@
 .secondary__container {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
     align-content: space-between;
     margin-left: 150px;
+
+    span {
+
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1098px) {
+    .secondary__container {
+        display: none;
+    }
 }

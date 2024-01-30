@@ -1,7 +1,8 @@
-type DropdownItem = {
+export type DropdownItem = {
     label: string;
+    dropdownItems: string[];
 };
 
 export interface DropdownProps {
-    items: DropdownItem[];
+    dropdown: DropdownItem[];
 }

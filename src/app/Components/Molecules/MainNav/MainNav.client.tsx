@@ -4,42 +4,55 @@ import { MainNavProps } from './MainNav.types';
 import Dropdown from '../Dropdown/Dropdown';
 
 const MainNav: React.FC<MainNavProps> = ({ items }) => {
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [hoveredItem, setHoveredItem] = useState<string>('');
 
-    const handleMouseEnter = (index: number) => {
-        setActiveIndex(index);
+    const handleMouseEnter = (itemLabel: string) => {
+        setHoveredItem(itemLabel);
     };
 
     const handleMouseLeave = () => {
-        setActiveIndex(null);
+        setHoveredItem('');
     };
-
     const dropdownItems = [
-        { label: 'Live Score' },
-        { label: 'Results' },
-        { label: 'Season View' },
-        { label: 'Desktop Scoreboard' },
-        { label: 'Schedule' },
+        {
+            label: 'Live Scores',
+            dropdownItems: [
+                'Live Scores',
+                'Results',
+                'Season View',
+                'Desktop Scoreboard',
+                'Schedule',
+            ],
+        },
+        { label: 'Series', dropdownItems: ['U19 World Cup', 'SA20 2024', 'IPL 2024'] },
+        { label: 'Teams', dropdownItems: ['Australia', 'Bangladesh', 'England', 'India'] },
+        { label: 'News', dropdownItems: ['News Home', 'Racism', 'Corruption'] },
+        { label: 'Features', dropdownItems: ['Features Home', 'Writers', 'On this day'] },
+        { label: 'Videos', dropdownItems: ['Match day', 'Safe Hands', 'Men of Platinum'] },
+        { label: 'Stats', dropdownItems: ['Stats Home', 'All Records', 'Rankings'] },
     ];
 
+    const filteredDropdownItems = dropdownItems.find((item) => item.label === hoveredItem);
+
     return (
-        <>
-            <div className={styles.main__container} onMouseLeave={handleMouseLeave}>
-                {items.map((item, idx) => (
-                    <div
-                        style={{
-                            cursor: 'pointer',
-                            backgroundColor: activeIndex === idx ? '#0288C6' : '',
-                        }}
-                        key={idx}
-                        onMouseEnter={() => handleMouseEnter(idx)}
-                    >
-                        {item.value}
-                        {activeIndex === idx && <Dropdown items={dropdownItems} />}
-                    </div>
-                ))}
-            </div>
-        </>
+        <div className={styles.main__container} onMouseLeave={handleMouseLeave}>
+            {items.map((item, idx) => (
+                <div
+                    className={`${styles['main__container--item']} ${
+                        filteredDropdownItems?.label === item.value
+                            ? styles['main__container--active-blue']
+                            : ''
+                    }`}
+                    key={idx}
+                    onMouseEnter={() => handleMouseEnter(item.value)}
+                >
+                    <p> {item.value}</p>
+                    {filteredDropdownItems && filteredDropdownItems.label === item.value && (
+                        <Dropdown dropdown={[filteredDropdownItems]} />
+                    )}
+                </div>
+            ))}
+        </div>
     );
 };
 
