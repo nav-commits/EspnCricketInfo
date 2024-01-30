@@ -13,8 +13,6 @@ const MainNav: React.FC<MainNavProps> = ({ items }) => {
     const handleMouseLeave = () => {
         setHoveredItem('');
     };
-    // need to make fixes so that mainNav is the dropdownItems then just filter through that
-
     const dropdownItems = [
         {
             label: 'Live Scores',
@@ -26,12 +24,12 @@ const MainNav: React.FC<MainNavProps> = ({ items }) => {
                 'Schedule',
             ],
         },
-        { label: 'Series', dropdownItems: ['Series 1', 'Series 2', 'Series 3'] },
-        { label: 'Teams', dropdownItems: ['Team 1', 'Team 2', 'Team 3'] },
-        { label: 'News', dropdownItems: ['News 1', 'News 2', 'News 3'] },
-        { label: 'Features', dropdownItems: ['Feature 1', 'Feature 2', 'Feature 3'] },
-        { label: 'Videos', dropdownItems: ['Video 1', 'Video 2', 'Video 3'] },
-        { label: 'Stats', dropdownItems: ['Stats 1', 'Stats 2', 'Stats 3'] },
+        { label: 'Series', dropdownItems: ['U19 World Cup', 'SA20 2024', 'IPL 2024'] },
+        { label: 'Teams', dropdownItems: ['Australia', 'Bangladesh', 'England', 'India'] },
+        { label: 'News', dropdownItems: ['News Home', 'Racism', 'Corruption'] },
+        { label: 'Features', dropdownItems: ['Features Home', 'Writers', 'On this day'] },
+        { label: 'Videos', dropdownItems: ['Match day', 'Safe Hands', 'Men of Platinum'] },
+        { label: 'Stats', dropdownItems: ['Stats Home', 'All Records', 'Rankings'] },
     ];
 
     const filteredDropdownItems = dropdownItems.find((item) => item.label === hoveredItem);

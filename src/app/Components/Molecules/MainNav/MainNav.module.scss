@@ -10,10 +10,16 @@
     }
 
     .main__container--active-blue {
-        background-color: #0288C6
+        background-color: #0288c6;
     }
 
     p {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 1098px) {
+    .main__container {
+        display: none;
     }
 }

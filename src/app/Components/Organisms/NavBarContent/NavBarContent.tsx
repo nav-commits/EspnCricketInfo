@@ -8,6 +8,7 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import { SecondaryItem } from '../../Molecules/SecondaryNav/Secondary.types';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBarContent = () => {
     const secondaryItemArray: SecondaryItem[] = [
@@ -29,13 +30,17 @@ const NavBarContent = () => {
 
     return (
         <div className={styles.navbar__container}>
+            <div className={styles.hamburger}>
+                <MenuIcon />
+            </div>
+
             <div className={styles.navbar__content}>
                 <Image
                     src='https://wassets.hscicdn.com/static/images/logo.png'
                     alt='espncricketinfo'
                     width={138}
                     height={19}
-                    style={{ marginTop: '14px' }}
+                    className={styles.image}
                 />
 
                 <MainNav items={mainNavArray} />

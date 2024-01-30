@@ -7,10 +7,37 @@
     align-items: center;
     background-color: $main_color;
     font-weight: 500;
+
+    .navbar__content {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .image {
+        margin-top: 14px;
+    }
+
+    .hamburger {
+        display: none;
+    }
 }
 
-.navbar__content {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
+@media (max-width: 1098px) {
+
+    .navbar__container {
+        justify-content: flex-start;
+        align-items: 'flex-start';
+        padding: 8px;
+    }
+
+    .hamburger {
+        display: block !important;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .image {
+        margin-top: 5px !important;
+    }
 }
