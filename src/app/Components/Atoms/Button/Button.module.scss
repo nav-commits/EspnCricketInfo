@@ -1,7 +1,10 @@
 .custom__button {
-    border: 1px solid black;
+    border: 1px solid rgb(159, 157, 157);
     border-radius: 20px;
-    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 1px;
+    padding-bottom: 3px;
     cursor: pointer;
 
     .button__inner--container {
@@ -12,6 +15,6 @@
     .button__content {
         text-decoration: none;
         color: black;
-        font-size: 10px;
+        font-size: 10.5px;
     }
 }

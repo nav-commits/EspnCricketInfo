@@ -10,7 +10,7 @@ const Homepage: React.FC = () => {
             {/* main content on homepage */}
             <div className={styles.center__container}>
                 <ButtonContent />
-                <h1>welcome</h1>
+                <h1>Card component with tabs will be here</h1>
             </div>
         </>
     );
