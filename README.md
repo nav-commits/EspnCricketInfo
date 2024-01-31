@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ESPN Cricinfo Inspired Components
+
+This project contains reusable UI components inspired by the ESPN Cricinfo cricket website. These components are built using Next.js and TypeScript, styled with SCSS/SASS. 
+
+## Components
+
+The project includes the following components:
+
+- **Button:** Customizable buttons for various purposes.
+- **Card:** Cards for displaying cricket match information, news, etc.
+- **Tabs:** Tabs for navigation between different sections.
+- **NavigationBar:** A responsive navigation bar for site navigation.
+
+Other components may be added as the project evolves.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/nav-commits/EspnCricketInfo.git
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Install dependencies:
+npm install or yarn install
 
-## Learn More
+2. Run the development server:
+npm run dev or yarn dev
 
-To learn more about Next.js, take a look at the following resources:
+Open http://localhost:3000 with your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Each component is modular and can be imported individually. Here's an example of how to use the Button component:
 
-## Deploy on Vercel
+```tsx
+import React from 'react';
+import { ButtonProps } from './Button.types';
+import styles from './Button.module.scss';
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+const Button: React.FC<ButtonProps> = ({ text, icon }) => {
+    return (
+        <div className={styles.custom__button}>
+            <div className={styles['button__inner--container']}>
+                <a className={styles.button__content} href='/'>
+                    {text}
+                </a>
+                {icon && icon}
+            </div>
+        </div>
+    );
+};
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+export default Button;
+
+
