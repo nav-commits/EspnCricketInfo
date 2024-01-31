@@ -4,7 +4,7 @@ import NavBarContent from '../Organisms/NavBarContent/NavBarContent';
 import ButtonContent from '../Organisms/ButtonContent/ButtonContent';
 import styles from '../Organisms/ButtonContent/ButtonContent.module.scss';
 import Card from '../Molecules/Card/Card';
-import Tabs from '../Organisms/Tabs/Tabs';
+import Tabs from '../Molecules/Tabs/Tabs';
 
 const Homepage: React.FC = () => {
     const tabData = [
@@ -20,7 +20,10 @@ const Homepage: React.FC = () => {
             <NavBarContent />
             <div className={styles.center__container}>
                 <ButtonContent />
-                <Card headerText={<h2>Match Coverage</h2>} tabs={<Tabs tabs={tabData} />} />
+                <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                    <Card headerText={<h2>Match Coverage</h2>} tabs={<Tabs tabs={tabData} />} />
+                    <h1>mini card</h1>
+                </div>
             </div>
         </>
     );
