@@ -2,6 +2,7 @@ import React from 'react';
 import NavBarContent from '../Organisms/NavBarContent/NavBarContent';
 import ButtonContent from '../Organisms/ButtonContent/ButtonContent';
 import styles from '../Organisms/ButtonContent/ButtonContent.module.scss';
+import Card from '../Molecules/Card/Card';
 
 const Homepage: React.FC = () => {
     return (
@@ -10,7 +11,7 @@ const Homepage: React.FC = () => {
             {/* main content on homepage */}
             <div className={styles.center__container}>
                 <ButtonContent />
-                <h1>Card component with tabs will be here</h1>
+                <Card headerText={<h2>Match Coverage</h2>} />
             </div>
         </>
     );
