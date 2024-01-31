@@ -1,0 +1,15 @@
+.tab__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+
+    .tab__content--content {
+        font-size: 11.5px;
+        color: black;
+    }
+    .tab__content--label {
+        font-weight: 800;
+    }
+}
