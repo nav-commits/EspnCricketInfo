@@ -3,5 +3,7 @@ export interface MatchHighlightProps {
     alt: string;
     title: string;
     description: string;
-    view?: object;   
+    view?: object;  
+    imageVideoIcon: React.ReactNode;
+    isDesktop?: boolean;
 }
