@@ -6,4 +6,5 @@ export type TabData = {
 
 export type TabsProps = {
     tabs: TabData[];
+    onTabSelect: (label: string) => void;
 };

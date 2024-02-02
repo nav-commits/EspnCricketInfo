@@ -4,8 +4,13 @@ import Tab from '../../Atoms/Tab/Tab';
 import { TabsProps } from './Tabs.types';
 import styles from './Tabs.module.scss';
 
-const Tabs: React.FC<TabsProps> = ({ tabs }) => {
+const Tabs: React.FC<TabsProps> = ({ tabs, onTabSelect }) => {
     const [activeTab, setActiveTab] = useState(0);
+    const handleTabSelect = (index: number) => {
+        setActiveTab(index);
+        onTabSelect(tabs[index].label);
+    };
+
     return (
         <div className={styles.tabs__container}>
             {tabs.map((tab, index) => (
@@ -15,7 +20,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
                     label={tab.label}
                     content={tab.content}
                     activeTab={activeTab}
-                    onClick={setActiveTab}
+                    onClick={() => handleTabSelect(index)}
                 />
             ))}
         </div>
