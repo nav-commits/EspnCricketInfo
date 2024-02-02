@@ -1,0 +1,9 @@
+.match__container {
+    padding: 12px 12px 12px 12px;
+    display: flex;
+    gap: 15px;
+
+    .match__container--icon {
+        position: absolute;
+    }
+}
