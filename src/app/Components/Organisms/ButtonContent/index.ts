@@ -1,1 +1,1 @@
-export { default } from './ButtonContent';
+export { default } from './ScrollBar';
