@@ -1,8 +1,8 @@
-import Homepage from './Components/Views/Homepage';
+import HomePageContent from './Components/Views/HomePageContent';
 export default function Home() {
     return (
         <main>
-            <Homepage />
+            <HomePageContent />
         </main>
     );
 }

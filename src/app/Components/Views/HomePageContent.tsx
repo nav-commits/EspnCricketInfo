@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import ScrollBar from '../Organisms/ScrollBarContent/ScrollBar';
-import styles from '../Organisms/ScrollBarContent/ScrollBar.module.scss';
+import styles from '../Views/HomPageContent.module.scss';
 import Card from '../Molecules/Card/Card';
 import Tabs from '../Molecules/Tabs/Tabs';
 import { useState } from 'react';
@@ -10,13 +10,9 @@ import useResponsive from '@/app/Utils/UseResponsiveHook';
 import ImageVideoIcon from '../Atoms/ImageVideoIcon/ImageVideoIcon';
 import { tabData } from '@/app/Utils/Data';
 
-const Homepage: React.FC = () => {
+const HomepageContent: React.FC = () => {
     const { isDesktop } = useResponsive();
     const [selectedLabel, setSelectedLabel] = useState(tabData[0].label);
-
-    const viewStyle: React.CSSProperties = {
-        flexDirection: isDesktop ? 'row' : 'column',
-    };
 
     const renderView = (label: string) => {
         switch (label) {
@@ -27,7 +23,7 @@ const Homepage: React.FC = () => {
                         alt='Aus vs WI Highlights'
                         title='Australia takes on West Indies in a thrilling match'
                         description='A detailed recap of the match between Australia and West Indies.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
                             <ImageVideoIcon
                                 width='55px'
@@ -48,7 +44,7 @@ const Homepage: React.FC = () => {
                         alt='Ind vs Eng Highlights'
                         title='India battles England in a day full of surprises'
                         description='Highlights and key moments from the India vs England match.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
                             <ImageVideoIcon
                                 width='55px'
@@ -69,7 +65,7 @@ const Homepage: React.FC = () => {
                         alt='SL vs Afg Highlights'
                         title='Sri Lanka faces Afghanistan in an intense clash'
                         description='Catch all the action from the Sri Lanka vs Afghanistan game.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
                             <ImageVideoIcon
                                 width='55px'
@@ -90,7 +86,7 @@ const Homepage: React.FC = () => {
                         alt='Ind A vs Lions Highlights'
                         title='India A vs Lions: A Test of Future Stars'
                         description='Emerging talents from India A and Lions go head-to-head.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
                             <ImageVideoIcon
                                 width='55px'
@@ -111,7 +107,7 @@ const Homepage: React.FC = () => {
                         alt='ILT20 Highlights'
                         title="Highlights from the ILT20: Cricket's Newest Extravaganza"
                         description='The best moments and performances from the inaugural ILT20 league.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
                             <ImageVideoIcon
                                 width='55px'
@@ -158,7 +154,27 @@ const Homepage: React.FC = () => {
                     </div>
 
                     <Card
-                        headerText={<h3 style={{ padding: '5px 5px 5px 5px' }}>Must Watch</h3>}
+                        headerText={
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <h4 style={{ padding: '0px 10px' }}>Must Watch</h4>
+                                <p
+                                    style={{
+                                        fontSize: '12px',
+                                        color: '#03a9f4',
+                                        padding: '0px 10px',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    See All
+                                </p>
+                            </div>
+                        }
                         width='280px'
                         height='200px'
                     />
@@ -168,4 +184,4 @@ const Homepage: React.FC = () => {
     );
 };
 
-export default Homepage;
+export default HomepageContent;

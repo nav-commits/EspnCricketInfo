@@ -12,7 +12,7 @@ const MatchHighlight: React.FC<MatchHighlightProps> = ({
     width,
     height,
 }) => (
-    <div style={view} className={styles.match__container}>
+    <div style={{ flexDirection: view  }} className={styles.match__container}>
         <Image
             src={src}
             alt={alt}
