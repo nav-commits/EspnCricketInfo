@@ -12,7 +12,7 @@ import StoryAvatar from '../../Atoms/StoryAvatar/StoryAvatar';
 import { buttons, stories } from '@/app/Utils/Data';
 import { Navigation } from 'swiper/modules';
 import { useState } from 'react';
-import StoryModal from '../../Molecules/Modal/Modal';
+import Modal from '../../Molecules/Modal/Modal';
 
 const ScrollBar = () => {
     const { isMobile, isTablet } = useResponsive();
@@ -39,7 +39,7 @@ const ScrollBar = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <StoryModal isModalOpen={isModalOpen} onClose={closeModal} />
+                <Modal isModalOpen={isModalOpen} onClose={closeModal} />
             </>
         );
     } else {
