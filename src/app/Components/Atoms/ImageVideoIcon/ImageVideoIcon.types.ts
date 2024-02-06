@@ -3,5 +3,4 @@ export interface ImageVideoIconProps {
     height?: string;
     top?: string;
     left?: string;
-    isDesktop?: boolean;
 }

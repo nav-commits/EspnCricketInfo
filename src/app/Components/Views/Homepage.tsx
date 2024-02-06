@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import NavBarContent from '../Organisms/NavBarContent/NavBarContent';
 import ScrollBar from '../Organisms/ScrollBarContent/ScrollBar';
 import styles from '../Organisms/ScrollBarContent/ScrollBar.module.scss';
 import Card from '../Molecules/Card/Card';
@@ -33,12 +32,12 @@ const Homepage: React.FC = () => {
                             <ImageVideoIcon
                                 width='55px'
                                 height='55px'
-                                top='170px'
-                                left='10px'
-                                isDesktop={isDesktop}
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
                             />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -54,12 +53,12 @@ const Homepage: React.FC = () => {
                             <ImageVideoIcon
                                 width='55px'
                                 height='55px'
-                                top='170px'
-                                left='10px'
-                                isDesktop={isDesktop}
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
                             />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -75,12 +74,12 @@ const Homepage: React.FC = () => {
                             <ImageVideoIcon
                                 width='55px'
                                 height='55px'
-                                top='170px'
-                                left='10px'
-                                isDesktop={isDesktop}
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
                             />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -96,12 +95,12 @@ const Homepage: React.FC = () => {
                             <ImageVideoIcon
                                 width='55px'
                                 height='55px'
-                                top='170px'
-                                left='10px'
-                                isDesktop={isDesktop}
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
                             />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -114,9 +113,15 @@ const Homepage: React.FC = () => {
                         description='The best moments and performances from the inaugural ILT20 league.'
                         view={viewStyle}
                         imageVideoIcon={
-                            <ImageVideoIcon width='55px' height='55px' top='170px' left='10px' />
+                            <ImageVideoIcon
+                                width='55px'
+                                height='55px'
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
+                            />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -134,7 +139,6 @@ const Homepage: React.FC = () => {
 
     return (
         <>
-            <NavBarContent />
             <div className={styles.center__container}>
                 <ScrollBar />
                 <div style={style}>
@@ -154,7 +158,7 @@ const Homepage: React.FC = () => {
                     </div>
 
                     <Card
-                        headerText={<h3 style={{ padding: '10px' }}>Must Watch</h3>}
+                        headerText={<h3 style={{ padding: '5px 5px 5px 5px' }}>Must Watch</h3>}
                         width='280px'
                         height='200px'
                     />

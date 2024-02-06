@@ -104,13 +104,13 @@ export const secondaryItemArray: SecondaryItem[] = [
 ];
 
 export const mainNavArray = [
-    { value: 'Live Scores' },
-    { value: 'Series' },
-    { value: 'Teams' },
-    { value: 'News' },
-    { value: 'Features' },
-    { value: 'Videos' },
-    { value: 'Stats' },
+    { value: 'Live Scores', path: '/LiveScores' },
+    { value: 'Series', path: '/series' },
+    { value: 'Teams', path: '/teams' },
+    { value: 'News', path: '/news' },
+    { value: 'Features', path: '/features' },
+    { value: 'Videos', path: '/videos' },
+    { value: 'Stats', path: '/stats' },
 ];
 
 export const storyContent = [

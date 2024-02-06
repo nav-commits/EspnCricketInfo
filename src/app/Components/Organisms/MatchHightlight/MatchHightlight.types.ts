@@ -6,4 +6,6 @@ export interface MatchHighlightProps {
     view?: object;  
     imageVideoIcon: React.ReactNode;
     isDesktop?: boolean;
+    width?: number;
+    height?: number;
 }
