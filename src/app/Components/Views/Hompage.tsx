@@ -1,26 +1,18 @@
 'use client';
 import React from 'react';
 import NavBarContent from '../Organisms/NavBarContent/NavBarContent';
-import ButtonContent from '../Organisms/ButtonContent/ButtonContent';
-import styles from '../Organisms/ButtonContent/ButtonContent.module.scss';
+import ScrollBar from '../Organisms/ScrollBarContent/ScrollBar';
+import styles from '../Organisms/ScrollBarContent/ScrollBar.module.scss';
 import Card from '../Molecules/Card/Card';
 import Tabs from '../Molecules/Tabs/Tabs';
 import { useState } from 'react';
 import MatchHighlight from '../Organisms/MatchHightlight/MatchHightlight';
 import useResponsive from '@/app/Utils/UseResponsiveHook';
 import ImageVideoIcon from '../Atoms/ImageVideoIcon/ImageVideoIcon';
+import { tabData } from '@/app/Utils/Data';
 
 const Homepage: React.FC = () => {
-    const { isMobile, isTablet, isDesktop } = useResponsive();
-
-    const tabData = [
-        { label: 'Aus vs WI', content: "1st Men's ODI" },
-        { label: 'Ind vs Eng', content: "2nd Men's Test" },
-        { label: 'SL vs Afg', content: 'Only test' },
-        { label: 'Ind A vs Lions', content: '3rd unofficial Test' },
-        { label: 'ILT20', content: '2024' },
-    ];
-
+    const { isDesktop } = useResponsive();
     const [selectedLabel, setSelectedLabel] = useState(tabData[0].label);
 
     const viewStyle: React.CSSProperties = {
@@ -144,15 +136,23 @@ const Homepage: React.FC = () => {
         <>
             <NavBarContent />
             <div className={styles.center__container}>
-                <ButtonContent />
+                <ScrollBar />
                 <div style={style}>
-                    <Card
-                        headerText={<h2 style={{ padding: '10px' }}>Match Coverage</h2>}
-                        tabs={<Tabs tabs={tabData} onTabSelect={setSelectedLabel} />}
-                        width={isDesktop ? '800px' : ''}
-                        renderView={() => renderView(selectedLabel)}
-                        paddingBottom='10px'
-                    />
+                    <div>
+                        <Card
+                            headerText={<h2 style={{ padding: '10px' }}>Match Coverage</h2>}
+                            tabs={<Tabs tabs={tabData} onTabSelect={setSelectedLabel} />}
+                            width={isDesktop ? '800px' : ''}
+                            renderView={() => renderView(selectedLabel)}
+                            paddingBottom='10px'
+                        />
+                        <Card
+                            headerText={<h2 style={{ padding: '10px' }}>Top Stories</h2>}
+                            width={isDesktop ? '800px' : ''}
+                            paddingBottom='10px'
+                        />
+                    </div>
+
                     <Card
                         headerText={<h3 style={{ padding: '10px' }}>Must Watch</h3>}
                         width='280px'
