@@ -6,10 +6,10 @@
 }
 
 .story__container--wrapper {
-    width: 55px; 
-    height: 55px; 
-    border-radius: 50%; 
-    border: 2.5px solid rgb(3, 169, 244); 
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2.5px solid rgb(3, 169, 244);
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -17,6 +17,7 @@
 }
 
 .story-title {
-    margin-top: 8px;
-    font-size:10px; 
+    text-align: center;
+    margin-top: 5px;
+    font-size: 10px;
 }

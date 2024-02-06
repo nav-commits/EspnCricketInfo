@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import NavBarContent from '../Organisms/NavBarContent/NavBarContent';
-import ScrollBar from '../Organisms/ButtonContent/ScrollBar';
-import styles from '../Organisms/ButtonContent/ScrollBar.module.scss';
+import ScrollBar from '../Organisms/ScrollBarContent/ScrollBar';
+import styles from '../Organisms/ScrollBarContent/ScrollBar.module.scss';
 import Card from '../Molecules/Card/Card';
 import Tabs from '../Molecules/Tabs/Tabs';
 import { useState } from 'react';
@@ -12,7 +12,7 @@ import ImageVideoIcon from '../Atoms/ImageVideoIcon/ImageVideoIcon';
 import { tabData } from '@/app/Utils/Data';
 
 const Homepage: React.FC = () => {
-    const { isMobile, isTablet, isDesktop } = useResponsive();
+    const { isDesktop } = useResponsive();
     const [selectedLabel, setSelectedLabel] = useState(tabData[0].label);
 
     const viewStyle: React.CSSProperties = {

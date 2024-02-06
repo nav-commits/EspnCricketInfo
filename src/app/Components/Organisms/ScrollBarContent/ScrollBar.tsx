@@ -1,4 +1,4 @@
-// ButtonContent.tsx
+'use client';
 import React from 'react';
 import Button from '../../Atoms/Button/Button';
 import '../../../styles/globals.scss';
@@ -8,12 +8,18 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import useResponsive from '@/app/Utils/UseResponsiveHook';
-import Story from '../../Atoms/Story/Story';
+import StoryAvatar from '../../Atoms/StoryAvatar/StoryAvatar';
 import { buttons, stories } from '@/app/Utils/Data';
 import { Navigation } from 'swiper/modules';
+import { useState } from 'react';
+import StoryModal from '../../Molecules/Modal/Modal';
 
 const ScrollBar = () => {
-    const { isMobile, isTablet} = useResponsive();
+    const { isMobile, isTablet } = useResponsive();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     if (isMobile || isTablet) {
         return (
             <>
@@ -25,10 +31,15 @@ const ScrollBar = () => {
                 >
                     {stories.map((story, index) => (
                         <SwiperSlide key={index}>
-                            <Story imageUrl={story.imageUrl} title={story.title} />
+                            <StoryAvatar
+                                openModal={openModal}
+                                imageUrl={story.imageUrl}
+                                title={story.title}
+                            />
                         </SwiperSlide>
                     ))}
                 </Swiper>
+                <StoryModal isModalOpen={isModalOpen} onClose={closeModal} />
             </>
         );
     } else {

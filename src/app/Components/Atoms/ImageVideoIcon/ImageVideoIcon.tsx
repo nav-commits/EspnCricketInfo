@@ -9,7 +9,7 @@ const ImageVideoIcon: React.FC<ImageVideoIconProps> = ({ width, height, top, lef
             style={{
                 width: width,
                 height: height,
-                top: isDesktop ? top : '110px',
+                top: isDesktop ? top : '',
                 left: isDesktop ? left : '10px',
             }}
             className={styles.iconWrapper}
