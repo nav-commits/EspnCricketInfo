@@ -4,7 +4,7 @@ import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNone
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import { SecondaryItem } from '../Components/Molecules/SecondaryNav/Secondary.types';
 
-export const buttons = [
+export const linkButtons = [
     {
         text: 'T20 World Cup schedule',
         icon: <KeyboardArrowRightOutlinedIcon fontSize='small' />,
