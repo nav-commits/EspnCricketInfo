@@ -8,7 +8,8 @@ import { useState } from 'react';
 import MatchHighlight from '../Organisms/MatchHightlight/MatchHightlight';
 import useResponsive from '@/app/Utils/UseResponsiveHook';
 import ImageVideoIcon from '../Atoms/ImageVideoIcon/ImageVideoIcon';
-import { tabData } from '@/app/Utils/Data';
+import { tabData, slides } from '@/app/Utils/Data';
+import ImageCarousel from '../Molecules/ImageCarousel/ImageCarousel';
 
 const HomepageContent: React.FC = () => {
     const { isDesktop } = useResponsive();
@@ -132,7 +133,6 @@ const HomepageContent: React.FC = () => {
         gap: '10px',
         justifyContent: isDesktop ? 'space-between' : 'flex-start',
     };
-
     return (
         <>
             <div className={styles.center__container}>
@@ -143,7 +143,7 @@ const HomepageContent: React.FC = () => {
                             headerText={<h2 style={{ padding: '10px' }}>Match Coverage</h2>}
                             tabs={<Tabs tabs={tabData} onTabSelect={setSelectedLabel} />}
                             width={isDesktop ? '800px' : ''}
-                            renderView={() => renderView(selectedLabel)}
+                            showContent={() => renderView(selectedLabel)}
                             paddingBottom='10px'
                         />
                         <Card
@@ -155,28 +155,14 @@ const HomepageContent: React.FC = () => {
 
                     <Card
                         headerText={
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                }}
-                            >
+                            <div className={styles['header-text__container']}>
                                 <h4 style={{ padding: '0px 10px' }}>Must Watch</h4>
-                                <p
-                                    style={{
-                                        fontSize: '12px',
-                                        color: '#03a9f4',
-                                        padding: '0px 10px',
-                                        cursor: 'pointer',
-                                    }}
-                                >
-                                    See All
-                                </p>
+                                <p className={styles['header-text--style']}>See All</p>
                             </div>
                         }
-                        width='280px'
-                        height='200px'
+                        width='300px'
+                        height='300px'
+                        showContent={<ImageCarousel slides={slides} />}
                     />
                 </div>
             </div>

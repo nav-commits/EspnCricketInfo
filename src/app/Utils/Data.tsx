@@ -131,3 +131,27 @@ export const storyContent = [
         duration: 5000,
     },
 ];
+
+
+ export const slides = [
+     {
+         imageUrl:
+             'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0205/dm_240205_INET_CRIC_INDvsENG_ENGBOWL_HARMISON_GLOBAL/dm_240205_INET_CRIC_INDvsENG_ENGBOWL_HARMISON_GLOBAL.jpg',
+         text: 'Pant: I felt at home even around my super-seniors',
+     },
+     {
+         imageUrl:
+             'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0201/dm_240201_INET_CRIC_PANTWITHSTAR_/dm_240201_INET_CRIC_PANTWITHSTAR_.jpg',
+         text: 'Pant: I felt at home even around my super-seniors',
+     },
+     {
+         imageUrl:
+             'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0201/dm_240201_INET_CRIC_star_pant_interview_GLOBAL/dm_240201_INET_CRIC_star_pant_interview_GLOBAL.jpg',
+         text: 'Pant: I felt at home even around my super-seniors',
+     },
+     {
+         imageUrl:
+             'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0205/dm_240205_indveng_generic_dravidpc1/dm_240205_indveng_generic_dravidpc1.jpg',
+         text: 'Pant: I felt at home even around my super-seniors',
+     },
+ ];
