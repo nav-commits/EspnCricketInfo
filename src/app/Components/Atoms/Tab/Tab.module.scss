@@ -4,10 +4,12 @@
     align-items: center;
     cursor: pointer;
     margin-right: 12px;
+    padding-right: 5px;
+    padding-bottom: 5px;
 
     .tab__content--content {
         font-size: 11.5px;
-        color: black;
+        color: rgb(128, 127, 127);
     }
 
     .tab__content--label {

@@ -13,18 +13,16 @@
         background-color: #0288c6;
     }
 
-    p {
-        font-size: 14px;
-    }
-
     .main__container-item-text {
-        color: #FFFFFF;
+        color: #ffffff;
         text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
     }
 }
 
-    @media (max-width: 1098px) {
-        .main__container {
-            display: none;
-        }
+@media (max-width: 1098px) {
+    .main__container {
+        display: none;
     }
+}
