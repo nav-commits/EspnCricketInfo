@@ -8,13 +8,13 @@ import { useState } from 'react';
 import MatchHighlight from '../Organisms/MatchHightlight/MatchHightlight';
 import useResponsive from '@/app/Utils/UseResponsiveHook';
 import ImageVideoIcon from '../Atoms/ImageVideoIcon/ImageVideoIcon';
-import { tabData, slides } from '@/app/Utils/Data';
+import { tabData, slides, dataArray } from '@/app/Utils/Data';
 import ImageCarousel from '../Molecules/ImageCarousel/ImageCarousel';
+import ItemDisplayGrid from '../Organisms/ItemDisplayGrid/ItemDisplayGrid';
 
 const HomepageContent: React.FC = () => {
     const { isDesktop } = useResponsive();
     const [selectedLabel, setSelectedLabel] = useState(tabData[0].label);
-
     const renderView = (label: string) => {
         switch (label) {
             case 'Aus vs WI':
@@ -126,37 +126,37 @@ const HomepageContent: React.FC = () => {
                 return null;
         }
     };
-
-    const style: React.CSSProperties = {
-        display: 'flex',
-        flexDirection: isDesktop ? 'row' : 'column',
-        gap: '10px',
-        justifyContent: isDesktop ? 'space-between' : 'flex-start',
-    };
     return (
         <>
-            <div className={styles.center__container}>
+            <div className={styles['center__container']}>
                 <ScrollBar />
-                <div style={style}>
+                <div
+                    className={`${styles['flex__container']} ${
+                        isDesktop ? styles['flex-row'] : styles['flex-column']
+                    }`}
+                >
                     <div>
                         <Card
-                            headerText={<h2 style={{ padding: '10px' }}>Match Coverage</h2>}
+                            headerText={<h2 className={styles['card-header']}>Match Coverage</h2>}
                             tabs={<Tabs tabs={tabData} onTabSelect={setSelectedLabel} />}
                             width={isDesktop ? '800px' : ''}
                             showContent={() => renderView(selectedLabel)}
                             paddingBottom='10px'
                         />
                         <Card
-                            headerText={<h2 style={{ padding: '10px' }}>Top Stories</h2>}
+                            headerText={
+                                <h3 className={styles['card-header--small']}>Top Stories</h3>
+                            }
                             width={isDesktop ? '800px' : ''}
                             paddingBottom='10px'
+                            showContent={<ItemDisplayGrid data={dataArray} />}
                         />
                     </div>
 
                     <Card
                         headerText={
                             <div className={styles['header-text__container']}>
-                                <h4 style={{ padding: '0px 10px' }}>Must Watch</h4>
+                                <h4>Must Watch</h4>
                                 <p className={styles['header-text--style']}>See All</p>
                             </div>
                         }

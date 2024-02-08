@@ -13,6 +13,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0px 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgb(237, 238, 240);
 
     .header-text--style {
         font-size: 12px;
@@ -20,4 +23,28 @@
         padding: 0px 10px;
         cursor: pointer;
     }
+}
+
+
+.flex__container {
+    display: flex;
+    gap: 10px;
+}
+
+.flex-row {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-column {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-header {
+    padding: 10px;
+}
+
+.card-header--small {
+    padding-left: 8px;
 }
