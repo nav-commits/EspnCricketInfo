@@ -7,10 +7,6 @@ body {
 
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 .swiper-button-next,
 .swiper-button-prev {
     background-color: rgb(255, 255, 255);
@@ -22,7 +18,6 @@ code {
 }
 
 .swiper-button-next {
-    background-image: url('/path/to/your/icon.svg');
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;
@@ -33,7 +28,6 @@ code {
 }
 
 .swiper-button-prev {
-    background-image: url('/path/to/your/icon.svg');
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: center;

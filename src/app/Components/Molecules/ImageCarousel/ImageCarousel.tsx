@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import { Navigation } from 'swiper/modules';
 import { Pagination } from 'swiper/modules';
@@ -9,6 +8,7 @@ import 'swiper/scss/pagination';
 import { ImageCarouselProps } from '../ImageCarousel/ImageCarousel.types';
 import styles from './ImageCarousel.module.scss';
 import ImageVideoIcon from '../../Atoms/ImageVideoIcon/ImageVideoIcon';
+import React from 'react';
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ slides }) => {
     return (
