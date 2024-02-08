@@ -128,43 +128,39 @@ const HomepageContent: React.FC = () => {
     };
     return (
         <>
-            <div className={styles['center__container']}>
-                <ScrollBar />
-                <div
-                    className={`${styles['flex__container']} ${
-                        isDesktop ? styles['flex-row'] : styles['flex-column']
-                    }`}
-                >
-                    <div>
-                        <Card
-                            headerText={<h2 className={styles['card-header']}>Match Coverage</h2>}
-                            tabs={<Tabs tabs={tabData} onTabSelect={setSelectedLabel} />}
-                            width={isDesktop ? '800px' : ''}
-                            showContent={() => renderView(selectedLabel)}
-                            paddingBottom='10px'
-                        />
-                        <Card
-                            headerText={
-                                <h3 className={styles['card-header--small']}>Top Stories</h3>
-                            }
-                            width={isDesktop ? '800px' : ''}
-                            paddingBottom='10px'
-                            showContent={<ItemDisplayGrid data={dataArray} />}
-                        />
-                    </div>
-
+            <ScrollBar />
+            <div
+                className={`${styles['flex__container']} ${
+                    isDesktop ? styles['flex-row'] : styles['flex-column']
+                }`}
+            >
+                <div>
                     <Card
-                        headerText={
-                            <div className={styles['header-text__container']}>
-                                <h4>Must Watch</h4>
-                                <p className={styles['header-text--style']}>See All</p>
-                            </div>
-                        }
-                        width='300px'
-                        height='300px'
-                        showContent={<ImageCarousel slides={slides} />}
+                        headerText={<h2 className={styles['card-header']}>Match Coverage</h2>}
+                        tabs={<Tabs tabs={tabData} onTabSelect={setSelectedLabel} />}
+                        width={isDesktop ? '800px' : ''}
+                        showContent={() => renderView(selectedLabel)}
+                        paddingBottom='10px'
+                    />
+                    <Card
+                        headerText={<h3 className={styles['card-header--small']}>Top Stories</h3>}
+                        width={isDesktop ? '800px' : ''}
+                        paddingBottom='10px'
+                        showContent={<ItemDisplayGrid data={dataArray} />}
                     />
                 </div>
+
+                <Card
+                    headerText={
+                        <div className={styles['header-text__container']}>
+                            <h4>Must Watch</h4>
+                            <p className={styles['header-text--style']}>See All</p>
+                        </div>
+                    }
+                    width='300px'
+                    height='300px'
+                    showContent={<ImageCarousel slides={slides} />}
+                />
             </div>
         </>
     );
