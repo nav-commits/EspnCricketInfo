@@ -6,7 +6,7 @@ const Card: React.FC<CardProps> = ({
     headerText,
     tabs,
     width,
-    renderView,
+    showContent,
     paddingBottom,
     height,
 }) => {
@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({
         >
             {headerText && headerText}
             {tabs && tabs}
-            {renderView && renderView()}
+            {typeof showContent === 'function' ? showContent() : showContent}
         </div>
     );
 };

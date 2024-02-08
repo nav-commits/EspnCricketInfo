@@ -1,24 +1,20 @@
 'use client';
 import React from 'react';
-import NavBarContent from '../Organisms/NavBarContent/NavBarContent';
 import ScrollBar from '../Organisms/ScrollBarContent/ScrollBar';
-import styles from '../Organisms/ScrollBarContent/ScrollBar.module.scss';
+import styles from '../Views/HomPageContent.module.scss';
 import Card from '../Molecules/Card/Card';
 import Tabs from '../Molecules/Tabs/Tabs';
 import { useState } from 'react';
 import MatchHighlight from '../Organisms/MatchHightlight/MatchHightlight';
 import useResponsive from '@/app/Utils/UseResponsiveHook';
 import ImageVideoIcon from '../Atoms/ImageVideoIcon/ImageVideoIcon';
-import { tabData } from '@/app/Utils/Data';
+import { tabData, slides, dataArray } from '@/app/Utils/Data';
+import ImageCarousel from '../Molecules/ImageCarousel/ImageCarousel';
+import ItemDisplayGrid from '../Organisms/ItemDisplayGrid/ItemDisplayGrid';
 
-const Homepage: React.FC = () => {
+const HomepageContent: React.FC = () => {
     const { isDesktop } = useResponsive();
     const [selectedLabel, setSelectedLabel] = useState(tabData[0].label);
-
-    const viewStyle: React.CSSProperties = {
-        flexDirection: isDesktop ? 'row' : 'column',
-    };
-
     const renderView = (label: string) => {
         switch (label) {
             case 'Aus vs WI':
@@ -28,17 +24,17 @@ const Homepage: React.FC = () => {
                         alt='Aus vs WI Highlights'
                         title='Australia takes on West Indies in a thrilling match'
                         description='A detailed recap of the match between Australia and West Indies.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
                             <ImageVideoIcon
                                 width='55px'
                                 height='55px'
-                                top='170px'
-                                left='10px'
-                                isDesktop={isDesktop}
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
                             />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -49,17 +45,17 @@ const Homepage: React.FC = () => {
                         alt='Ind vs Eng Highlights'
                         title='India battles England in a day full of surprises'
                         description='Highlights and key moments from the India vs England match.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
                             <ImageVideoIcon
                                 width='55px'
                                 height='55px'
-                                top='170px'
-                                left='10px'
-                                isDesktop={isDesktop}
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
                             />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -70,17 +66,17 @@ const Homepage: React.FC = () => {
                         alt='SL vs Afg Highlights'
                         title='Sri Lanka faces Afghanistan in an intense clash'
                         description='Catch all the action from the Sri Lanka vs Afghanistan game.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
                             <ImageVideoIcon
                                 width='55px'
                                 height='55px'
-                                top='170px'
-                                left='10px'
-                                isDesktop={isDesktop}
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
                             />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -91,17 +87,17 @@ const Homepage: React.FC = () => {
                         alt='Ind A vs Lions Highlights'
                         title='India A vs Lions: A Test of Future Stars'
                         description='Emerging talents from India A and Lions go head-to-head.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
                             <ImageVideoIcon
                                 width='55px'
                                 height='55px'
-                                top='170px'
-                                left='10px'
-                                isDesktop={isDesktop}
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
                             />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -112,11 +108,17 @@ const Homepage: React.FC = () => {
                         alt='ILT20 Highlights'
                         title="Highlights from the ILT20: Cricket's Newest Extravaganza"
                         description='The best moments and performances from the inaugural ILT20 league.'
-                        view={viewStyle}
+                        view={isDesktop ? 'row' : 'column'}
                         imageVideoIcon={
-                            <ImageVideoIcon width='55px' height='55px' top='170px' left='10px' />
+                            <ImageVideoIcon
+                                width='55px'
+                                height='55px'
+                                top={isDesktop ? '170px' : '120px'}
+                                left={isDesktop ? '10px' : '10px'}
+                            />
                         }
-                        isDesktop={isDesktop}
+                        width={isDesktop ? 420 : 310}
+                        height={isDesktop ? 250 : 200}
                     />
                 );
 
@@ -124,44 +126,44 @@ const Homepage: React.FC = () => {
                 return null;
         }
     };
-
-    const style: React.CSSProperties = {
-        display: 'flex',
-        flexDirection: isDesktop ? 'row' : 'column',
-        gap: '10px',
-        justifyContent: isDesktop ? 'space-between' : 'flex-start',
-    };
-
     return (
         <>
-            <NavBarContent />
-            <div className={styles.center__container}>
-                <ScrollBar />
-                <div style={style}>
-                    <div>
-                        <Card
-                            headerText={<h2 style={{ padding: '10px' }}>Match Coverage</h2>}
-                            tabs={<Tabs tabs={tabData} onTabSelect={setSelectedLabel} />}
-                            width={isDesktop ? '800px' : ''}
-                            renderView={() => renderView(selectedLabel)}
-                            paddingBottom='10px'
-                        />
-                        <Card
-                            headerText={<h2 style={{ padding: '10px' }}>Top Stories</h2>}
-                            width={isDesktop ? '800px' : ''}
-                            paddingBottom='10px'
-                        />
-                    </div>
-
+            <ScrollBar />
+            <div
+                className={`${styles['flex__container']} ${
+                    isDesktop ? styles['flex-row'] : styles['flex-column']
+                }`}
+            >
+                <div>
                     <Card
-                        headerText={<h3 style={{ padding: '10px' }}>Must Watch</h3>}
-                        width='280px'
-                        height='200px'
+                        headerText={<h2 className={styles['card-header']}>Match Coverage</h2>}
+                        tabs={<Tabs tabs={tabData} onTabSelect={setSelectedLabel} />}
+                        width={isDesktop ? '800px' : ''}
+                        showContent={() => renderView(selectedLabel)}
+                        paddingBottom='10px'
+                    />
+                    <Card
+                        headerText={<h3 className={styles['card-header--small']}>Top Stories</h3>}
+                        width={isDesktop ? '800px' : ''}
+                        paddingBottom='10px'
+                        showContent={<ItemDisplayGrid data={dataArray} />}
                     />
                 </div>
+
+                <Card
+                    headerText={
+                        <div className={styles['header-text__container']}>
+                            <h4>Must Watch</h4>
+                            <p className={styles['header-text--style']}>See All</p>
+                        </div>
+                    }
+                    width='300px'
+                    height='300px'
+                    showContent={<ImageCarousel slides={slides} />}
+                />
             </div>
         </>
     );
 };
 
-export default Homepage;
+export default HomepageContent;

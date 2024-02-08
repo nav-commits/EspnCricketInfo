@@ -16,10 +16,15 @@
     p {
         font-size: 14px;
     }
-}
 
-@media (max-width: 1098px) {
-    .main__container {
-        display: none;
+    .main__container-item-text {
+        color: #FFFFFF;
+        text-decoration: none;
     }
 }
+
+    @media (max-width: 1098px) {
+        .main__container {
+            display: none;
+        }
+    }

@@ -2,13 +2,12 @@
 import React from 'react';
 import styles from './NavBarContent.module.scss';
 import SecondaryNav from '../../Molecules/SecondaryNav/SecondaryNav';
-import MainNav from '../../Molecules/MainNav/MainNav.client';
+import MainNav from '../../Molecules/MainNav/MainNav';
 import Image from 'next/image';
 import { secondaryItemArray, mainNavArray } from '@/app/Utils/Data';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBarContent = () => {
-
     return (
         <div className={styles.navbar__container}>
             <div className={styles.hamburger}>

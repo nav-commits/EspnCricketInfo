@@ -4,7 +4,7 @@ import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNone
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import { SecondaryItem } from '../Components/Molecules/SecondaryNav/Secondary.types';
 
-export const buttons = [
+export const linkButtons = [
     {
         text: 'T20 World Cup schedule',
         icon: <KeyboardArrowRightOutlinedIcon fontSize='small' />,
@@ -104,13 +104,13 @@ export const secondaryItemArray: SecondaryItem[] = [
 ];
 
 export const mainNavArray = [
-    { value: 'Live Scores' },
-    { value: 'Series' },
-    { value: 'Teams' },
-    { value: 'News' },
-    { value: 'Features' },
-    { value: 'Videos' },
-    { value: 'Stats' },
+    { value: 'Live Scores', path: '/LiveScores' },
+    { value: 'Series', path: '/series' },
+    { value: 'Teams', path: '/teams' },
+    { value: 'News', path: '/news' },
+    { value: 'Features', path: '/features' },
+    { value: 'Videos', path: '/videos' },
+    { value: 'Stats', path: '/stats' },
 ];
 
 export const storyContent = [
@@ -129,5 +129,63 @@ export const storyContent = [
     {
         url: 'https://media.usestoryteller.com/assets/pages/184b9d19-6dd6-fb25-a129-3a1087246830/db03a760-a1d4-b23e-e648-3a108724682f/AssetImage.jpg',
         duration: 5000,
+    },
+];
+
+export const slides = [
+    {
+        imageUrl:
+            'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0205/dm_240205_INET_CRIC_INDvsENG_ENGBOWL_HARMISON_GLOBAL/dm_240205_INET_CRIC_INDvsENG_ENGBOWL_HARMISON_GLOBAL.jpg',
+        text: 'Pant: I felt at home even around my super-seniors',
+    },
+    {
+        imageUrl:
+            'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0201/dm_240201_INET_CRIC_PANTWITHSTAR_/dm_240201_INET_CRIC_PANTWITHSTAR_.jpg',
+        text: 'Pant: I felt at home even around my super-seniors',
+    },
+    {
+        imageUrl:
+            'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0201/dm_240201_INET_CRIC_star_pant_interview_GLOBAL/dm_240201_INET_CRIC_star_pant_interview_GLOBAL.jpg',
+        text: 'Pant: I felt at home even around my super-seniors',
+    },
+    {
+        imageUrl:
+            'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0205/dm_240205_indveng_generic_dravidpc1/dm_240205_indveng_generic_dravidpc1.jpg',
+        text: 'Pant: I felt at home even around my super-seniors',
+    },
+];
+
+export const dataArray = [
+    {
+        imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/374700/374703.6.jpg',
+        content: "U-19 WC: Agony for Pakistan, it's an Australia vs India final.",
+    },
+    {
+        imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/369600/369657.6.jpg',
+        content: "Conrad on SA's big loss vs NZ: 'A jolt and a wake-up call.",
+    },
+    {
+        imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/375600/375654.6.jpg',
+        content: 'NZ vs SA: Daryl Mitchell sidelined by foot injury.',
+    },
+    {
+        imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/375400/375423.6.jpg',
+        content: 'Rehan swings from the hip... but not on the golf course.',
+    },
+    {
+        imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/310600/310657.6.jpg',
+        content: 'IPL: Deepak Chahar is trying get stronger - with ball and bat.',
+    },
+    {
+        imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/324600/324614.6.jpg',
+        content: 'Sri Lanka drop Shanaka for ODIs against Afghanistan.',
+    },
+    {
+        imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/372600/372693.6.jpg',
+        content: 'WI star power returns as Australia assess top-order squeeze.',
+    },
+    {
+        imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/375500/375583.6.jpg',
+        content: 'Kapp on Sydney win: Proud moment for SA cricket.',
     },
 ];

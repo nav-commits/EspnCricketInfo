@@ -1,5 +1,6 @@
 type MainItem = {
-   value: string
+    value: string
+    path: string
 };
 
 export interface MainNavProps {

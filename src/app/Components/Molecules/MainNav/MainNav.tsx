@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styles from './MainNav.module.scss';
 import { MainNavProps } from './MainNav.types';
 import Dropdown from '../Dropdown/Dropdown';
-import {dropdownItems} from '../../../Utils/Data'
+import { dropdownItems } from '../../../Utils/Data';
+import Link from 'next/link';
 
 const MainNav: React.FC<MainNavProps> = ({ items }) => {
     const [hoveredItem, setHoveredItem] = useState<string>('');
@@ -28,7 +29,9 @@ const MainNav: React.FC<MainNavProps> = ({ items }) => {
                     key={idx}
                     onMouseEnter={() => handleMouseEnter(item.value)}
                 >
-                    <p> {item.value}</p>
+                    <Link className={styles['main__container-item-text']} href={item.path}>
+                        <p> {item.value}</p>
+                    </Link>
                     {filteredDropdownItems && filteredDropdownItems.label === item.value && (
                         <Dropdown dropdown={[filteredDropdownItems]} />
                     )}

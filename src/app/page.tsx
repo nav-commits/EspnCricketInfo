@@ -1,9 +1,8 @@
-import Homepage from './Components/Views/Hompage';
+import HomePageContent from './Components/Views/HomePageContent';
 export default function Home() {
     return (
         <main>
-            <div style={{ backgroundColor: '#0298DB', padding: '80px' }} />
-            <Homepage />
+            <HomePageContent />
         </main>
     );
 }

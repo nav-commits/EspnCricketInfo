@@ -9,14 +9,15 @@ const MatchHighlight: React.FC<MatchHighlightProps> = ({
     description,
     view,
     imageVideoIcon,
-    isDesktop,
+    width,
+    height,
 }) => (
-    <div style={view} className={styles.match__container}>
+    <div style={{ flexDirection: view  }} className={styles.match__container}>
         <Image
             src={src}
             alt={alt}
-            width={isDesktop ? 420 : 310}
-            height={isDesktop ? 250 : 200}
+            width={width}
+            height={height}
             style={{ borderRadius: '10px' }}
         />
         <div>

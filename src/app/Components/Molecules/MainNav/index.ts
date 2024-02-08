@@ -1,1 +1,1 @@
-export { default } from './MainNav.client';
+export { default } from './MainNav';
