@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { ResponsiveState } from './UseResponsiveHook.types';
+import { ResponsiveState } from '../../app/Hooks/UseResponsiveHook.types';
 
 const useResponsive = (): ResponsiveState => {
     const [windowSize, setWindowSize] = useState<ResponsiveState>({
         isMobile: false,
         isTablet: false,
-        isDesktop: true, 
+        isDesktop: true,
     });
 
     const MOBILE_WIDTH = 768;
@@ -25,7 +25,7 @@ const useResponsive = (): ResponsiveState => {
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
-    }, []); 
+    }, []);
 
     return windowSize;
 };

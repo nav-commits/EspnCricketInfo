@@ -5,9 +5,8 @@ import '../../../styles/globals.scss';
 import styles from './ScrollBar.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
-import useResponsive from '@/app/Utils/UseResponsiveHook';
+import 'swiper/scss/navigation';;
+import useResponsive from '@/app/Hooks/UseResponsiveHook';
 import StoryAvatar from '../../Atoms/StoryAvatar/StoryAvatar';
 import { linkButtons, stories } from '@/app/Utils/Data';
 import { Navigation } from 'swiper/modules';
@@ -46,12 +45,7 @@ const ScrollBar = () => {
         return (
             <div className={styles['scrollbar__container--content']}>
                 {linkButtons.map((button, index) => (
-                    <LinkButton
-                        key={index}
-                        text={button.text}
-                        icon={button.icon}
-                        href={'/'}
-                    />
+                    <LinkButton key={index} text={button.text} icon={button.icon} href={'/'} />
                 ))}
             </div>
         );

@@ -6,7 +6,7 @@ import Card from '../Molecules/Card/Card';
 import Tabs from '../Molecules/Tabs/Tabs';
 import { useState } from 'react';
 import MatchHighlight from '../Organisms/MatchHightlight/MatchHightlight';
-import useResponsive from '@/app/Utils/UseResponsiveHook';
+import useResponsive from '@/app/Hooks/UseResponsiveHook';
 import ImageVideoIcon from '../Atoms/ImageVideoIcon/ImageVideoIcon';
 import { tabData, slides, dataArray } from '@/app/Utils/Data';
 import ImageCarousel from '../Molecules/ImageCarousel/ImageCarousel';

@@ -19,28 +19,11 @@
     }
 }
 
-.swiper-container {
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+.swiper-pagination-bullet {
+    background: #000;
+    opacity: 1;
+}
 
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 15px;
-    }
-
-    .swiper-pagination-bullet {
-        background: #000;
-        opacity: 1;
-    }
-
-    .swiper-pagination-bullet-active {
-        background: #fff;
-    }
-
+.swiper-pagination-bullet-active {
+    background: #fff;
 }
