@@ -7,3 +7,35 @@
         position: absolute;
     }
 }
+
+.image {
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 1100px) {
+    .match__container {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+    .match__container {
+        flex-direction: column;
+    }
+
+    .image {
+        width: 310px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .match__container {
+        flex-direction: column;
+    }
+
+    .image {
+        width: 310px;
+        height: 200px;
+    }
+}
