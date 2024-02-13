@@ -3,9 +3,9 @@ import { linkProps } from './LinkButton.types';
 import styles from './LinkButton.module.scss';
 import Link from 'next/link';
 
-const LinkButton: React.FC<linkProps> = ({ text, icon, isDesktop, href }) => {
+const LinkButton: React.FC<linkProps> = ({ text, icon,href }) => {
     return (
-        <div style={{ width: !isDesktop ? '150px' : '' }} className={styles.custom__button}>
+        <div  className={styles.custom__button}>
             <div className={styles['button__inner--container']}>
                 <Link className={styles.button__content} href={href ?? ''}>
                     {text}

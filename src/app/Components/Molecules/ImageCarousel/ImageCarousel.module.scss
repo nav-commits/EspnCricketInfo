@@ -2,10 +2,13 @@
     position: relative;
     text-align: center;
 
-    .image-carousel--img {
+    .image-carousel--icon {
         position: absolute;
         top: -60px;
         left: 25px;
+    }
+    .image-size{
+        border-radius: 10px;
     }
 
     .image-carousel--text {
@@ -19,28 +22,12 @@
     }
 }
 
-.swiper-container {
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 15px;
-    }
-
-    .swiper-pagination-bullet {
-        background: #000;
-        opacity: 1;
-    }
-
-    .swiper-pagination-bullet-active {
-        background: #fff;
-    }
-
+.swiper-pagination-bullet {
+    background: #000;
+    opacity: 1;
 }
+
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+

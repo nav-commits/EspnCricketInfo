@@ -5,15 +5,14 @@ import { CardProps } from './Card.types';
 const Card: React.FC<CardProps> = ({
     headerText,
     tabs,
-    width,
     showContent,
     paddingBottom,
-    height,
+    cardSize,
 }) => {
     return (
         <div
-            style={{ minWidth: width, paddingBottom: paddingBottom, maxHeight: height }}
-            className={styles.card__container}
+            className={`${styles.card__container} ${cardSize ? styles[cardSize] : ''}`}
+            style={{ paddingBottom }}
         >
             {headerText && headerText}
             {tabs && tabs}

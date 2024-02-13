@@ -7,23 +7,18 @@ const MatchHighlight: React.FC<MatchHighlightProps> = ({
     alt,
     title,
     description,
-    view,
     imageVideoIcon,
-    width,
-    height,
+    subTitle,
 }) => (
-    <div style={{ flexDirection: view  }} className={styles.match__container}>
-        <Image
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            style={{ borderRadius: '10px' }}
-        />
-        <div>
-            <h2>{title}</h2>
-            <p>{description}</p>
-        </div>
+    <div className={styles['match__container']}>
+        <Image src={src} alt={alt} className={styles['image']} width={420} height={250} />
+        {subTitle && <p className={styles['sub-title']}>{subTitle}</p>}
+        {title && description && (
+            <div>
+                <h2>{title}</h2>
+                <p>{description}</p>
+            </div>
+        )}
         <div className={styles['match__container--icon']}>{imageVideoIcon}</div>
     </div>
 );

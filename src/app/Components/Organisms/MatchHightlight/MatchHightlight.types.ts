@@ -1,11 +1,8 @@
 export interface MatchHighlightProps {
     src: string;
     alt: string;
-    title: string;
-    description: string;
-    view?: 'row' | 'column';
-    imageVideoIcon: React.ReactNode;
-    isDesktop?: boolean;
-    width?: number;
-    height?: number;
+    title?: string;
+    description?: string;
+    imageVideoIcon?: React.ReactNode;
+    subTitle?: string;
 }

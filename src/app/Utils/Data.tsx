@@ -189,3 +189,32 @@ export const dataArray = [
         content: 'Kapp on Sydney win: Proud moment for SA cricket.',
     },
 ];
+
+
+export const matchHighlights = [
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0213/dm_240213_generic_bedingham/dm_240213_generic_bedingham.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Bedingham on his bizarre dismissal',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/cricinfo/2024/0209/cric_240209_Martin_Guptill_25_Questions/cric_240209_Martin_Guptill_25_Questions.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Which Australian does Guptill secretly wish was a New Zealander?',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0210/dm_240210_INET_CRIC_INDvENG_SQUADREAX_SHREYAS_GLOBAL/dm_240210_INET_CRIC_INDvENG_SQUADREAX_SHREYAS_GLOBAL.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Why did India leave Shreyas Iyer out?',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375213.6.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Bedingham on his bizarre dismissal',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375213.6.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Bedingham on his bizarre dismissal',
+    },
+];
