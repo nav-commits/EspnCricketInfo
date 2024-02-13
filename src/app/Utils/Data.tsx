@@ -189,3 +189,32 @@ export const dataArray = [
         content: 'Kapp on Sydney win: Proud moment for SA cricket.',
     },
 ];
+
+
+export const matchHighlights = [
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375213.6.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Bedingham on his bizarre dismissal',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375213.6.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Bedingham on his bizarre dismissal',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375213.6.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Bedingham on his bizarre dismissal',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375213.6.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Bedingham on his bizarre dismissal',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375213.6.jpg',
+        alt: 'SL vs Afg Highlights',
+        subTitle: 'Bedingham on his bizarre dismissal',
+    },
+];

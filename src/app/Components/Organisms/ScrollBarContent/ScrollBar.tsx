@@ -23,6 +23,16 @@ const ScrollBar = () => {
                 slidesPerView={7}
                 navigation={true}
                 className={styles['swiper-container']}
+                breakpoints={{
+                    450: {
+                        slidesPerView: 7,
+                        spaceBetween: 10,
+                    },
+                    0: {
+                        slidesPerView: 4,
+                        spaceBetween: 5,
+                    },
+                }}
             >
                 {stories.map((story, index) => (
                     <SwiperSlide key={index}>

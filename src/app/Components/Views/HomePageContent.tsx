@@ -7,7 +7,7 @@ import Tabs from '../Molecules/Tabs/Tabs';
 import { useState } from 'react';
 import MatchHighlight from '../Organisms/MatchHightlight/MatchHightlight';
 import ImageVideoIcon from '../Atoms/ImageVideoIcon/ImageVideoIcon';
-import { tabData, slides, dataArray } from '@/app/Utils/Data';
+import { tabData, slides, dataArray, matchHighlights } from '@/app/Utils/Data';
 import ImageCarousel from '../Molecules/ImageCarousel/ImageCarousel';
 import ItemDisplayGrid from '../Organisms/ItemDisplayGrid/ItemDisplayGrid';
 
@@ -74,6 +74,7 @@ const HomepageContent: React.FC = () => {
                 return null;
         }
     };
+
     return (
         <>
             <ScrollBar />
@@ -90,6 +91,28 @@ const HomepageContent: React.FC = () => {
                         paddingBottom='10px'
                         showContent={<ItemDisplayGrid data={dataArray} />}
                     />
+
+                    <div className={styles['show-container']}>
+                        <div className={styles['header-text__container']}>
+                            <h4>Must Watch</h4>
+                            <p className={styles['header-text--style']}>See All</p>
+                        </div>
+                        <div className={styles['scroll-container']}>
+                            <div className={styles['match-highlights-flex-container']}>
+                                {matchHighlights.map((highlight, index) => (
+                                    <MatchHighlight
+                                        key={index}
+                                        src={highlight.src}
+                                        alt={highlight.alt}
+                                        imageVideoIcon={
+                                            <ImageVideoIcon width='55px' height='55px' />
+                                        }
+                                        subTitle={highlight.subTitle}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className={styles['card-on-desktop']}>

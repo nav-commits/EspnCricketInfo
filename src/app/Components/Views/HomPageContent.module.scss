@@ -25,7 +25,6 @@
     }
 }
 
-
 .flex__container {
     display: flex;
     gap: 10px;
@@ -51,29 +50,63 @@
 }
 
 @media screen and (min-width: 1100px) {
-    .flex__container{
+    .flex__container {
         flex-direction: row;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1100px) {
-     .flex__container {
-         flex-direction: column;
-     }
+    .flex__container {
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 767px) {
-      .flex__container {
-          flex-direction: column;
-      }
+    .flex__container {
+        flex-direction: column;
+    }
 }
 
-
-@media only screen and (max-width: 1100px){
+@media only screen and (max-width: 1100px) {
     .card-on-desktop {
         display: none;
     }
 }
 
+.show-container {
+    display: none;
 
+    .scroll-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
 
+        .match-highlights-flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scroll-container > div > * {
+        flex: 0 0 auto;
+        margin-right: 10px;
+    }
+
+    .scroll-container > div > :last-child {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .show-container {
+        display: block;
+        background-color: black;
+        color: white;
+    }
+}
