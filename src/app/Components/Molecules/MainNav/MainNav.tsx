@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 const MainNav: React.FC<MainNavProps> = ({ items }) => {
     const [hoveredItem, setHoveredItem] = useState<string>('');
+    const [selectedItem, setSelectedItem] = useState<string>('');
 
     const handleMouseEnter = (itemLabel: string) => {
         setHoveredItem(itemLabel);
@@ -14,6 +15,10 @@ const MainNav: React.FC<MainNavProps> = ({ items }) => {
 
     const handleMouseLeave = () => {
         setHoveredItem('');
+    };
+
+    const onClick = (itemLabel: string) => {
+        setSelectedItem(itemLabel);
     };
     const filteredDropdownItems = dropdownItems.find((item) => item.label === hoveredItem);
 
@@ -30,7 +35,16 @@ const MainNav: React.FC<MainNavProps> = ({ items }) => {
                     onMouseEnter={() => handleMouseEnter(item.value)}
                 >
                     <Link className={styles['main__container-item-text']} href={item.path}>
-                        <p> {item.value}</p>
+                        <p
+                            onClick={() => onClick(item.value)}
+                            className={
+                                selectedItem === item.value
+                                    ? styles['main__container--active-text']
+                                    : ''
+                            }
+                        >
+                            {item.value}
+                        </p>
                     </Link>
                     {filteredDropdownItems && filteredDropdownItems.label === item.value && (
                         <Dropdown dropdown={[filteredDropdownItems]} />

@@ -10,7 +10,7 @@
 
     .sub-title {
         font-weight: 800;
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -42,6 +42,14 @@
 
     .image {
         width: 310px;
+        height: 200px;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .image {
+        width: 290px;
         height: 200px;
     }
 }

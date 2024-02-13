@@ -3,10 +3,14 @@
     flex-direction: row;
     gap: 2px;
     align-items: center;
+    z-index: 100;
 
     .main__container--item {
         padding: 0px 10px 2px;
         cursor: pointer;
+    }
+    .main__container--active-text {
+        font-weight: bold;
     }
 
     .main__container--active-blue {
@@ -17,7 +21,6 @@
         color: #ffffff;
         text-decoration: none;
         font-size: 14px;
-        font-weight: 600;
     }
 }
 
@@ -26,3 +29,4 @@
         display: none;
     }
 }
+
