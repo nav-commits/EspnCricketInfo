@@ -1,7 +1,9 @@
 .custom__button {
-    border: 1px solid rgb(159, 157, 157);
+    border: 1px solid rgb(208, 208, 208);
     border-radius: 20px;
     padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 3px;
     cursor: pointer;
 
@@ -14,13 +16,10 @@
     .button__content {
         text-decoration: none;
         color: black;
-        font-size: 8.5px;
+        font-size: 10.5px;
     }
 }
 
-
-@media screen and (min-width: 1100px) {
-    .custom__button {
-        width: 150px;
-    }
+.custom__button:hover {
+    border: 0.5px solid #03a9f4 !important;
 }

@@ -92,17 +92,18 @@ const HomepageContent: React.FC = () => {
                     />
                 </div>
 
-                <Card
-                    headerText={
-                        <div className={styles['header-text__container']}>
-                            <h4>Must Watch</h4>
-                            <p className={styles['header-text--style']}>See All</p>
-                        </div>
-                    }
-                    width='300px'
-                    height='300px'
-                    showContent={<ImageCarousel slides={slides} />}
-                />
+                <div className={styles['card-on-desktop']}>
+                    <Card
+                        headerText={
+                            <div className={styles['header-text__container']}>
+                                <h4>Must Watch</h4>
+                                <p className={styles['header-text--style']}>See All</p>
+                            </div>
+                        }
+                        cardSize='must-watch'
+                        showContent={<ImageCarousel slides={slides} />}
+                    />
+                </div>
             </div>
         </>
     );

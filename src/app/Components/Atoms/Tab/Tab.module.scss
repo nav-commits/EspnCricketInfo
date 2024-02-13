@@ -4,8 +4,6 @@
     align-items: center;
     cursor: pointer;
     margin-right: 12px;
-    padding-right: 5px;
-    padding-bottom: 5px;
 
     .tab__content--content {
         font-size: 11.5px;
@@ -14,5 +12,15 @@
 
     .tab__content--label {
         font-weight: 800;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .tab__content {
+        font-size: 10px !important;
+    }
+
+    .tab__content--content {
+        font-size: 10px !important;
     }
 }

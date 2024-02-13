@@ -2,10 +2,13 @@
     position: relative;
     text-align: center;
 
-    .image-carousel--img {
+    .image-carousel--icon {
         position: absolute;
         top: -60px;
         left: 25px;
+    }
+    .image-size{
+        border-radius: 10px;
     }
 
     .image-carousel--text {
@@ -27,3 +30,4 @@
 .swiper-pagination-bullet-active {
     background: #fff;
 }
+
