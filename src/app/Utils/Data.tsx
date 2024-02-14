@@ -113,22 +113,32 @@ export const mainNavArray = [
     { value: 'Stats', path: '/stats' },
 ];
 
+const bashirHeading = {
+    heading: 'Bashir',
+    subheading: 'Bashir@gmail.com',
+    profileImage:
+        'https://media.usestoryteller.com/assets/stories/943788f0-f44c-3cee-72d9-3a10778b1db8/638424008179889177_best_square_thumbnail.webp',
+};
 export const storyContent = [
     {
         url: 'https://media.usestoryteller.com/assets/pages/e2062520-4102-e818-a848-3a108ff1f43f/bf4b75b1-47dc-9b6c-60c1-3a108ff1f43f/AssetImage.jpg',
         duration: 5000,
+        header: bashirHeading,
     },
     {
         url: 'https://media.usestoryteller.com/assets/pages/258f511c-749f-275f-a7ce-3a108b4e48ae/0fe1593c-b843-f824-4a1e-3a108b4e7866/AssetImage.jpg',
         duration: 5000,
+        header: bashirHeading,
     },
     {
         url: 'https://media.usestoryteller.com/assets/pages/bb1a81e4-d737-ffe9-c809-3a1087245b8f/fe28b72d-1d0b-e7ee-2605-3a1087245b8f/AssetImage.jpg',
         duration: 5000,
+        header: bashirHeading,
     },
     {
         url: 'https://media.usestoryteller.com/assets/pages/184b9d19-6dd6-fb25-a129-3a1087246830/db03a760-a1d4-b23e-e648-3a108724682f/AssetImage.jpg',
         duration: 5000,
+        header: bashirHeading,
     },
 ];
 
@@ -217,4 +227,10 @@ export const matchHighlights = [
         alt: 'SL vs Afg Highlights',
         subTitle: 'Bedingham on his bizarre dismissal',
     },
+];
+
+export const tabDataLiveScores = [
+    { label: 'Live Cricket Score' },
+    { label: 'Upcoming' },
+    { label: 'Result' },
 ];

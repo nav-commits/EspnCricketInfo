@@ -4,4 +4,5 @@ export type TabProps = {
     activeTab: number;
     content: string;
     onClick: (index: number) => void;
+    borderBottom?: string;
 };

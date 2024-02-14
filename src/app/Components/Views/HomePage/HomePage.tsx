@@ -1,15 +1,16 @@
 'use client';
 import React from 'react';
-import ScrollBar from '../Organisms/ScrollBarContent/ScrollBar';
-import styles from '../Views/HomPageContent.module.scss';
-import Card from '../Molecules/Card/Card';
-import Tabs from '../Molecules/Tabs/Tabs';
+import ScrollBar from '../../Organisms/ScrollBarContent/ScrollBar';
+import styles from '../../Views/HomePage/HomePage.module.scss';
+import Card from '../../Molecules/Card/Card';
+import Tabs from '../../Molecules/Tabs/Tabs';
 import { useState } from 'react';
-import MatchHighlight from '../Organisms/MatchHightlight/MatchHightlight';
-import ImageVideoIcon from '../Atoms/ImageVideoIcon/ImageVideoIcon';
+import MatchHighlight from '../../Organisms/MatchHightlight/MatchHightlight';
+import ImageVideoIcon from '../../Atoms/ImageVideoIcon/ImageVideoIcon';
 import { tabData, slides, dataArray, matchHighlights } from '@/app/Utils/Data';
-import ImageCarousel from '../Molecules/ImageCarousel/ImageCarousel';
-import ItemDisplayGrid from '../Organisms/ItemDisplayGrid/ItemDisplayGrid';
+import ImageCarousel from '../../Molecules/ImageCarousel/ImageCarousel';
+import ItemDisplayGrid from '../../Organisms/ItemDisplayGrid/ItemDisplayGrid';
+import NavBarContent from '../../Organisms/NavBarContent/NavBarContent';
 
 const HomepageContent: React.FC = () => {
     const [selectedLabel, setSelectedLabel] = useState(tabData[0].label);
@@ -77,55 +78,67 @@ const HomepageContent: React.FC = () => {
 
     return (
         <>
-            <ScrollBar />
-            <div className={styles['flex__container']}>
-                <div>
-                    <Card
-                        headerText={<h2 className={styles['card-header']}>Match Coverage</h2>}
-                        tabs={<Tabs tabs={tabData} onTabSelect={setSelectedLabel} />}
-                        showContent={() => renderView(selectedLabel)}
-                        paddingBottom='10px'
-                    />
-                    <Card
-                        headerText={<h3 className={styles['card-header--small']}>Top Stories</h3>}
-                        paddingBottom='10px'
-                        showContent={<ItemDisplayGrid data={dataArray} />}
-                    />
+            <div style={{ backgroundColor: '#0298DB', padding: '80px' }} />
+            <NavBarContent />
+            <div className={styles['center__container']}>
+                <ScrollBar />
+                <div className={styles['flex__container']}>
+                    <div>
+                        <Card
+                            headerText={<h2 className={styles['card-header']}>Match Coverage</h2>}
+                            tabs={
+                                <Tabs
+                                    tabs={tabData}
+                                    onTabSelect={setSelectedLabel}
+                                    borderBottom='1px solid rgb(237, 238, 240)'
+                                />
+                            }
+                            showContent={() => renderView(selectedLabel)}
+                            paddingBottom='10px'
+                        />
+                        <Card
+                            headerText={
+                                <h3 className={styles['card-header--small']}>Top Stories</h3>
+                            }
+                            paddingBottom='10px'
+                            showContent={<ItemDisplayGrid data={dataArray} />}
+                        />
 
-                    <div className={styles['show-container']}>
-                        <div className={styles['header-text__container']}>
-                            <h4>Must Watch</h4>
-                            <p className={styles['header-text--style']}>See All</p>
-                        </div>
-                        <div className={styles['scroll-container']}>
-                            <div className={styles['match-highlights-flex-container']}>
-                                {matchHighlights.map((highlight, index) => (
-                                    <MatchHighlight
-                                        key={index}
-                                        src={highlight.src}
-                                        alt={highlight.alt}
-                                        imageVideoIcon={
-                                            <ImageVideoIcon width='55px' height='55px' />
-                                        }
-                                        subTitle={highlight.subTitle}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles['card-on-desktop']}>
-                    <Card
-                        headerText={
+                        <div className={styles['show-container']}>
                             <div className={styles['header-text__container']}>
                                 <h4>Must Watch</h4>
                                 <p className={styles['header-text--style']}>See All</p>
                             </div>
-                        }
-                        cardSize='must-watch'
-                        showContent={<ImageCarousel slides={slides} />}
-                    />
+                            <div className={styles['scroll-container']}>
+                                <div className={styles['match-highlights-flex-container']}>
+                                    {matchHighlights.map((highlight, index) => (
+                                        <MatchHighlight
+                                            key={index}
+                                            src={highlight.src}
+                                            alt={highlight.alt}
+                                            imageVideoIcon={
+                                                <ImageVideoIcon width='55px' height='55px' />
+                                            }
+                                            subTitle={highlight.subTitle}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles['card-on-desktop']}>
+                        <Card
+                            headerText={
+                                <div className={styles['header-text__container']}>
+                                    <h4>Must Watch</h4>
+                                    <p className={styles['header-text--style']}>See All</p>
+                                </div>
+                            }
+                            cardSize='must-watch'
+                            showContent={<ImageCarousel slides={slides} />}
+                        />
+                    </div>
                 </div>
             </div>
         </>
