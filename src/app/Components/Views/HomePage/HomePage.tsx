@@ -91,6 +91,7 @@ const HomepageContent: React.FC = () => {
                                     tabs={tabData}
                                     onTabSelect={setSelectedLabel}
                                     borderBottom='1px solid rgb(237, 238, 240)'
+                                    gap='25px'
                                 />
                             }
                             showContent={() => renderView(selectedLabel)}

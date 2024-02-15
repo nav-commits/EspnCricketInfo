@@ -2,7 +2,17 @@ import React from 'react';
 import { TabProps } from './Tab.types';
 import styles from './Tab.module.scss';
 
-const Tab: React.FC<TabProps> = ({ index, label, activeTab, onClick, content }) => {
+const Tab: React.FC<TabProps> = ({
+    index,
+    label,
+    activeTab,
+    onClick,
+    content,
+    paddingRight,
+    paddingLeft,
+    paddingTop,
+    paddingBottom,
+}) => {
     return (
         <div
             style={{
@@ -12,7 +22,15 @@ const Tab: React.FC<TabProps> = ({ index, label, activeTab, onClick, content }) 
             onClick={() => onClick(index)}
         >
             {label && (
-                <div className={`${activeTab === index ? styles['tab__content--label'] : ''}`}>
+                <div
+                    style={{
+                        paddingLeft: paddingLeft,
+                        paddingRight: paddingRight,
+                        paddingTop: paddingTop,
+                        paddingBottom: paddingBottom,
+                    }}
+                    className={`${activeTab === index ? styles['tab__content--label'] : ''}`}
+                >
                     {label}
                 </div>
             )}

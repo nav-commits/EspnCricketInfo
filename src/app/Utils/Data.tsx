@@ -200,7 +200,6 @@ export const dataArray = [
     },
 ];
 
-
 export const matchHighlights = [
     {
         src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0213/dm_240213_generic_bedingham/dm_240213_generic_bedingham.jpg',

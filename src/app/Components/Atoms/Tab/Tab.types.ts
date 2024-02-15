@@ -5,4 +5,8 @@ export type TabProps = {
     content: string;
     onClick: (index: number) => void;
     borderBottom?: string;
+    paddingRight?: string;
+    paddingLeft?: string;
+    paddingTop?: string;
+    paddingBottom?: string;
 };

@@ -6,25 +6,38 @@ import { useState } from 'react';
 import Tabs from '../../Molecules/Tabs/Tabs';
 import NavBarContent from '../../Organisms/NavBarContent/NavBarContent';
 import styles from './LiveScoresPage.module.scss';
+import { useRouter } from 'next/navigation';
 
 const LiveScores = () => {
     const [selectedLabel, setSelectedLabel] = useState(tabDataLiveScores[0].label);
+    const router = useRouter();
+    const handleTabClick = (tabName: string) => {
+        router.push(`/LiveScores?tab=${tabName}`);
+    };
     return (
         <>
             <NavBarContent />
             <div className={styles['center__container']}>
                 <Card
-                    padding='10px'
                     tabs={
                         <div
                             style={{
-                                fontSize: '20px',
+                                fontSize: '17px',
                                 textAlign: 'center',
                                 display: 'flex',
                                 justifyContent: 'center',
                             }}
                         >
-                            <Tabs tabs={tabDataLiveScores} onTabSelect={setSelectedLabel} />
+                            <Tabs
+                                tabs={tabDataLiveScores}
+                                handleTabClick={handleTabClick}
+                                onTabSelect={setSelectedLabel}
+                                gap='60px'
+                                paddingLeft='25px'
+                                paddingRight='25px'
+                                paddingTop='20px'
+                                paddingBottom='10px'
+                            />
                         </div>
                     }
                 />
