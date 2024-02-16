@@ -234,7 +234,6 @@ export const tabDataLiveScores = [
     { label: 'Result' },
 ];
 
-
 export const chips = [
     { label: "int'l' " },
     { label: 'T20s' },
@@ -247,4 +246,106 @@ export const chips = [
     { label: 'Youth' },
     { label: 'List A' },
     { label: 'Others' },
+];
+
+export const cricketMatches = [
+    {
+        stumps: 'Stumps',
+        match: {
+            matchInfo: {
+                description: '3rd Test, Rajkot, February 15 - 19, 2024, England tour of India',
+                summary: 'England trail by 238 runs.',
+            },
+            teams: [
+                {
+                    name: 'India',
+                    flag: 'India Flag',
+                    score: 445,
+                },
+                {
+                    name: 'England',
+                    flag: 'England Flag',
+                    score: '207/2',
+                    overs: '35',
+                    trailRuns: 238,
+                },
+            ],
+        },
+        additionalContent: 'Live Blog',
+        day: 'Day 2 - England trail by 238 runs.',
+    },
+    {
+        stumps: 'Stumps',
+        match: {
+            matchInfo: {
+                description:
+                    'Only Test, Perth, February 15 - 18, 2024, South Africa Women tour of Australia',
+                summary: 'Day 2 - South Africa (W) trail by 432 runs.',
+            },
+            teams: [
+                {
+                    name: 'South Africa Women',
+                    flag: 'South Africa Women Flag',
+                    score: '76 & 67/3',
+                    overs: '28',
+                },
+                {
+                    name: 'Australia Women',
+                    flag: 'Australia Women Flag',
+                    score: '575/9d',
+                },
+            ],
+        },
+        additionalContent: 'Series Home',
+        day: 'Day 2 - S Africa (W) trail by 432 runs.',
+    },
+
+    {
+        stumps: 'Result',
+        match: {
+            matchInfo: {
+                description:
+                    '34th Match (N), Chattogram, February 16, 2024, Bangladesh Premier League',
+                summary: 'Rangpur won by 18 runs.',
+            },
+            teams: [
+                {
+                    name: 'Rangpur Riders',
+                    flag: 'Rangpur Riders Flag',
+                    score: '187/8',
+                },
+                {
+                    name: 'Chattogram Challengers',
+                    flag: 'Chattogram Challengers Flag',
+                    score: '(20 ov, T:188) 169/6',
+                },
+            ],
+        },
+        additionalContent: 'Series Home',
+        day: 'N/A',
+    },
+    {
+        stumps: 'Result',
+        match: {
+            matchInfo: {
+                description:
+                    '2nd Test, Hamilton, February 13 - 16, 2024, South Africa tour of New Zealand',
+                summary: 'New Zealand won by 7 wickets.',
+            },
+            teams: [
+                {
+                    name: 'South Africa',
+                    flag: 'South Africa Flag',
+                    score: '242 & 235',
+                },
+                {
+                    name: 'New Zealand',
+                    flag: 'New Zealand Flag',
+                    score: '(T:267) 211 & 269/3',
+                },
+            ],
+        },
+        additionalContent: 'Report, Photos, Videos',
+        day: 'N/A',
+    },
 ];

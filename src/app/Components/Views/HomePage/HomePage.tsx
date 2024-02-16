@@ -11,6 +11,7 @@ import { tabData, slides, dataArray, matchHighlights } from '@/app/Utils/Data';
 import ImageCarousel from '../../Molecules/ImageCarousel/ImageCarousel';
 import ItemDisplayGrid from '../../Organisms/ItemDisplayGrid/ItemDisplayGrid';
 import NavBarContent from '../../Organisms/NavBarContent/NavBarContent';
+import Image from 'next/image';
 
 const HomepageContent: React.FC = () => {
     const [selectedLabel, setSelectedLabel] = useState(tabData[0].label);
@@ -102,7 +103,29 @@ const HomepageContent: React.FC = () => {
                                 <h3 className={styles['card-header--small']}>Top Stories</h3>
                             }
                             paddingBottom='10px'
-                            showContent={<ItemDisplayGrid data={dataArray} />}
+                            showContent={
+                                <ItemDisplayGrid
+                                    data={
+                                        <>
+                                            {dataArray.map((item, index) => (
+                                                <div className={styles['grid-item']} key={index}>
+                                                    <Image
+                                                        src={item.imgSrc}
+                                                        alt={'Content'}
+                                                        width={180}
+                                                        height={100}
+                                                        style={{
+                                                            borderRadius: '10px',
+                                                            marginRight: '20px',
+                                                        }}
+                                                    />
+                                                    <p>{item.content}</p>
+                                                </div>
+                                            ))}
+                                        </>
+                                    }
+                                />
+                            }
                         />
 
                         <div className={styles['show-container']}>
