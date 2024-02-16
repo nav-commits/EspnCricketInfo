@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Tab from '../../Atoms/Tab/Tab';
 import { TabsProps } from './Tabs.types';
 import styles from './Tabs.module.scss';
-import { BorderBottom } from '@mui/icons-material';
 
 const Tabs: React.FC<TabsProps> = ({ tabs, onTabSelect, borderBottom, handleTabClick, gap, paddingLeft,paddingRight, paddingTop , paddingBottom}) => {
     const [activeTab, setActiveTab] = useState(0);

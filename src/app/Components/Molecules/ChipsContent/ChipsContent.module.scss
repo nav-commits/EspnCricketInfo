@@ -1,0 +1,16 @@
+.chips-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.chips-container--reset-chip {
+    color: grey;
+    opacity: 0.5;
+    font-size: 12px;
+    border-right: 1px solid rgb(158, 158, 158);
+    padding-right: 10px;
+    font-weight: 600;
+
+}

@@ -233,3 +233,18 @@ export const tabDataLiveScores = [
     { label: 'Upcoming' },
     { label: 'Result' },
 ];
+
+
+export const chips = [
+    { label: "int'l' " },
+    { label: 'T20s' },
+    { label: 'ODIs' },
+    { label: 'Tests' },
+    { label: 'Men' },
+    { label: 'Woman' },
+    { label: 'Domestic' },
+    { label: 'FC' },
+    { label: 'Youth' },
+    { label: 'List A' },
+    { label: 'Others' },
+];

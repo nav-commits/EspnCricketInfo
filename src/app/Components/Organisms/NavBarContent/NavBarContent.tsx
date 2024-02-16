@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import styles from './NavBarContent.module.scss';
 import SecondaryNav from '../../Molecules/SecondaryNav/SecondaryNav';
