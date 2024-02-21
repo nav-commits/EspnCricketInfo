@@ -15,7 +15,7 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 const LiveScores = () => {
     const [selectedLabel, setSelectedLabel] = useState(tabDataLiveScores[0].label);
-    const [chipActive, setChipActive] = useState(chips);
+    const [chipItems, setChipItems] = useState(chips);
 
     const router = useRouter();
 
@@ -24,26 +24,26 @@ const LiveScores = () => {
     };
 
     const activeChip = (index: number) => {
-        const newChips = chipActive.map((chip, i) => {
+        const newChips = chipItems.map((chip, i) => {
             if (i === index) {
                 return { ...chip, isSelected: !chip.isSelected };
             }
             return chip;
         });
-
-        if (index) {
-            let moveFrontArray = newChips.splice(index, 1);
-            newChips.unshift(moveFrontArray[0]);
-            setChipActive(newChips);
-        }
+        let moveFrontArray = newChips.splice(index, 1);
+        newChips.unshift(moveFrontArray[0]);
+        setChipItems(newChips);
     };
 
     const moveChipBackToOriginal = (index: number) => {
-        const newChips = chipActive.map((chip, i) => ({
+        const newChips = chipItems.map((chip, i) => ({
             ...chip,
             isSelected: i === index ? false : chip.isSelected,
         }));
-        setChipActive(newChips);
+        let removeFromSpot = newChips.splice(index, 1);
+        let findIndex = chips.findIndex((chip) => chip.label === removeFromSpot[0].label);
+        newChips.splice(findIndex, 0, removeFromSpot[0]);
+        setChipItems(newChips);
     };
 
     return (
@@ -74,7 +74,7 @@ const LiveScores = () => {
                             style={{ fontSize: '14px', position: 'relative', top: '2px' }}
                         />
                     }
-                    chipActive={chipActive}
+                    chipItems={chipItems}
                 />
                 {selectedLabel === 'Live Cricket Score' && (
                     <Card

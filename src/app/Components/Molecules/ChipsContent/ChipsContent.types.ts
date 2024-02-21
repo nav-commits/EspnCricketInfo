@@ -4,7 +4,7 @@ type Chip = {
 }
 export interface ChipContentProps {
     onClick?: (index:number) => void;
-    chipActive?: Chip[];
+    chipItems?: Chip[];
     label?: string;
     moveChipBackToOriginal?: (index: number) => void;
     icon?: React.ReactNode;
