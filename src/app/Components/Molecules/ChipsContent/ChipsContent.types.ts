@@ -1,10 +1,12 @@
 type Chip = {
     label: string;
+    isSelected?: boolean;
 }
 export interface ChipContentProps {
-    onClick?: (label:string) => void;
-    chipActive?: string;
+    onClick?: (index:number) => void;
+    chipActive?: Chip[];
     label?: string;
-    chips?: Chip[];
+    moveChipBackToOriginal?: (index: number) => void;
+    icon?: React.ReactNode;
 
 }

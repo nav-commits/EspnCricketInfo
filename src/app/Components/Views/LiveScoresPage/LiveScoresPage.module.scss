@@ -16,18 +16,40 @@
     text-align: center;
 }
 
+.card-header--small {
+    margin-left: 12px;
+}
 
 .grid-item {
     width: 50%;
     box-sizing: border-box;
-    padding: 20px;
-    border-bottom: 0.5px solid rgb(237, 238, 240);
+    padding-left: 15px;
+    padding-right: 15px;
     border-top: 1px solid rgb(237, 238, 240);
-    gap: 10px;
     font-size: 12px;
 
-    .grid-item--text-style {
-        font-size: 10px;
+    .grid-item--description {
+        font-size: 10.5px;
+        color: rgb(150, 150, 150);
+    }
+
+    .grid-item--header {
+        font-size: 12px;
+        font-weight: bold;
+        color: rgb(236, 150, 48);
+
+    }
+
+    .grid-item--match-day {
+        border-bottom: 1px solid rgb(237, 238, 240);
+        margin-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .grid-item--content {
+        font-weight: 800;
+        font-weight: 13px;
+
     }
 }
 
@@ -52,5 +74,25 @@
 
     .grid-item:nth-child(odd) {
         border-right: none;
+    }
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-between;
+
+    .team-container--inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .team-container--name {
+        font-size: 15px;
+    }
+
+    .team-container--flag {
+        border-radius: 5px;
+        margin-right: 20px;
     }
 }

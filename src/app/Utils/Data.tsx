@@ -235,22 +235,22 @@ export const tabDataLiveScores = [
 ];
 
 export const chips = [
-    { label: "int'l' " },
-    { label: 'T20s' },
-    { label: 'ODIs' },
-    { label: 'Tests' },
-    { label: 'Men' },
-    { label: 'Woman' },
-    { label: 'Domestic' },
-    { label: 'FC' },
-    { label: 'Youth' },
-    { label: 'List A' },
-    { label: 'Others' },
+    { label: "Int'l", isSelected: false },
+    { label: 'T20s', isSelected: false },
+    { label: 'ODIs', isSelected: false },
+    { label: 'Tests', isSelected: false },
+    { label: 'Men', isSelected: false },
+    { label: 'Women', isSelected: false },
+    { label: 'Domestic', isSelected: false },
+    { label: 'FC', isSelected: false },
+    { label: 'Youth', isSelected: false },
+    { label: 'List A', isSelected: false },
+    { label: 'Others', isSelected: false },
 ];
 
 export const cricketMatches = [
     {
-        stumps: 'Stumps',
+        stumps: 'STUMPS',
         match: {
             matchInfo: {
                 description: '3rd Test, Rajkot, February 15 - 19, 2024, England tour of India',
@@ -259,12 +259,12 @@ export const cricketMatches = [
             teams: [
                 {
                     name: 'India',
-                    flag: 'India Flag',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313128.logo.png',
                     score: 445,
                 },
                 {
                     name: 'England',
-                    flag: 'England Flag',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313114.logo.png',
                     score: '207/2',
                     overs: '35',
                     trailRuns: 238,
@@ -275,7 +275,7 @@ export const cricketMatches = [
         day: 'Day 2 - England trail by 238 runs.',
     },
     {
-        stumps: 'Stumps',
+        stumps: 'STUMPS',
         match: {
             matchInfo: {
                 description:
@@ -285,13 +285,13 @@ export const cricketMatches = [
             teams: [
                 {
                     name: 'South Africa Women',
-                    flag: 'South Africa Women Flag',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313300/313348.logo.png',
                     score: '76 & 67/3',
                     overs: '28',
                 },
                 {
                     name: 'Australia Women',
-                    flag: 'Australia Women Flag',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340400/340493.png',
                     score: '575/9d',
                 },
             ],
@@ -310,13 +310,13 @@ export const cricketMatches = [
             },
             teams: [
                 {
-                    name: 'Rangpur Riders',
-                    flag: 'Rangpur Riders Flag',
+                    name: 'Nepal',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/319900/319958.png',
                     score: '187/8',
                 },
                 {
-                    name: 'Chattogram Challengers',
-                    flag: 'Chattogram Challengers Flag',
+                    name: 'Netherlands',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313136.logo.png',
                     score: '(20 ov, T:188) 169/6',
                 },
             ],
@@ -334,13 +334,13 @@ export const cricketMatches = [
             },
             teams: [
                 {
-                    name: 'South Africa',
-                    flag: 'South Africa Flag',
+                    name: 'New South Wales',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/349300/349350.png',
                     score: '242 & 235',
                 },
                 {
-                    name: 'New Zealand',
-                    flag: 'New Zealand Flag',
+                    name: 'Victoria',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/318500/318595.jpg',
                     score: '(T:267) 211 & 269/3',
                 },
             ],

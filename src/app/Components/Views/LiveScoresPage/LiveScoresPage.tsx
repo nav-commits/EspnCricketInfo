@@ -9,20 +9,41 @@ import styles from './LiveScoresPage.module.scss';
 import { useRouter } from 'next/navigation';
 import ChipsContent from '../../Molecules/ChipsContent/ChipsContent';
 import ItemDisplayGrid from '../.././Organisms/ItemDisplayGrid/ItemDisplayGrid';
-import { dataArray, chips, cricketMatches } from '@/app/Utils/Data';
+import { chips, cricketMatches } from '@/app/Utils/Data';
 import Image from 'next/image';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 const LiveScores = () => {
     const [selectedLabel, setSelectedLabel] = useState(tabDataLiveScores[0].label);
-    const [chipActive, setChipActive] = useState('');
+    const [chipActive, setChipActive] = useState(chips);
+
     const router = useRouter();
 
     const handleTabClick = (tabName: string) => {
         router.push(`/LiveScores?tab=${tabName}`);
     };
 
-    const onClick = (label: string) => {
-        setChipActive(label);
+    const activeChip = (index: number) => {
+        const newChips = chipActive.map((chip, i) => {
+            if (i === index) {
+                return { ...chip, isSelected: !chip.isSelected };
+            }
+            return chip;
+        });
+
+        if (index) {
+            let moveFrontArray = newChips.splice(index, 1);
+            newChips.unshift(moveFrontArray[0]);
+            setChipActive(newChips);
+        }
+    };
+
+    const moveChipBackToOriginal = (index: number) => {
+        const newChips = chipActive.map((chip, i) => ({
+            ...chip,
+            isSelected: i === index ? false : chip.isSelected,
+        }));
+        setChipActive(newChips);
     };
 
     return (
@@ -45,7 +66,16 @@ const LiveScores = () => {
                         </div>
                     }
                 />
-                <ChipsContent onClick={onClick} chipActive={chipActive} chips={chips} />
+                <ChipsContent
+                    onClick={activeChip}
+                    moveChipBackToOriginal={moveChipBackToOriginal}
+                    icon={
+                        <CloseOutlinedIcon
+                            style={{ fontSize: '14px', position: 'relative', top: '2px' }}
+                        />
+                    }
+                    chipActive={chipActive}
+                />
                 {selectedLabel === 'Live Cricket Score' && (
                     <Card
                         headerText={
@@ -60,10 +90,12 @@ const LiveScores = () => {
                                             <div className={styles['grid-item']} key={index}>
                                                 <div>
                                                     <div>
-                                                        <p>{cricketMatch.stumps}</p>
+                                                        <p className={styles['grid-item--header']}>
+                                                            {cricketMatch.stumps}
+                                                        </p>
                                                         <p
                                                             className={
-                                                                styles['grid-item--text-style']
+                                                                styles['grid-item--description']
                                                             }
                                                         >
                                                             {
@@ -73,45 +105,61 @@ const LiveScores = () => {
                                                         </p>
                                                     </div>
 
-                                                    <div>
+                                                    <>
                                                         {cricketMatch.match.teams &&
                                                             cricketMatch.match.teams.map(
                                                                 (team, index) => {
                                                                     return (
-                                                                        <div key={index}>
-                                                                            {/* <Image
-                                                                            src={team.flag} // Changed from team.logo to team.flag
-                                                                            alt={'Team Flag'} // Changed the alt text to 'Team Flag'
-                                                                            width={50}
-                                                                            height={50}
-                                                                            style={{
-                                                                                borderRadius:
-                                                                                    '10px',
-                                                                                marginRight: '20px',
-                                                                            }}
-                                                                        /> */}
+                                                                        <div
+                                                                            className={
+                                                                                styles[
+                                                                                    'team-container'
+                                                                                ]
+                                                                            }
+                                                                            key={index}
+                                                                        >
                                                                             <div
-                                                                                style={{
-                                                                                    display: 'flex',
-                                                                                    flexDirection:
-                                                                                        'row',
-                                                                                    justifyContent:
-                                                                                        'space-between',
-                                                                                    gap: '50px',
-                                                                                }}
+                                                                                className={
+                                                                                    styles[
+                                                                                        'team-container--inner'
+                                                                                    ]
+                                                                                }
                                                                             >
-                                                                                <p>{team.name}</p>
-                                                                                <p>{team.score}</p>
+                                                                                <Image
+                                                                                    src={team.flag}
+                                                                                    alt={
+                                                                                        'Team Flag'
+                                                                                    }
+                                                                                    width={20}
+                                                                                    height={20}
+                                                                                    style={{
+                                                                                        marginRight:
+                                                                                            '8px',
+                                                                                    }}
+                                                                                />
+                                                                                <p
+                                                                                    className={
+                                                                                        styles[
+                                                                                            'team-container--name'
+                                                                                        ]
+                                                                                    }
+                                                                                >
+                                                                                    {team.name}
+                                                                                </p>
                                                                             </div>
+
+                                                                            <p>{team.score}</p>
                                                                         </div>
                                                                     );
                                                                 }
                                                             )}
-                                                    </div>
-                                                    <p style={{ borderBottom: '1px solid black' }}>
+                                                    </>
+                                                    <p className={styles['grid-item--match-day']}>
+                                                        {cricketMatch.day}
+                                                    </p>
+                                                    <p className={styles['grid-item--content']}>
                                                         {cricketMatch.additionalContent}
                                                     </p>
-                                                    <p>{cricketMatch.day}</p>
                                                 </div>
                                             </div>
                                         ))}

@@ -3,16 +3,24 @@ import Chip from '../../Atoms/Chip/Chip';
 import styles from './ChipsContent.module.scss';
 import { ChipContentProps } from './ChipsContent.types';
 
-const ChipsContent: React.FC<ChipContentProps> = ({ onClick, chipActive, chips }) => {
+const ChipsContent: React.FC<ChipContentProps> = ({
+    onClick,
+    chipActive,
+    moveChipBackToOriginal,
+    icon,
+}) => {
     return (
         <div className={styles['chips-container']}>
             <p className={styles['chips-container--reset-chip']}>Reset</p>
-            {chips?.map((chip, index) => (
+            {chipActive?.map((chip, index) => (
                 <Chip
                     key={index}
                     label={chip.label}
-                    onClick={onClick}
-                    chipActive={chipActive}
+                    onClick={onClick ? () => onClick(index) : undefined}
+                    moveChipBackToOriginal={moveChipBackToOriginal? () => moveChipBackToOriginal(index) : undefined}
+                    index={index}
+                    icon={icon}
+                    checkSelected={chip.isSelected}
                 />
             ))}
         </div>
