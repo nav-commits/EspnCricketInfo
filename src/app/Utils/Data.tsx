@@ -250,102 +250,96 @@ export const chips = [
 
 export const cricketMatches = [
     {
-        stumps: 'STUMPS',
+        stumps: 'Live',
         match: {
             matchInfo: {
-                description: '3rd Test, Rajkot, February 15 - 19, 2024, England tour of India',
-                summary: 'England trail by 238 runs.',
+                description: '8th Match (N), Lahore, February 22, 2024',
+            },
+            teams: [
+                {
+                    name: 'Islamabad United',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313500/313521.logo.png',
+                    score: '(20 ov) 138/9',
+                },
+                {
+                    name: 'Quetta Gladiators',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313500/313522.logo.png',
+                },
+            ],
+        },
+        additionalContent: 'Series Home',
+        day: 'Gladiators chose to field.',
+        label: [{ label: 'Men' }, { label: 'Domestic' }, { label: 'T20s' }],
+    },
+    {
+        stumps: 'Today, 11:00PM',
+        match: {
+            matchInfo: {
+                description: '4th Test, Ranchi, February 23 - 27, 2024',
             },
             teams: [
                 {
                     name: 'India',
                     flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313128.logo.png',
-                    score: 445,
-                },
-                {
-                    name: 'England',
-                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313114.logo.png',
-                    score: '207/2',
-                    overs: '35',
-                    trailRuns: 238,
-                },
-            ],
-        },
-        additionalContent: 'Live Blog',
-        day: 'Day 2 - England trail by 238 runs.',
-    },
-    {
-        stumps: 'STUMPS',
-        match: {
-            matchInfo: {
-                description:
-                    'Only Test, Perth, February 15 - 18, 2024, South Africa Women tour of Australia',
-                summary: 'Day 2 - South Africa (W) trail by 432 runs.',
-            },
-            teams: [
-                {
-                    name: 'South Africa Women',
-                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313300/313348.logo.png',
                     score: '76 & 67/3',
                     overs: '28',
                 },
                 {
-                    name: 'Australia Women',
-                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340400/340493.png',
+                    name: 'England',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313114.logo.png',
                     score: '575/9d',
                 },
             ],
         },
-        additionalContent: 'Series Home',
-        day: 'Day 2 - S Africa (W) trail by 432 runs.',
+        additionalContent: 'Preview News',
+        day: 'Match yet to begin',
+        label: [{ label: "Int'l" }, { label: 'Tests' }, { label: 'Men' }],
     },
 
     {
         stumps: 'Result',
         match: {
             matchInfo: {
-                description:
-                    '34th Match (N), Chattogram, February 16, 2024, Bangladesh Premier League',
-                summary: 'Rangpur won by 18 runs.',
+                description: '2nd Match, Group B, Bangi, February 22, 2024',
             },
             teams: [
                 {
-                    name: 'Nepal',
-                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/319900/319958.png',
-                    score: '187/8',
+                    name: 'Bahrain',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/358500/358567.png',
+                    score: '266/7',
                 },
                 {
-                    name: 'Netherlands',
-                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313136.logo.png',
-                    score: '(20 ov, T:188) 169/6',
+                    name: 'Vanuatu',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313200/313221.logo.png',
+                    score: '(48.2/50 ov, T:267) 157',
                 },
             ],
         },
-        additionalContent: 'Series Home',
-        day: 'N/A',
+        additionalContent: 'Summary Series Home',
+        day: 'Bahrain won by 109 runs',
+        label: [{ label: 'Men' }],
     },
     {
         stumps: 'Result',
         match: {
             matchInfo: {
-                description:
-                    '2nd Test, Hamilton, February 13 - 16, 2024, South Africa tour of New Zealand',
-                summary: 'New Zealand won by 7 wickets.',
+                description: '3rd Match, Group A, Kuala Lumpur, February 22, 2024',
             },
             teams: [
                 {
-                    name: 'New South Wales',
-                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/349300/349350.png',
-                    score: '242 & 235',
+                    name: 'Saudi Arabia',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/358500/358566.png',
+                    score: '231',
                 },
                 {
-                    name: 'Victoria',
-                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/318500/318595.jpg',
-                    score: '(T:267) 211 & 269/3',
+                    name: 'Kuwait',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/358500/358568.png',
+                    score: '(35/50 ov. T:232) 134',
                 },
             ],
         },
         additionalContent: 'Report, Photos, Videos',
         day: 'N/A',
+        label: [{ label: 'Men' }, { label: 'Domestic' }],
     },
 ];

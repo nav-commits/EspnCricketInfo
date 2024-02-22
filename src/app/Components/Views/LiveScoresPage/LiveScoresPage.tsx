@@ -16,6 +16,8 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 const LiveScores = () => {
     const [selectedLabel, setSelectedLabel] = useState(tabDataLiveScores[0].label);
     const [chipItems, setChipItems] = useState(chips);
+    const [filterMatches, setFilterMatches] = useState(cricketMatches);
+    const [activeClass, setActiveClass] = useState(false);
 
     const router = useRouter();
 
@@ -33,6 +35,19 @@ const LiveScores = () => {
         let moveFrontArray = newChips.splice(index, 1);
         newChips.unshift(moveFrontArray[0]);
         setChipItems(newChips);
+
+        const selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
+
+        if (selectedLabels.length > 0) {
+            let filterContent = cricketMatches.filter((match) =>
+                selectedLabels.every((selectedLabel) =>
+                    match.label.some((labelObj) => labelObj.label.includes(selectedLabel))
+                )
+            );
+
+            setFilterMatches(filterContent);
+        }
+        setActiveClass(true);
     };
 
     const moveChipBackToOriginal = (index: number) => {
@@ -44,6 +59,17 @@ const LiveScores = () => {
         let findIndex = chips.findIndex((chip) => chip.label === removeFromSpot[0].label);
         newChips.splice(findIndex, 0, removeFromSpot[0]);
         setChipItems(newChips);
+
+        const selectedChipsCount = newChips.filter((chip) => chip.isSelected).length;
+        if (selectedChipsCount === 0) {
+            setActiveClass(false);
+        }
+    };
+
+    const resetFilterAndChips = () => {
+        setActiveClass(false);
+        setChipItems(chips);
+        setFilterMatches(cricketMatches);
     };
 
     return (
@@ -75,6 +101,8 @@ const LiveScores = () => {
                         />
                     }
                     chipItems={chipItems}
+                    resetFilterAndChips={resetFilterAndChips}
+                    activeClass={activeClass}
                 />
                 {selectedLabel === 'Live Cricket Score' && (
                     <Card
@@ -86,7 +114,7 @@ const LiveScores = () => {
                             <ItemDisplayGrid
                                 data={
                                     <>
-                                        {cricketMatches.map((cricketMatch, index) => (
+                                        {filterMatches.map((cricketMatch, index) => (
                                             <div className={styles['grid-item']} key={index}>
                                                 <div>
                                                     <div>

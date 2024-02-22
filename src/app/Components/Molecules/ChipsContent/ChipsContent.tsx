@@ -8,10 +8,21 @@ const ChipsContent: React.FC<ChipContentProps> = ({
     chipItems,
     moveChipBackToOriginal,
     icon,
+    resetFilterAndChips,
+    activeClass,
 }) => {
     return (
         <div className={styles['chips-container']}>
-            <p className={styles['chips-container--reset-chip']}>Reset</p>
+            <p
+                onClick={activeClass ? resetFilterAndChips : undefined}
+                className={
+                    activeClass
+                        ? styles['chips-container-reset--blue']
+                        : styles['chips-container-reset--grey']
+                }
+            >
+                Reset
+            </p>
             {chipItems?.map((chip, index) => (
                 <Chip
                     key={index}

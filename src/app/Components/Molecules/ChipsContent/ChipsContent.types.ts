@@ -8,5 +8,7 @@ export interface ChipContentProps {
     label?: string;
     moveChipBackToOriginal?: (index: number) => void;
     icon?: React.ReactNode;
+    resetFilterAndChips?: () => void;
+    activeClass?: boolean;
 
 }
