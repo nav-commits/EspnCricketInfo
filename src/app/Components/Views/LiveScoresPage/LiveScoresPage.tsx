@@ -36,15 +36,14 @@ const LiveScores = () => {
         newChips.unshift(moveFrontArray[0]);
         setChipItems(newChips);
 
-        const selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
 
+        const selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
         if (selectedLabels.length > 0) {
             let filterContent = cricketMatches.filter((match) =>
                 selectedLabels.every((selectedLabel) =>
                     match.label.some((labelObj) => labelObj.label.includes(selectedLabel))
                 )
             );
-
             setFilterMatches(filterContent);
         }
         setActiveClass(true);
@@ -59,6 +58,19 @@ const LiveScores = () => {
         let findIndex = chips.findIndex((chip) => chip.label === removeFromSpot[0].label);
         newChips.splice(findIndex, 0, removeFromSpot[0]);
         setChipItems(newChips);
+
+        
+        const selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
+        if (selectedLabels.length > 0) {
+            let filterContent = cricketMatches.filter((match) =>
+                match.label.some((labelObj) =>
+                    selectedLabels.some((selectedLabel) => labelObj.label.includes(selectedLabel))
+                )
+            );
+            setFilterMatches(filterContent);
+        } else {
+            setFilterMatches(cricketMatches);
+        }
 
         const selectedChipsCount = newChips.filter((chip) => chip.isSelected).length;
         if (selectedChipsCount === 0) {
