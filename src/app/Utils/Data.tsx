@@ -113,22 +113,32 @@ export const mainNavArray = [
     { value: 'Stats', path: '/stats' },
 ];
 
+const bashirHeading = {
+    heading: 'Bashir',
+    subheading: 'Bashir@gmail.com',
+    profileImage:
+        'https://media.usestoryteller.com/assets/stories/943788f0-f44c-3cee-72d9-3a10778b1db8/638424008179889177_best_square_thumbnail.webp',
+};
 export const storyContent = [
     {
         url: 'https://media.usestoryteller.com/assets/pages/e2062520-4102-e818-a848-3a108ff1f43f/bf4b75b1-47dc-9b6c-60c1-3a108ff1f43f/AssetImage.jpg',
         duration: 5000,
+        header: bashirHeading,
     },
     {
         url: 'https://media.usestoryteller.com/assets/pages/258f511c-749f-275f-a7ce-3a108b4e48ae/0fe1593c-b843-f824-4a1e-3a108b4e7866/AssetImage.jpg',
         duration: 5000,
+        header: bashirHeading,
     },
     {
         url: 'https://media.usestoryteller.com/assets/pages/bb1a81e4-d737-ffe9-c809-3a1087245b8f/fe28b72d-1d0b-e7ee-2605-3a1087245b8f/AssetImage.jpg',
         duration: 5000,
+        header: bashirHeading,
     },
     {
         url: 'https://media.usestoryteller.com/assets/pages/184b9d19-6dd6-fb25-a129-3a1087246830/db03a760-a1d4-b23e-e648-3a108724682f/AssetImage.jpg',
         duration: 5000,
+        header: bashirHeading,
     },
 ];
 
@@ -190,7 +200,6 @@ export const dataArray = [
     },
 ];
 
-
 export const matchHighlights = [
     {
         src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/esci/media/motion/2024/0213/dm_240213_generic_bedingham/dm_240213_generic_bedingham.jpg',
@@ -216,5 +225,122 @@ export const matchHighlights = [
         src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375213.6.jpg',
         alt: 'SL vs Afg Highlights',
         subTitle: 'Bedingham on his bizarre dismissal',
+    },
+];
+
+export const tabDataLiveScores = [
+    { label: 'Live Cricket Score' },
+    { label: 'Upcoming' },
+    { label: 'Result' },
+];
+
+export const chips = [
+    { label: "Int'l", isSelected: false, disabled: false },
+    { label: 'T20s', isSelected: false, disabled: false },
+    { label: 'ODIs', isSelected: false, disabled: false },
+    { label: 'Tests', isSelected: false, disabled: false },
+    { label: 'Men', isSelected: false, disabled: false },
+    { label: 'Women', isSelected: false, disabled: false },
+    { label: 'Domestic', isSelected: false, disabled: false },
+    { label: 'FC', isSelected: false, disabled: false },
+    { label: 'Youth', isSelected: false, disabled: false },
+    { label: 'List A', isSelected: false, disabled: false },
+    { label: 'Others', isSelected: false, disabled: false },
+];
+
+
+export const cricketMatches = [
+    {
+        stumps: 'Live',
+        match: {
+            matchInfo: {
+                description: '8th Match (N), Lahore, February 22, 2024',
+            },
+            teams: [
+                {
+                    name: 'Islamabad United',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313500/313521.logo.png',
+                    score: '(20 ov) 138/9',
+                },
+                {
+                    name: 'Quetta Gladiators',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313500/313522.logo.png',
+                },
+            ],
+        },
+        additionalContent: 'Series Home',
+        day: 'Gladiators chose to field.',
+        label: [{ label: 'Men' }, { label: 'Domestic' }, { label: 'T20s' }],
+    },
+    {
+        stumps: 'Today, 11:00PM',
+        match: {
+            matchInfo: {
+                description: '4th Test, Ranchi, February 23 - 27, 2024',
+            },
+            teams: [
+                {
+                    name: 'India',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313128.logo.png',
+                    score: '76 & 67/3',
+                    overs: '28',
+                },
+                {
+                    name: 'England',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313114.logo.png',
+                    score: '575/9d',
+                },
+            ],
+        },
+        additionalContent: 'Preview News',
+        day: 'Match yet to begin',
+        label: [{ label: "Int'l" }, { label: 'Tests' }, { label: 'Men' }],
+    },
+
+    {
+        stumps: 'Result',
+        match: {
+            matchInfo: {
+                description: '2nd Match, Group B, Bangi, February 22, 2024',
+            },
+            teams: [
+                {
+                    name: 'Bahrain',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/358500/358567.png',
+                    score: '266/7',
+                },
+                {
+                    name: 'Vanuatu',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313200/313221.logo.png',
+                    score: '(48.2/50 ov, T:267) 157',
+                },
+            ],
+        },
+        additionalContent: 'Summary Series Home',
+        day: 'Bahrain won by 109 runs',
+        label: [{ label: 'Men' }],
+    },
+    {
+        stumps: 'Result',
+        match: {
+            matchInfo: {
+                description: '3rd Match, Group A, Kuala Lumpur, February 22, 2024',
+            },
+            teams: [
+                {
+                    name: 'Saudi Arabia',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/358500/358566.png',
+                    score: '231',
+                },
+                {
+                    name: 'Kuwait',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/358500/358568.png',
+                    score: '(35/50 ov. T:232) 134',
+                },
+            ],
+        },
+        additionalContent: 'Report, Photos, Videos',
+        day: 'N/A',
+        label: [{ label: 'Men' }, { label: 'Domestic' }],
     },
 ];

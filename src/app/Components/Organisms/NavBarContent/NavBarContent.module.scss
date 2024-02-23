@@ -12,11 +12,15 @@
         gap: 50px;
     }
 
-    .image {
+    .navbar__container--image {
         margin-top: 12px;
+        cursor: pointer;
+    }
+    .navbar__container--menu-icon{
+        cursor: pointer;
     }
 
-    .hamburger {
+    .hamburger-menu {
         display: none;
     }
 }
@@ -29,13 +33,13 @@
         padding: 8px;
     }
 
-    .hamburger {
+    .hamburger-menu {
         display: block !important;
         margin-top: 10px;
         margin-left: 10px;
     }
 
-    .image {
+    .navbar__container--image {
         margin-top: 5px !important;
     }
 }

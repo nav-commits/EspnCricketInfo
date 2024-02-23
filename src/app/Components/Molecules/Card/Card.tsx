@@ -8,11 +8,12 @@ const Card: React.FC<CardProps> = ({
     showContent,
     paddingBottom,
     cardSize,
+    padding,
 }) => {
     return (
         <div
             className={`${styles.card__container} ${cardSize ? styles[cardSize] : ''}`}
-            style={{ paddingBottom }}
+            style={{ paddingBottom, padding: padding }}
         >
             {headerText && headerText}
             {tabs && tabs}

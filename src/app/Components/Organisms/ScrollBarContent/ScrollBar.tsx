@@ -8,7 +8,8 @@ import 'swiper/scss/navigation';
 import StoryAvatar from '../../Atoms/StoryAvatar/StoryAvatar';
 import { linkButtons, stories } from '@/app/Utils/Data';
 import { Navigation } from 'swiper/modules';
-
+import Stories from 'react-insta-stories';
+import { storyContent } from '@/app/Utils/Data';
 import Modal from '../../Molecules/Modal/Modal';
 
 const ScrollBar = () => {
@@ -49,7 +50,19 @@ const ScrollBar = () => {
                     <LinkButton key={index} text={button.text} icon={button.icon} href={'/'} />
                 ))}
             </div>
-            <Modal isModalOpen={isModalOpen} onClose={closeModal} />
+            <Modal
+                stories={
+                    <Stories
+                        stories={storyContent}
+                        defaultInterval={1500}
+                        width={'100%'}
+                        height={'100%'}
+                        onAllStoriesEnd={closeModal}
+                    />
+                }
+                isModalOpen={isModalOpen}
+                onClose={closeModal}
+            />
         </>
     );
 };

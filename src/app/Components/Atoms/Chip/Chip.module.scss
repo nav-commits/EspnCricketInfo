@@ -1,0 +1,32 @@
+.chip {
+    display: flex;
+    padding: 0.4rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 12px;
+    align-items: center;
+    color: rgb(82, 82, 82);
+
+  
+}
+.chip-text {
+    cursor: pointer;
+    /* other styling */
+}
+
+.chip-text-selected {
+    cursor: default;
+}
+
+  .chip-icon {
+      cursor: pointer;
+  }
+
+
+.chip:hover {
+    background-color: #c7edfb;
+    opacity: 0.8;
+}

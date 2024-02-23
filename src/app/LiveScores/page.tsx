@@ -1,10 +1,10 @@
+
 import React from 'react';
-import Link from 'next/link';
+import LiveScoresPage from '../Components/Views/LiveScoresPage/LiveScoresPage';
 const LiveScores = () => {
     return (
         <div>
-            <h1>Live Scores</h1>
-            <Link href='/'>Go back to home</Link>
+            <LiveScoresPage />
         </div>
     );
 };
