@@ -235,18 +235,19 @@ export const tabDataLiveScores = [
 ];
 
 export const chips = [
-    { label: "Int'l", isSelected: false },
-    { label: 'T20s', isSelected: false },
-    { label: 'ODIs', isSelected: false },
-    { label: 'Tests', isSelected: false },
-    { label: 'Men', isSelected: false },
-    { label: 'Women', isSelected: false },
-    { label: 'Domestic', isSelected: false },
-    { label: 'FC', isSelected: false },
-    { label: 'Youth', isSelected: false },
-    { label: 'List A', isSelected: false },
-    { label: 'Others', isSelected: false },
+    { label: "Int'l", isSelected: false, disabled: false },
+    { label: 'T20s', isSelected: false, disabled: false },
+    { label: 'ODIs', isSelected: false, disabled: false },
+    { label: 'Tests', isSelected: false, disabled: false },
+    { label: 'Men', isSelected: false, disabled: false },
+    { label: 'Women', isSelected: false, disabled: false },
+    { label: 'Domestic', isSelected: false, disabled: false },
+    { label: 'FC', isSelected: false, disabled: false },
+    { label: 'Youth', isSelected: false, disabled: false },
+    { label: 'List A', isSelected: false, disabled: false },
+    { label: 'Others', isSelected: false, disabled: false },
 ];
+
 
 export const cricketMatches = [
     {

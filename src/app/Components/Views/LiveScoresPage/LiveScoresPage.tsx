@@ -20,7 +20,6 @@ const LiveScores = () => {
     const [activeClass, setActiveClass] = useState(false);
 
     const router = useRouter();
-
     const handleTabClick = (tabName: string) => {
         router.push(`/LiveScores?tab=${tabName}`);
     };
@@ -35,7 +34,6 @@ const LiveScores = () => {
         let moveFrontArray = newChips.splice(index, 1);
         newChips.unshift(moveFrontArray[0]);
         setChipItems(newChips);
-
 
         const selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
         if (selectedLabels.length > 0) {
@@ -59,7 +57,6 @@ const LiveScores = () => {
         newChips.splice(findIndex, 0, removeFromSpot[0]);
         setChipItems(newChips);
 
-        
         const selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
         if (selectedLabels.length > 0) {
             let filterContent = cricketMatches.filter((match) =>
@@ -126,83 +123,97 @@ const LiveScores = () => {
                             <ItemDisplayGrid
                                 data={
                                     <>
-                                        {filterMatches.map((cricketMatch, index) => (
-                                            <div className={styles['grid-item']} key={index}>
-                                                <div>
+                                        {filterMatches.length > 0 ? (
+                                            filterMatches.map((cricketMatch, index) => (
+                                                <div className={styles['grid-item']} key={index}>
                                                     <div>
-                                                        <p className={styles['grid-item--header']}>
-                                                            {cricketMatch.stumps}
-                                                        </p>
-                                                        <p
-                                                            className={
-                                                                styles['grid-item--description']
-                                                            }
-                                                        >
-                                                            {
-                                                                cricketMatch.match.matchInfo
-                                                                    .description
-                                                            }
-                                                        </p>
-                                                    </div>
+                                                        <div>
+                                                            <p
+                                                                className={
+                                                                    styles['grid-item--header']
+                                                                }
+                                                            >
+                                                                {cricketMatch.stumps}
+                                                            </p>
+                                                            <p
+                                                                className={
+                                                                    styles['grid-item--description']
+                                                                }
+                                                            >
+                                                                {
+                                                                    cricketMatch.match.matchInfo
+                                                                        .description
+                                                                }
+                                                            </p>
+                                                        </div>
 
-                                                    <>
-                                                        {cricketMatch.match.teams &&
-                                                            cricketMatch.match.teams.map(
-                                                                (team, index) => {
-                                                                    return (
-                                                                        <div
-                                                                            className={
-                                                                                styles[
-                                                                                    'team-container'
-                                                                                ]
-                                                                            }
-                                                                            key={index}
-                                                                        >
+                                                        <>
+                                                            {cricketMatch.match.teams &&
+                                                                cricketMatch.match.teams.map(
+                                                                    (team, index) => {
+                                                                        return (
                                                                             <div
                                                                                 className={
                                                                                     styles[
-                                                                                        'team-container--inner'
+                                                                                        'team-container'
                                                                                     ]
                                                                                 }
+                                                                                key={index}
                                                                             >
-                                                                                <Image
-                                                                                    src={team.flag}
-                                                                                    alt={
-                                                                                        'Team Flag'
-                                                                                    }
-                                                                                    width={20}
-                                                                                    height={20}
-                                                                                    style={{
-                                                                                        marginRight:
-                                                                                            '8px',
-                                                                                    }}
-                                                                                />
-                                                                                <p
+                                                                                <div
                                                                                     className={
                                                                                         styles[
-                                                                                            'team-container--name'
+                                                                                            'team-container--inner'
                                                                                         ]
                                                                                     }
                                                                                 >
-                                                                                    {team.name}
-                                                                                </p>
-                                                                            </div>
+                                                                                    <Image
+                                                                                        src={
+                                                                                            team.flag
+                                                                                        }
+                                                                                        alt={
+                                                                                            'Team Flag'
+                                                                                        }
+                                                                                        width={20}
+                                                                                        height={20}
+                                                                                        style={{
+                                                                                            marginRight:
+                                                                                                '8px',
+                                                                                        }}
+                                                                                    />
+                                                                                    <p
+                                                                                        className={
+                                                                                            styles[
+                                                                                                'team-container--name'
+                                                                                            ]
+                                                                                        }
+                                                                                    >
+                                                                                        {team.name}
+                                                                                    </p>
+                                                                                </div>
 
-                                                                            <p>{team.score}</p>
-                                                                        </div>
-                                                                    );
-                                                                }
-                                                            )}
-                                                    </>
-                                                    <p className={styles['grid-item--match-day']}>
-                                                        {cricketMatch.day}
-                                                    </p>
-                                                    <p className={styles['grid-item--content']}>
-                                                        {cricketMatch.additionalContent}
-                                                    </p>
+                                                                                <p>{team.score}</p>
+                                                                            </div>
+                                                                        );
+                                                                    }
+                                                                )}
+                                                        </>
+                                                        <p
+                                                            className={
+                                                                styles['grid-item--match-day']
+                                                            }
+                                                        >
+                                                            {cricketMatch.day}
+                                                        </p>
+                                                        <p className={styles['grid-item--content']}>
+                                                            {cricketMatch.additionalContent}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            ))
+                                        ) : (
+                                            <p className={styles['no-match']}>No match found</p>
+                                        )}
                                     </>
                                 }
                             />

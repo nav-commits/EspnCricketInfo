@@ -17,7 +17,7 @@ const Chip: React.FC<ChipProps> = ({
         onClick?.(e);
     };
     return (
-        <div>
+        <>
             {label && (
                 <div
                     style={{
@@ -43,7 +43,7 @@ const Chip: React.FC<ChipProps> = ({
                     )}
                 </div>
             )}
-        </div>
+        </>
     );
 };
 

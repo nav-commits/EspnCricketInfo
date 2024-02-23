@@ -1,6 +1,7 @@
 type Chip = {
     label: string;
     isSelected?: boolean;
+    disabled?: boolean; 
 }
 export interface ChipContentProps {
     onClick?: (index:number) => void;
