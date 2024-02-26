@@ -355,7 +355,7 @@ export const disableRules: { [key: string]: string[] } = {
     Domestic: ["Int'l", 'Youth', 'Tests', 'ODIs', 'Others'],
     Others: ['T20s', "Int'l", 'Tests', 'ODIs', 'Domestic', 'FC', 'List A', 'Youth'],
     FC: ['ODIs', 'T20s', 'Others', 'List A', 'Woman', 'Youth'],
-    'List A': ['T20s', 'Tests', 'ODIs', 'Woman', 'Youth', 'Others', 'FC'],
-    Youth: ['Domestic', 'Others', 'Woman', 'FC', 'List A'],
+    'List A': ['T20s', 'Tests', 'ODIs', 'Women', 'Youth', 'Others', 'FC'],
+    Youth: ['Domestic', 'Others', 'Women', 'FC', 'List A'],
     Women: ['Men', 'Youth', 'FC', 'List A'],
 };
