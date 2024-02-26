@@ -59,6 +59,7 @@ const LiveScores = () => {
             return { ...chip, disabled: isDisabled };
         });
         setChipItems(disabledChips);
+        setActiveClass(true);
     };
 
     const moveChipBackToOriginal = (index: number) => {
