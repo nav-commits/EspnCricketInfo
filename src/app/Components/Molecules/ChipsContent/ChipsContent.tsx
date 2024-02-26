@@ -33,6 +33,7 @@ const ChipsContent: React.FC<ChipContentProps> = ({
                     }
                     icon={icon}
                     checkSelected={chip.isSelected}
+                    disabledStatus={chip.disabled}
                 />
             ))}
         </div>

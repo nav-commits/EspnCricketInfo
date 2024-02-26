@@ -9,7 +9,7 @@ import styles from './LiveScoresPage.module.scss';
 import { useRouter } from 'next/navigation';
 import ChipsContent from '../../Molecules/ChipsContent/ChipsContent';
 import ItemDisplayGrid from '../.././Organisms/ItemDisplayGrid/ItemDisplayGrid';
-import { chips, cricketMatches } from '@/app/Utils/Data';
+import { chips, cricketMatches, disableRules } from '@/app/Utils/Data';
 import Image from 'next/image';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
@@ -25,6 +25,7 @@ const LiveScores = () => {
     };
 
     const activeChip = (index: number) => {
+        //  move chips to the front when selected
         const newChips = chipItems.map((chip, i) => {
             if (i === index) {
                 return { ...chip, isSelected: !chip.isSelected };
@@ -35,7 +36,8 @@ const LiveScores = () => {
         newChips.unshift(moveFrontArray[0]);
         setChipItems(newChips);
 
-        const selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
+        // filter matches based on selected labels
+        let selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
         if (selectedLabels.length > 0) {
             let filterContent = cricketMatches.filter((match) =>
                 selectedLabels.every((selectedLabel) =>
@@ -44,10 +46,23 @@ const LiveScores = () => {
             );
             setFilterMatches(filterContent);
         }
-        setActiveClass(true);
+
+        // disable chips based on selected labels
+        const disabledChips = newChips.map((chip) => {
+            let isDisabled = selectedLabels.some((selectedLabel) => {
+                if (disableRules[selectedLabel]) {
+                    return disableRules[selectedLabel].includes(chip.label);
+                }
+                return false;
+            });
+
+            return { ...chip, disabled: isDisabled };
+        });
+        setChipItems(disabledChips);
     };
 
     const moveChipBackToOriginal = (index: number) => {
+        //  move back chips to the original position
         const newChips = chipItems.map((chip, i) => ({
             ...chip,
             isSelected: i === index ? false : chip.isSelected,
@@ -57,6 +72,7 @@ const LiveScores = () => {
         newChips.splice(findIndex, 0, removeFromSpot[0]);
         setChipItems(newChips);
 
+        // filter matches based on selected labels
         const selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
         if (selectedLabels.length > 0) {
             let filterContent = cricketMatches.filter((match) =>
@@ -69,6 +85,20 @@ const LiveScores = () => {
             setFilterMatches(cricketMatches);
         }
 
+        // undisable chips based on selected labels
+        const disabledChips = newChips.map((chip) => {
+            let isDisabled = selectedLabels.some((selectedLabel) => {
+                if (disableRules[selectedLabel]) {
+                    return disableRules[selectedLabel].includes(chip.label);
+                }
+                return false;
+            });
+
+            return { ...chip, disabled: isDisabled };
+        });
+        setChipItems(disabledChips);
+
+        // remove the class on Reset button when one chip is selected
         const selectedChipsCount = newChips.filter((chip) => chip.isSelected).length;
         if (selectedChipsCount === 0) {
             setActiveClass(false);
