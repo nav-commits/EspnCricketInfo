@@ -11,5 +11,6 @@ export interface ChipContentProps {
     icon?: React.ReactNode;
     resetFilterAndChips?: () => void;
     activeClass?: boolean;
+    disabledStatus?: boolean;
 
 }

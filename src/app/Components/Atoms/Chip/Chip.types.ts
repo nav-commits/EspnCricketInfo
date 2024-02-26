@@ -5,4 +5,5 @@ export interface ChipProps {
     icon?: ReactNode; 
     label?: string;
     checkSelected?: boolean;
+    disabledStatus?: boolean;
 }

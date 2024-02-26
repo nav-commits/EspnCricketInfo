@@ -8,9 +8,10 @@ const Chip: React.FC<ChipProps> = ({
     moveChipBackToOriginal,
     icon,
     checkSelected,
+    disabledStatus,
 }) => {
     const handleClick = (e: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => {
-        if (checkSelected) {
+        if (checkSelected || disabledStatus ) {
             e.stopPropagation();
             return;
         }
@@ -23,6 +24,7 @@ const Chip: React.FC<ChipProps> = ({
                     style={{
                         backgroundColor: checkSelected ? '#03A9F4' : '',
                         color: checkSelected ? 'white' : '',
+                        opacity: disabledStatus ? 0.5 : 1,
                     }}
                     className={styles['chip']}
                 >

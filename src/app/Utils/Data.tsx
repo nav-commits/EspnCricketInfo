@@ -344,3 +344,18 @@ export const cricketMatches = [
         label: [{ label: 'Men' }, { label: 'Domestic' }],
     },
 ];
+
+
+export const disableRules: { [key: string]: string[] } = {
+    "Int'l": ['Domestic', 'Others'],
+    T20s: ['ODIs', 'Tests', 'FC', 'List A'],
+    Men: ['Tests', 'Others', 'FC', 'List A', 'Women', 'Youth'],
+    Tests: ['T20s', 'ODIs', 'Others', 'Domestic', 'List A'],
+    ODIs: ['T20s', 'Tests', 'Others', 'Domestic', 'FC'],
+    Domestic: ["Int'l", 'Youth', 'Tests', 'ODIs', 'Others'],
+    Others: ['T20s', "Int'l", 'Tests', 'ODIs', 'Domestic', 'FC', 'List A', 'Youth'],
+    FC: ['ODIs', 'T20s', 'Others', 'List A', 'Woman', 'Youth'],
+    'List A': ['T20s', 'Tests', 'ODIs', 'Woman', 'Youth', 'Others', 'FC'],
+    Youth: ['Domestic', 'Others', 'Woman', 'FC', 'List A'],
+    Women: ['Men', 'Youth', 'FC', 'List A'],
+};
