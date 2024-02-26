@@ -10,23 +10,27 @@
     align-items: center;
     color: rgb(82, 82, 82);
 
-  
-}
-.chip-text {
-    cursor: pointer;
-    /* other styling */
-}
+    .chip-text {
+        cursor: pointer;
+    }
 
-.chip-text-selected {
-    cursor: default;
+    .chip-text-selected {
+        cursor: default;
+    }
+
+    .chip-icon {
+        cursor: pointer;
+    }
 }
-
-  .chip-icon {
-      cursor: pointer;
-  }
-
 
 .chip:hover {
     background-color: #c7edfb;
     opacity: 0.8;
+}
+
+@media only screen and (max-width: 768px) {
+    .chip-text {
+        font-size: 10px;
+        padding: 0.2rem;
+    }
 }

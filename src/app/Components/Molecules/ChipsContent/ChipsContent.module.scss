@@ -1,10 +1,21 @@
 @import '../../../styles/main.scss';
+
 .chips-container {
     display: flex;
     gap: 10px;
     margin: 20px 0;
     align-items: center;
 }
+
+.chips-container.sticky {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 20px;
+    width: 780px;
+}
+
 
 .chips-container-reset--grey {
     color: grey;
@@ -13,7 +24,6 @@
     border-right: 1px solid rgb(158, 158, 158);
     padding-right: 10px;
     font-weight: 600;
-
 }
 
 .chips-container-reset--blue {
@@ -23,4 +33,12 @@
     padding-right: 10px;
     font-weight: 600;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .chips-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
 }

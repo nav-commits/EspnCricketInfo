@@ -2,7 +2,7 @@
 import React from 'react';
 import Card from '../../Molecules/Card/Card';
 import { tabDataLiveScores } from '@/app/Utils/Data';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Tabs from '../../Molecules/Tabs/Tabs';
 import NavBarContent from '../../Organisms/NavBarContent/NavBarContent';
 import styles from './LiveScoresPage.module.scss';
@@ -18,6 +18,8 @@ const LiveScores = () => {
     const [chipItems, setChipItems] = useState(chips);
     const [filterMatches, setFilterMatches] = useState(cricketMatches);
     const [activeClass, setActiveClass] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
+    const stickyRef = useRef<HTMLDivElement>(null);
 
     const router = useRouter();
     const handleTabClick = (tabName: string) => {
@@ -112,6 +114,29 @@ const LiveScores = () => {
         setFilterMatches(cricketMatches);
     };
 
+    const handleScroll = () => {
+        if (!stickyRef.current) {
+            return;
+        }
+        const chipsTopToDocumentTop =
+            stickyRef.current.getBoundingClientRect().top + window.scrollY;
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition >= chipsTopToDocumentTop) {
+            setIsSticky(true);
+        } else {
+            setIsSticky(false);
+        }
+    };
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const items = Array.from({ length: 100 }, (_, index) => `Item ${index + 1}`);
+
     return (
         <>
             <NavBarContent />
@@ -132,125 +157,154 @@ const LiveScores = () => {
                         </div>
                     }
                 />
-                <ChipsContent
-                    onClick={activeChip}
-                    moveChipBackToOriginal={moveChipBackToOriginal}
-                    icon={
-                        <CloseOutlinedIcon
-                            style={{ fontSize: '14px', position: 'relative', top: '2px' }}
-                        />
-                    }
-                    chipItems={chipItems}
-                    resetFilterAndChips={resetFilterAndChips}
-                    activeClass={activeClass}
-                />
                 {selectedLabel === 'Live Cricket Score' && (
-                    <Card
-                        headerText={
-                            <h3 className={styles['card-header--small']}>Live Cricket Matches</h3>
-                        }
-                        paddingBottom='10px'
-                        showContent={
-                            <ItemDisplayGrid
-                                data={
-                                    <>
-                                        {filterMatches.length > 0 ? (
-                                            filterMatches.map((cricketMatch, index) => (
-                                                <div className={styles['grid-item']} key={index}>
-                                                    <div>
+                    <>
+                        <ChipsContent
+                            onClick={activeChip}
+                            moveChipBackToOriginal={moveChipBackToOriginal}
+                            icon={
+                                <CloseOutlinedIcon
+                                    style={{ fontSize: '14px', position: 'relative', top: '2px' }}
+                                />
+                            }
+                            chipItems={chipItems}
+                            resetFilterAndChips={resetFilterAndChips}
+                            activeClass={activeClass}
+                            refItem={stickyRef}
+                            isSticky={isSticky}
+                        />
+                        <Card
+                            headerText={
+                                <h3 className={styles['card-header--small']}>
+                                    Live Cricket Matches
+                                </h3>
+                            }
+                            paddingBottom='10px'
+                            showContent={
+                                <ItemDisplayGrid
+                                    data={
+                                        <>
+                                            {filterMatches.length > 0 ? (
+                                                filterMatches.map((cricketMatch, index) => (
+                                                    <div
+                                                        className={styles['grid-item']}
+                                                        key={index}
+                                                    >
                                                         <div>
-                                                            <p
-                                                                className={
-                                                                    styles['grid-item--header']
-                                                                }
-                                                            >
-                                                                {cricketMatch.stumps}
-                                                            </p>
-                                                            <p
-                                                                className={
-                                                                    styles['grid-item--description']
-                                                                }
-                                                            >
-                                                                {
-                                                                    cricketMatch.match.matchInfo
-                                                                        .description
-                                                                }
-                                                            </p>
-                                                        </div>
+                                                            <div>
+                                                                <p
+                                                                    className={
+                                                                        styles['grid-item--header']
+                                                                    }
+                                                                >
+                                                                    {cricketMatch.stumps}
+                                                                </p>
+                                                                <p
+                                                                    className={
+                                                                        styles[
+                                                                            'grid-item--description'
+                                                                        ]
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        cricketMatch.match.matchInfo
+                                                                            .description
+                                                                    }
+                                                                </p>
+                                                            </div>
 
-                                                        <>
-                                                            {cricketMatch.match.teams &&
-                                                                cricketMatch.match.teams.map(
-                                                                    (team, index) => {
-                                                                        return (
-                                                                            <div
-                                                                                className={
-                                                                                    styles[
-                                                                                        'team-container'
-                                                                                    ]
-                                                                                }
-                                                                                key={index}
-                                                                            >
+                                                            <>
+                                                                {cricketMatch.match.teams &&
+                                                                    cricketMatch.match.teams.map(
+                                                                        (team, index) => {
+                                                                            return (
                                                                                 <div
                                                                                     className={
                                                                                         styles[
-                                                                                            'team-container--inner'
+                                                                                            'team-container'
                                                                                         ]
                                                                                     }
+                                                                                    key={index}
                                                                                 >
-                                                                                    <Image
-                                                                                        src={
-                                                                                            team.flag
-                                                                                        }
-                                                                                        alt={
-                                                                                            'Team Flag'
-                                                                                        }
-                                                                                        width={20}
-                                                                                        height={20}
-                                                                                        style={{
-                                                                                            marginRight:
-                                                                                                '8px',
-                                                                                        }}
-                                                                                    />
-                                                                                    <p
+                                                                                    <div
                                                                                         className={
                                                                                             styles[
-                                                                                                'team-container--name'
+                                                                                                'team-container--inner'
                                                                                             ]
                                                                                         }
                                                                                     >
-                                                                                        {team.name}
+                                                                                        <Image
+                                                                                            src={
+                                                                                                team.flag
+                                                                                            }
+                                                                                            alt={
+                                                                                                'Team Flag'
+                                                                                            }
+                                                                                            width={
+                                                                                                20
+                                                                                            }
+                                                                                            height={
+                                                                                                20
+                                                                                            }
+                                                                                            style={{
+                                                                                                marginRight:
+                                                                                                    '8px',
+                                                                                            }}
+                                                                                        />
+                                                                                        <p
+                                                                                            className={
+                                                                                                styles[
+                                                                                                    'team-container--name'
+                                                                                                ]
+                                                                                            }
+                                                                                        >
+                                                                                            {
+                                                                                                team.name
+                                                                                            }
+                                                                                        </p>
+                                                                                    </div>
+
+                                                                                    <p>
+                                                                                        {team.score}
                                                                                     </p>
                                                                                 </div>
-
-                                                                                <p>{team.score}</p>
-                                                                            </div>
-                                                                        );
-                                                                    }
-                                                                )}
-                                                        </>
-                                                        <p
-                                                            className={
-                                                                styles['grid-item--match-day']
-                                                            }
-                                                        >
-                                                            {cricketMatch.day}
-                                                        </p>
-                                                        <p className={styles['grid-item--content']}>
-                                                            {cricketMatch.additionalContent}
-                                                        </p>
+                                                                            );
+                                                                        }
+                                                                    )}
+                                                            </>
+                                                            <p
+                                                                className={
+                                                                    styles['grid-item--match-day']
+                                                                }
+                                                            >
+                                                                {cricketMatch.day}
+                                                            </p>
+                                                            <p
+                                                                className={
+                                                                    styles['grid-item--content']
+                                                                }
+                                                            >
+                                                                {cricketMatch.additionalContent}
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            ))
-                                        ) : (
-                                            <p className={styles['no-match']}>No match found</p>
-                                        )}
-                                    </>
-                                }
-                            />
-                        }
-                    />
+                                                ))
+                                            ) : (
+                                                <p className={styles['no-match']}>No match found</p>
+                                            )}
+                                        </>
+                                    }
+                                />
+                            }
+                        />
+                    </>
                 )}
+                Items that make the page scrollable
+                {items.map((item, index) => (
+                    <div key={index} className={styles.item}>
+                        {item}
+                    </div>
+                ))}
             </div>
         </>
     );

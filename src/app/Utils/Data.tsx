@@ -349,13 +349,13 @@ export const cricketMatches = [
 export const disableRules: { [key: string]: string[] } = {
     "Int'l": ['Domestic', 'Others'],
     T20s: ['ODIs', 'Tests', 'FC', 'List A'],
-    Men: ['Tests', 'Others', 'FC', 'List A', 'Women', 'Youth'],
+    Men: ['FC', 'List A', 'Women', 'Youth'],
     Tests: ['T20s', 'ODIs', 'Others', 'Domestic', 'List A'],
     ODIs: ['T20s', 'Tests', 'Others', 'Domestic', 'FC'],
-    Domestic: ["Int'l", 'Youth', 'Tests', 'ODIs', 'Others'],
+    Domestic: ["Int'l", 'Youth', 'Tests', 'ODIs'],
     Others: ['T20s', "Int'l", 'Tests', 'ODIs', 'Domestic', 'FC', 'List A', 'Youth'],
-    FC: ['ODIs', 'T20s', 'Others', 'List A', 'Woman', 'Youth'],
-    'List A': ['T20s', 'Tests', 'ODIs', 'Women', 'Youth', 'Others', 'FC'],
+    FC: ['ODIs', 'T20s', 'Others', 'List A', 'Women', 'Youth'],
+    'List A': ['T20s', 'Tests', 'Women', 'Youth', 'Others', 'FC'],
     Youth: ['Domestic', 'Others', 'Women', 'FC', 'List A'],
     Women: ['Men', 'Youth', 'FC', 'List A'],
 };
