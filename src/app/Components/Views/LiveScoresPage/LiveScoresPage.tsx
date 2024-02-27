@@ -21,12 +21,38 @@ const LiveScores = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [navSticky, setNavSticky] = useState(false);
     const stickyRef = useRef<HTMLDivElement>(null);
-     const [navbarHeight, setNavbarHeight] = useState(0);
-     const navbarRef = useRef<HTMLDivElement>(null);
+    const [navbarHeight, setNavbarHeight] = useState(0);
+    const navbarRef = useRef<HTMLDivElement>(null);
 
     const router = useRouter();
     const handleTabClick = (tabName: string) => {
         router.push(`/LiveScores?tab=${tabName}`);
+    };
+
+    const filterSelectedLabel = (chipItem: Array<any>) => {
+        let selectedLabels = chipItem.filter((chip) => chip.isSelected).map((chip) => chip.label);
+        if (selectedLabels.length > 0) {
+            let filterContent = cricketMatches.filter((match) =>
+                selectedLabels.every((selectedLabel) =>
+                    match.label.some((labelObj) => labelObj.label.includes(selectedLabel))
+                )
+            );
+            setFilterMatches(filterContent);
+        }
+    };
+
+    const unDisableAndDisableChips = (selectedItem: Array<string>, chips: Array<any>) => {
+        const disabledChips = chips.map((chip) => {
+            let isDisabled = selectedItem.some((selectedLabel) => {
+                if (disableRules[selectedLabel]) {
+                    return disableRules[selectedLabel].includes(chip.label);
+                }
+                return false;
+            });
+
+            return { ...chip, disabled: isDisabled };
+        });
+        setChipItems(disabledChips);
     };
 
     const activeChip = (index: number) => {
@@ -41,29 +67,13 @@ const LiveScores = () => {
         newChips.unshift(moveFrontArray[0]);
         setChipItems(newChips);
 
-        // filter matches based on selected labels
         let selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
-        if (selectedLabels.length > 0) {
-            let filterContent = cricketMatches.filter((match) =>
-                selectedLabels.every((selectedLabel) =>
-                    match.label.some((labelObj) => labelObj.label.includes(selectedLabel))
-                )
-            );
-            setFilterMatches(filterContent);
-        }
+
+        // filter matches based on selected labels
+        filterSelectedLabel(newChips);
 
         // disable chips based on selected labels
-        const disabledChips = newChips.map((chip) => {
-            let isDisabled = selectedLabels.some((selectedLabel) => {
-                if (disableRules[selectedLabel]) {
-                    return disableRules[selectedLabel].includes(chip.label);
-                }
-                return false;
-            });
-
-            return { ...chip, disabled: isDisabled };
-        });
-        setChipItems(disabledChips);
+        unDisableAndDisableChips(selectedLabels, newChips);
         setActiveClass(true);
     };
 
@@ -93,28 +103,13 @@ const LiveScores = () => {
         // filter matches based on selected labels
         const selectedLabels = newChips.filter((chip) => chip.isSelected).map((chip) => chip.label);
         if (selectedLabels.length > 0) {
-            let filterContent = cricketMatches.filter((match) =>
-                match.label.some((labelObj) =>
-                    selectedLabels.some((selectedLabel) => labelObj.label.includes(selectedLabel))
-                )
-            );
-            setFilterMatches(filterContent);
+            filterSelectedLabel(newChips);
         } else {
             setFilterMatches(cricketMatches);
         }
 
         // undisable chips based on selected labels
-        const disabledChips = newChips.map((chip) => {
-            let isDisabled = selectedLabels.some((selectedLabel) => {
-                if (disableRules[selectedLabel]) {
-                    return disableRules[selectedLabel].includes(chip.label);
-                }
-                return false;
-            });
-
-            return { ...chip, disabled: isDisabled };
-        });
-        setChipItems(disabledChips);
+        unDisableAndDisableChips(selectedLabels, newChips);
 
         // remove the class on Reset button when one chip is selected
         const selectedChipsCount = newChips.filter((chip) => chip.isSelected).length;
@@ -136,7 +131,7 @@ const LiveScores = () => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             const navbarStickyThreshold = 20;
-            
+
             const isNavbarSticky = scrollPosition > navbarStickyThreshold;
             setNavSticky(isNavbarSticky);
 
@@ -148,7 +143,6 @@ const LiveScores = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [navbarHeight]);
-
 
     return (
         <>
