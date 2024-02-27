@@ -149,7 +149,6 @@ const LiveScores = () => {
         };
     }, [navbarHeight]);
 
-    const items = Array.from({ length: 100 }, (_, index) => `Item ${index + 1}`);
 
     return (
         <>
@@ -314,12 +313,6 @@ const LiveScores = () => {
                         />
                     </>
                 )}
-                Items that make the page scrollable
-                {items.map((item, index) => (
-                    <div key={index} className={styles.item}>
-                        {item}
-                    </div>
-                ))}
             </div>
         </>
     );
