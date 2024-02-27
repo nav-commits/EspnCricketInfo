@@ -11,7 +11,7 @@ const Chip: React.FC<ChipProps> = ({
     disabledStatus,
 }) => {
     const handleClick = (e: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => {
-        if (checkSelected || disabledStatus ) {
+        if (checkSelected || disabledStatus) {
             e.stopPropagation();
             return;
         }
@@ -38,11 +38,11 @@ const Chip: React.FC<ChipProps> = ({
                             {label}
                         </span>
                     )}
-                    {checkSelected && (
+                    {checkSelected && !disabledStatus ? (
                         <span className={styles['chip-icon']} onClick={moveChipBackToOriginal}>
                             {icon}
                         </span>
-                    )}
+                    ) : null}
                 </div>
             )}
         </>

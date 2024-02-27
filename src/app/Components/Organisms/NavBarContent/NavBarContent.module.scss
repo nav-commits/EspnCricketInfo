@@ -6,6 +6,8 @@
     justify-content: center;
     align-items: center;
     background-color: $main_color;
+
+
     .navbar__content {
         display: flex;
         flex-direction: row;
@@ -24,6 +26,13 @@
         display: none;
     }
 }
+
+  .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+  }
 
 @media (max-width: 1098px) {
 

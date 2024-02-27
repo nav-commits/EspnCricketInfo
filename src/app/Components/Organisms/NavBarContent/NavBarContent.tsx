@@ -6,10 +6,14 @@ import Image from 'next/image';
 import { secondaryItemArray, mainNavArray } from '@/app/Utils/Data';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
+import { NavBarProps } from '../../../Components/Organisms/NavBarContent/NavBar.Content.types';
 
-const NavBarContent = () => {
+const NavBarContent: React.FC<NavBarProps> = ({ navSticky, navbarRef }) => {
     return (
-        <div className={styles['navbar__container']}>
+        <div
+            ref={navbarRef}
+            className={`${styles['navbar__container']} ${navSticky ? styles['sticky'] : ''}`}
+        >
             <div className={styles['hamburger-menu']}>
                 <MenuIcon />
             </div>

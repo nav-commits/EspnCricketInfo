@@ -19,7 +19,10 @@ const LiveScores = () => {
     const [filterMatches, setFilterMatches] = useState(cricketMatches);
     const [activeClass, setActiveClass] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+    const [navSticky, setNavSticky] = useState(false);
     const stickyRef = useRef<HTMLDivElement>(null);
+     const [navbarHeight, setNavbarHeight] = useState(0);
+     const navbarRef = useRef<HTMLDivElement>(null);
 
     const router = useRouter();
     const handleTabClick = (tabName: string) => {
@@ -70,9 +73,21 @@ const LiveScores = () => {
             ...chip,
             isSelected: i === index ? false : chip.isSelected,
         }));
-        let removeFromSpot = newChips.splice(index, 1);
-        let findIndex = chips.findIndex((chip) => chip.label === removeFromSpot[0].label);
-        newChips.splice(findIndex, 0, removeFromSpot[0]);
+
+        let [removedChip] = newChips.splice(index, 1);
+        if (removedChip.label !== "Int'l") {
+            let findIndex = chips.findIndex((chip) => chip.label === removedChip.label);
+            newChips.splice(findIndex, 0, removedChip);
+            let intlIndex = newChips.findIndex((chip) => chip.label === "Int'l");
+            if (intlIndex > 0) {
+                [newChips[intlIndex], newChips[intlIndex - 1]] = [
+                    newChips[intlIndex - 1],
+                    newChips[intlIndex],
+                ];
+            }
+        } else {
+            newChips.splice(index, 0, removedChip);
+        }
         setChipItems(newChips);
 
         // filter matches based on selected labels
@@ -114,32 +129,31 @@ const LiveScores = () => {
         setFilterMatches(cricketMatches);
     };
 
-    const handleScroll = () => {
-        if (!stickyRef.current) {
-            return;
-        }
-        const chipsTopToDocumentTop =
-            stickyRef.current.getBoundingClientRect().top + window.scrollY;
-        const scrollPosition = window.scrollY;
-
-        if (scrollPosition >= chipsTopToDocumentTop) {
-            setIsSticky(true);
-        } else {
-            setIsSticky(false);
-        }
-    };
     useEffect(() => {
+        if (navbarRef.current) {
+            setNavbarHeight(navbarRef.current?.offsetHeight);
+        }
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const navbarStickyThreshold = 20;
+            
+            const isNavbarSticky = scrollPosition > navbarStickyThreshold;
+            setNavSticky(isNavbarSticky);
+
+            setIsSticky(isNavbarSticky && scrollPosition > navbarHeight + navbarStickyThreshold);
+        };
+
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [navbarHeight]);
 
     const items = Array.from({ length: 100 }, (_, index) => `Item ${index + 1}`);
 
     return (
         <>
-            <NavBarContent />
+            <NavBarContent navSticky={navSticky} navbarRef={navbarRef} />
             <div className={styles['center__container']}>
                 <Card
                     tabs={
@@ -172,6 +186,7 @@ const LiveScores = () => {
                             activeClass={activeClass}
                             refItem={stickyRef}
                             isSticky={isSticky}
+                            navbarHeight={navbarHeight}
                         />
                         <Card
                             headerText={

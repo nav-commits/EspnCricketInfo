@@ -7,16 +7,6 @@
     align-items: center;
 }
 
-.chips-container.sticky {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    border-radius: 10px;
-    padding-left: 20px;
-    width: 780px;
-}
-
-
 .chips-container-reset--grey {
     color: grey;
     opacity: 0.5;
@@ -33,6 +23,16 @@
     padding-right: 10px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.chip--sticky {
+    position: sticky;
+    top: 20;
+    z-index: 90;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 20px;
+    width: 780px;
 }
 
 @media only screen and (max-width: 768px) {

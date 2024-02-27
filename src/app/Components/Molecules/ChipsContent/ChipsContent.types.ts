@@ -14,5 +14,6 @@ export interface ChipContentProps {
     disabledStatus?: boolean;
     refItem?: React.RefObject<HTMLDivElement>;
     isSticky?: boolean;
+    navbarHeight?: number;
 
 }

@@ -12,11 +12,13 @@ const ChipsContent: React.FC<ChipContentProps> = ({
     activeClass,
     refItem,
     isSticky,
+    navbarHeight,
 }) => {
     return (
         <div
-            className={`${styles['chips-container']} ${isSticky ? styles['sticky'] : ''}`}
+            className={`${styles['chips-container']} ${isSticky ? styles['chip--sticky'] : ''}`}
             ref={refItem}
+            style={{ top: `${navbarHeight}px` }}
         >
             <p
                 onClick={activeClass ? resetFilterAndChips : undefined}
