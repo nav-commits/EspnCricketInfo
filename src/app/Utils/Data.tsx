@@ -248,7 +248,6 @@ export const chips = [
     { label: 'Others', isSelected: false, disabled: false },
 ];
 
-
 export const cricketMatches = [
     {
         stumps: 'Live',
@@ -343,19 +342,178 @@ export const cricketMatches = [
         day: 'N/A',
         label: [{ label: 'Men' }, { label: 'Domestic' }],
     },
-];
 
+    {
+        stumps: 'Live',
+        match: {
+            matchInfo: {
+                description: 'Final, Dubai, March 05, 2024',
+            },
+            teams: [
+                {
+                    name: 'Australia',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340400/340493.png',
+                    score: '(18 ov) 172/4',
+                },
+                {
+                    name: 'New Zealand',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340500/340505.png',
+                },
+            ],
+        },
+        additionalContent: 'Series Finale',
+        day: 'Aussies chose to bat.',
+        label: [{ label: 'Men' }, { label: "Int'l" }, { label: 'T20' }],
+    },
+    {
+        stumps: 'Today, 2:00PM',
+        match: {
+            matchInfo: {
+                description: '1st ODI, Wellington, March 10, 2024',
+            },
+            teams: [
+                {
+                    name: 'Pakistan',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313129.logo.png',
+                    score: '250/7',
+                    overs: '50',
+                },
+                {
+                    name: 'South Africa',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313125.logo.png',
+                    score: '251/5',
+                    overs: '48.3',
+                },
+            ],
+        },
+        additionalContent: 'Match Report',
+        day: 'Match ended',
+        label: [{ label: "Int'l" }, { label: 'ODIs' }, { label: 'Men' }],
+    },
+    {
+        stumps: 'Delayed',
+        match: {
+            matchInfo: {
+                description: 'Semi-Final, Colombo, March 15, 2024',
+            },
+            teams: [
+                {
+                    name: 'Sri Lanka',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340000/340047.png',
+                },
+                {
+                    name: 'West Indies',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/317600/317615.png',
+                },
+            ],
+        },
+        additionalContent: 'Rain Delay',
+        day: 'Match delayed due to rain.',
+        label: [{ label: 'Men' }, { label: "Int'l" }, { label: 'T20' }],
+    },
+    {
+        stumps: 'Result',
+        match: {
+            matchInfo: {
+                description: 'Quarter Final, Dhaka, March 20, 2024',
+            },
+            teams: [
+                {
+                    name: 'Bangladesh',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/341400/341456.png',
+                    score: '350/8',
+                },
+                {
+                    name: 'Zimbabwe',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/340500/340503.png',
+                    score: '(50 ov, T:351) 220',
+                },
+            ],
+        },
+        additionalContent: 'Match Summary',
+        day: 'Bangladesh won by 130 runs',
+        label: [{ label: 'Men' }, { label: 'ODIs' }],
+    },
+    {
+        stumps: 'Result',
+        match: {
+            matchInfo: {
+                description: 'Group Stage, Harare, April 05, 2024',
+            },
+            teams: [
+                {
+                    name: 'Ireland',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313149.logo.png',
+                    score: '280/6',
+                },
+                {
+                    name: 'Afghanistan',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/321000/321005.png',
+                    score: '(48/50 ov, T:281) 284/7',
+                },
+            ],
+        },
+        additionalContent: 'Full Scorecard',
+        day: 'Afghanistan won by 3 wickets',
+        label: [{ label: 'Men' }, { label: 'ODIs' }],
+    },
+    {
+        stumps: 'Live',
+        match: {
+            matchInfo: {
+                description: "2nd Test, Lord's, July 22 - 26, 2024",
+            },
+            teams: [
+                {
+                    name: 'England',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313114.logo.png',
+                    score: '345 & 129/3',
+                    overs: '45',
+                },
+                {
+                    name: 'India',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313100/313128.logo.png',
+                    score: '290 & 280',
+                },
+            ],
+        },
+        additionalContent: 'Live Commentary',
+        day: 'Day 4 in progress',
+        label: [{ label: "Int'l" }, { label: 'Tests' }, { label: 'Men' }],
+    },
+    {
+        stumps: 'Today, 9:00AM',
+        match: {
+            matchInfo: {
+                description: '1st T20, Abu Dhabi, April 25, 2024',
+            },
+            teams: [
+                {
+                    name: 'United Arab Emirates',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/358500/358569.png',
+                },
+                {
+                    name: 'Nepal',
+                    flag: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/319900/319958.png',
+                },
+            ],
+        },
+        additionalContent: 'Match Preview',
+        day: 'Match yet to begin',
+        label: [{ label: 'Men' }, { label: "Int'l" }, { label: 'T20' }],
+    },
+];
 
 export const disableRules: { [key: string]: string[] } = {
     "Int'l": ['Domestic', 'Others'],
     T20s: ['ODIs', 'Tests', 'FC', 'List A'],
-    Men: ['Tests', 'Others', 'FC', 'List A', 'Women', 'Youth'],
+    Men: ['FC', 'List A', 'Women', 'Youth'],
     Tests: ['T20s', 'ODIs', 'Others', 'Domestic', 'List A'],
     ODIs: ['T20s', 'Tests', 'Others', 'Domestic', 'FC'],
-    Domestic: ["Int'l", 'Youth', 'Tests', 'ODIs', 'Others'],
-    Others: ['T20s', "Int'l", 'Tests', 'ODIs', 'Domestic', 'FC', 'List A', 'Youth'],
-    FC: ['ODIs', 'T20s', 'Others', 'List A', 'Woman', 'Youth'],
-    'List A': ['T20s', 'Tests', 'ODIs', 'Women', 'Youth', 'Others', 'FC'],
+    Domestic: ["Int'l", 'Youth', 'Tests', 'ODIs'],
+    Others: ["Int'l", 'Tests', 'ODIs', 'FC', 'List A', 'Youth'],
+    FC: ['ODIs', 'T20s', 'Others', 'List A', 'Women', 'Youth'],
+    'List A': ['T20s', 'Tests', 'Women', 'Youth', 'Others', 'FC'],
     Youth: ['Domestic', 'Others', 'Women', 'FC', 'List A'],
     Women: ['Men', 'Youth', 'FC', 'List A'],
 };

@@ -12,5 +12,8 @@ export interface ChipContentProps {
     resetFilterAndChips?: () => void;
     activeClass?: boolean;
     disabledStatus?: boolean;
+    refItem?: React.RefObject<HTMLDivElement>;
+    isSticky?: boolean;
+    navbarHeight?: number;
 
 }
