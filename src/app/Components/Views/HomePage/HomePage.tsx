@@ -95,7 +95,7 @@ const HomepageContent: React.FC = () => {
                                     gap='25px'
                                 />
                             }
-                            showContent={() => renderView(selectedLabel)}
+                            showContentBelow={() => renderView(selectedLabel)}
                             paddingBottom='10px'
                         />
                         <Card
@@ -103,7 +103,7 @@ const HomepageContent: React.FC = () => {
                                 <h3 className={styles['card-header--small']}>Top Stories</h3>
                             }
                             paddingBottom='10px'
-                            showContent={
+                            showContentBelow={
                                 <ItemDisplayGrid
                                     data={
                                         <>
@@ -160,7 +160,7 @@ const HomepageContent: React.FC = () => {
                                 </div>
                             }
                             cardSize='must-watch'
-                            showContent={<ImageCarousel slides={slides} />}
+                            showContentBelow={<ImageCarousel slides={slides} />}
                         />
                     </div>
                 </div>
