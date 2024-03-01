@@ -7,11 +7,26 @@ import Tabs from '../../Molecules/Tabs/Tabs';
 import { useState } from 'react';
 import MatchHighlight from '../../Organisms/MatchHightlight/MatchHightlight';
 import ImageVideoIcon from '../../Atoms/ImageVideoIcon/ImageVideoIcon';
-import { tabData, slides, dataArray, matchHighlights, slidesTwo } from '@/app/Utils/Data';
+import {
+    tabData,
+    slides,
+    dataArray,
+    matchHighlights,
+    cricketMatches,
+    trendingPlayers,
+} from '@/app/Utils/Data';
 import ImageCarousel from '../../Molecules/ImageCarousel/ImageCarousel';
 import ItemDisplayGrid from '../../Organisms/ItemDisplayGrid/ItemDisplayGrid';
 import NavBarContent from '../../Organisms/NavBarContent/NavBarContent';
 import Image from 'next/image';
+import liveScoreStyles from '../../Views/LiveScoresPage/LiveScoresPage.module.scss';
+import LinkButton from '../../Atoms/LinkButton/LinkButton';
+
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const HomepageContent: React.FC = () => {
     const [selectedLabel, setSelectedLabel] = useState(tabData[0].label);
@@ -77,9 +92,163 @@ const HomepageContent: React.FC = () => {
         }
     };
 
+    const tabs = [
+        { name: 'Matches', count: 26 },
+        { name: 'AFG v IRE', count: 1 },
+        { name: 'BPL 2024', count: 1 },
+        { name: 'WPL', count: 2 },
+        { name: 'NZ v AUS', count: 1 },
+        { name: 'WCL 2', count: 1 },
+        { name: 'Sheffield Shield', count: 3 },
+        { name: 'Plunket Shield', count: 3 },
+        { name: 'Durham in ZIM', count: 1 },
+        { name: 'CSA 4-Day DIV1', count: 1 },
+        { name: 'CWC Play-off', count: 3 },
+        { name: 'Nepal Tri-Nation', count: 2 },
+        { name: 'Dang CL', count: 3 },
+        { name: 'Ranji Trophy', count: 2 },
+        { name: 'PSL 2024', count: 2 },
+    ];
+
+    const carouselItems = [
+        {
+            src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/374900/374946.6.jpg',
+            alt: 'MAR 01',
+
+            description: 'India vs England has been a tale of two very good captains',
+        },
+
+        {
+            src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
+            alt: 'MAR 01',
+
+            description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
+        },
+        {
+            src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
+            alt: 'MAR 01',
+
+            description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
+        },
+        {
+            src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
+            alt: 'MAR 01',
+
+            description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
+        },
+    ];
+
     return (
         <>
-            <div style={{ backgroundColor: '#0298DB', padding: '80px' }} />
+            <div style={{ backgroundColor: '#0298DB' }}>
+                <div
+                    style={{
+                        marginRight: 'auto',
+                        marginLeft: 'auto',
+                        padding: '10px',
+                        maxWidth: '1200px',
+                    }}
+                    className={styles['scores__tab-container']}
+                >
+                    <div
+                        style={{
+                            display: 'flex',
+                            gap: '5px',
+                        }}
+                    >
+                        {tabs.map((tab, index) => (
+                            <div
+                                key={index}
+                                style={{
+                                    flexShrink: 0,
+                                    marginRight: index === tabs.length - 1 ? '0' : '5px',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    maxWidth: '1200px',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                <span
+                                    style={{
+                                        fontSize: '12px',
+                                        color: 'white',
+                                    }}
+                                >
+                                    {tab.name} <span>({tab.count})</span>
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                    <Swiper
+                        modules={[Navigation, Pagination]}
+                        spaceBetween={5} // Small gap between cards
+                        slidesPerView={4} // Adjust based on your layout requirements
+                        navigation={true}
+                    >
+                        {cricketMatches.map((match, index) => (
+                            <SwiperSlide key={index}>
+                                <Card
+                                    width={'290px'}
+                                    showContentBelow={
+                                        <>
+                                            <div>
+                                                <p
+                                                    style={{
+                                                        fontSize: '12px',
+                                                        color: 'rgb(236, 150, 48)',
+                                                        fontWeight: 'bold',
+                                                    }}
+                                                >
+                                                    {match.stumps}
+                                                </p>
+                                                <p
+                                                    style={{ fontSize: '12px' }}
+                                                    className={liveScoreStyles['grid-item--header']}
+                                                >
+                                                    {match.match.matchInfo.description}
+                                                </p>
+                                            </div>
+                                            {match.match.teams.map((team, teamIndex) => (
+                                                <div
+                                                    key={teamIndex}
+                                                    className={liveScoreStyles['team-container']}
+                                                    style={{ fontSize: '12px' }} // Consider moving inline styles to CSS classes for maintainability
+                                                >
+                                                    <div
+                                                        className={
+                                                            liveScoreStyles['team-container--inner']
+                                                        }
+                                                    >
+                                                        <Image
+                                                            src={team.flag}
+                                                            alt={`${team.name} Flag`}
+                                                            width={15}
+                                                            height={15}
+                                                            style={{ marginRight: '8px' }}
+                                                        />
+                                                        <p
+                                                            style={{ fontSize: '12px' }}
+                                                            className={
+                                                                liveScoreStyles[
+                                                                    'team-container--name'
+                                                                ]
+                                                            }
+                                                        >
+                                                            {team.name}
+                                                        </p>
+                                                    </div>
+                                                    <p>{team.score}</p>
+                                                </div>
+                                            ))}
+                                        </>
+                                    }
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+            </div>
             <NavBarContent />
             <div className={styles['center__container']}>
                 <ScrollBar />
@@ -126,6 +295,110 @@ const HomepageContent: React.FC = () => {
                                     }
                                 />
                             }
+                        />
+                        <Card
+                            headerText={
+                                <div className={styles['header-text__container']}>
+                                    <h4>Editor’s Picks</h4>
+                                    <p className={styles['header-text--style']}>See All</p>
+                                </div>
+                            }
+                            paddingBottom='10px'
+                            showContentBelow={
+                                <div>
+                                    <Swiper
+                                        modules={[Navigation, Pagination]}
+                                        spaceBetween={5}
+                                        slidesPerView={3}
+                                        navigation={true}
+                                    >
+                                        {carouselItems.map((item, index) => (
+                                            <SwiperSlide key={index}>
+                                                <div
+                                                    style={{
+                                                        padding: '10px',
+                                                        maxWidth: '600px',
+                                                    }}
+                                                >
+                                                    <div
+                                                        style={{
+                                                            position: 'relative',
+                                                            paddingBottom: '56.25%', // Aspect ratio for 16:9
+                                                            height: 0,
+
+                                                            margin: 'auto',
+                                                        }}
+                                                    >
+                                                        <Image
+                                                            src={item.src}
+                                                            alt={item.alt}
+                                                            layout='fill'
+                                                            objectFit='cover'
+                                                            style={{
+                                                                borderRadius: '10px 10px 0 0',
+                                                                cursor: 'pointer',
+                                                                transition:
+                                                                    'transform .5s ease-in-out',
+                                                            }}
+                                                            className='hover:scale-110'
+                                                        />
+                                                    </div>
+                                                    <div
+                                                        style={{
+                                                            padding: '10px',
+                                                            backgroundColor: 'black',
+                                                            color: 'white',
+                                                            textAlign: 'left',
+                                                            borderRadius: '0 0 5px 5px',
+                                                            height: '80px',
+                                                        }}
+                                                    >
+                                                        <p
+                                                            style={{
+                                                                margin: 0,
+                                                                fontSize: '12px',
+                                                                marginTop: '5px',
+                                                            }}
+                                                        >
+                                                            {item.description}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </SwiperSlide>
+                                        ))}
+                                    </Swiper>
+                                </div>
+                            }
+                        />
+
+                        <Card
+                            headerText={
+                                <div className={styles['header-text__container']}>
+                                    <h4>Trending Players</h4>
+                                </div>
+                            }
+                            showContentBelow={
+                                <div
+                                    style={{
+                                        color: 'black',
+                                        backgroundColor: 'white',
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        padding: '10px',
+                                        gap:'10px',
+                                        fontSize: '12px',
+                                    }}
+                                >
+                                    {trendingPlayers.map((button: any, index: number) => (
+                                        <LinkButton
+                                            key={index}
+                                            text={button.text}
+                                            icon={button.icon}
+                                        />
+                                    ))}
+                                </div>
+                            }
+                            paddingBottom='10px'
                         />
 
                         <div className={styles['show-container']}>
@@ -194,7 +467,7 @@ const HomepageContent: React.FC = () => {
                                                     width: '100%',
                                                     height: '100%',
                                                     borderRadius: '10px 10px 0 0',
-                                                    cursor:'pointer',
+                                                    cursor: 'pointer',
 
                                                     transition: 'transform .5s ease-in-out',
                                                 }}
@@ -210,7 +483,13 @@ const HomepageContent: React.FC = () => {
                                             }}
                                         >
                                             <h4 style={{ margin: 0 }}>MAR 01</h4>
-                                            <p style={{ margin: 0, fontSize:'10px', marginTop:'10px' }}>
+                                            <p
+                                                style={{
+                                                    margin: 0,
+                                                    fontSize: '10px',
+                                                    marginTop: '10px',
+                                                }}
+                                            >
                                                 Happy birthday, Shahid Afridi
                                             </p>
                                         </div>

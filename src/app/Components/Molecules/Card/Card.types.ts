@@ -7,4 +7,5 @@ export interface CardProps {
     cardSize?: string;
     padding?: string;
     showContentTop?: React.ReactNode;
+    width?: string;
 }

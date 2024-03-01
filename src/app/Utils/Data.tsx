@@ -18,6 +18,21 @@ export const linkButtons = [
     { text: 'Ask Cricinfo', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
 ];
 
+export const trendingPlayers = [
+    {
+        text: 'Cameron Green',
+        icon: <KeyboardArrowRightOutlinedIcon fontSize='small' />,
+    },
+    { text: 'Usman Tariq', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Usman Tariq', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Usman Tariq', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Usman Tariq', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'ICC team rankings', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Writers', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Ask Cricinfo', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+];
+
+
 export const stories = [
     {
         id: 1,

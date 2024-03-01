@@ -10,11 +10,12 @@ const Card: React.FC<CardProps> = ({
     cardSize,
     padding,
     showContentTop,
+    width
 }) => {
     return (
         <div
             className={`${styles.card__container} ${cardSize ? styles[cardSize] : ''}`}
-            style={{ paddingBottom, padding: padding }}
+            style={{ paddingBottom, padding: padding, width: width }}
         >
             {showContentTop && showContentTop}
             {headerText && headerText}
