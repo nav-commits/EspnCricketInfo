@@ -7,7 +7,7 @@ import Tabs from '../../Molecules/Tabs/Tabs';
 import { useState } from 'react';
 import MatchHighlight from '../../Organisms/MatchHightlight/MatchHightlight';
 import ImageVideoIcon from '../../Atoms/ImageVideoIcon/ImageVideoIcon';
-import { tabData, slides, dataArray, matchHighlights } from '@/app/Utils/Data';
+import { tabData, slides, dataArray, matchHighlights, slidesTwo } from '@/app/Utils/Data';
 import ImageCarousel from '../../Molecules/ImageCarousel/ImageCarousel';
 import ItemDisplayGrid from '../../Organisms/ItemDisplayGrid/ItemDisplayGrid';
 import NavBarContent from '../../Organisms/NavBarContent/NavBarContent';
@@ -151,17 +151,73 @@ const HomepageContent: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className={styles['card-on-desktop']}>
-                        <Card
-                            headerText={
-                                <div className={styles['header-text__container']}>
-                                    <h4>Must Watch</h4>
-                                    <p className={styles['header-text--style']}>See All</p>
-                                </div>
-                            }
-                            cardSize='must-watch'
-                            showContentBelow={<ImageCarousel slides={slides} />}
-                        />
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <div className={styles['card-on-desktop']}>
+                            <Card
+                                headerText={
+                                    <div className={styles['header-text__container']}>
+                                        <h4>Must Watch</h4>
+                                        <p className={styles['header-text--style']}>See All</p>
+                                    </div>
+                                }
+                                cardSize='must-watch'
+                                showContentBelow={<ImageCarousel slides={slides} />}
+                            />
+                        </div>
+                        <div className={styles['card-on-desktop']}>
+                            <Card
+                                headerText={
+                                    <div className={styles['header-text__container']}>
+                                        <h4>On This Day</h4>
+                                        <p className={styles['header-text--style']}>See All</p>
+                                    </div>
+                                }
+                                cardSize='must-watch'
+                                showContentBelow={
+                                    <div style={{ padding: '10px' }}>
+                                        <div
+                                            style={{
+                                                position: 'relative',
+                                                paddingBottom: '56.25%',
+                                                height: 0,
+                                                overflow: 'hidden',
+                                            }}
+                                        >
+                                            <Image
+                                                src='https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/259200/259294.9.jpg'
+                                                alt='MAR 01'
+                                                layout='fill'
+                                                style={{
+                                                    position: 'absolute',
+                                                    top: 0,
+                                                    left: 0,
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    borderRadius: '10px 10px 0 0',
+                                                    cursor:'pointer',
+
+                                                    transition: 'transform .5s ease-in-out',
+                                                }}
+                                                className='hover:scale-110'
+                                            />
+                                        </div>
+                                        <div
+                                            style={{
+                                                padding: '10px', // Adjust padding as needed
+                                                backgroundColor: 'black', // For the background color of the text area
+                                                color: 'white', // For the text color
+                                                textAlign: 'left', // Aligns text to the left
+                                            }}
+                                        >
+                                            <h4 style={{ margin: 0 }}>MAR 01</h4>
+                                            <p style={{ margin: 0, fontSize:'10px', marginTop:'10px' }}>
+                                                Happy birthday, Shahid Afridi
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

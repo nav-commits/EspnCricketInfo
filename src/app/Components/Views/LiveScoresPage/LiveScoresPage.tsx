@@ -205,8 +205,8 @@ const LiveScores = () => {
                                                                         .description,
                                                                 flag: cricketMatch.match.teams[0]
                                                                     .flag,
-                                                                flag2: cricketMatch.match.teams[1].flag,
-
+                                                                flag2: cricketMatch.match.teams[1]
+                                                                    .flag,
                                                                 team1: cricketMatch.match.teams[0]
                                                                     .name,
                                                                 team2: cricketMatch.match.teams[1]
@@ -218,7 +218,12 @@ const LiveScores = () => {
                                                                 day: cricketMatch.day,
                                                                 additionalContent:
                                                                     cricketMatch.additionalContent,
-                                                                
+                                                                endOfOverSummary: JSON.stringify(
+                                                                    cricketMatch.end_of_over_summary
+                                                                ),
+                                                                commentary: JSON.stringify(
+                                                                    cricketMatch.commentary
+                                                                ), // Correctly passing the serialized commentary array
                                                             },
                                                         }}
                                                         key={index}

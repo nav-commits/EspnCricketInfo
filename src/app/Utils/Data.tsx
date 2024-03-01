@@ -165,6 +165,25 @@ export const slides = [
     },
 ];
 
+export const slidesTwo = [
+    {
+        imageUrl: '10',
+        text: 'Test hundreds for Joe Root against India are the most by any batter.',
+    },
+    {
+        imageUrl: '10',
+        text: 'Test hundreds for Joe Root against India are the most by any batter.',
+    },
+    {
+        imageUrl: '10',
+        text: 'Test hundreds for Joe Root against India are the most by any batter.',
+    },
+    {
+        imageUrl: '10',
+        text: 'Test hundreds for Joe Root against India are the most by any batter.',
+    },
+];
+
 export const dataArray = [
     {
         imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/374700/374703.6.jpg',
@@ -476,7 +495,10 @@ export const cricketMatches = [
             runs_scored_by_batsman_at_crease: 103,
             balls_faced_by_batsman_at_crease: 155,
             fours_by_batsman_at_crease: 16,
-            bowler_stats_over: 'William O’Rourke 20-8-59-2, Matt Henry 20-7-43-4',
+            bowler_stats_over_one: 'William O’Rourke',
+            bowler_number_one: '20-8-59-2',
+            bowler_number_two: '20-6-54-3',
+            bowler_stats_over_two: 'Matt Henry 20-6-54-3',
         },
         match_summary: {
             day_summary:
