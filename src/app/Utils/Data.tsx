@@ -23,15 +23,14 @@ export const trendingPlayers = [
         text: 'Cameron Green',
         icon: <KeyboardArrowRightOutlinedIcon fontSize='small' />,
     },
-    { text: 'Usman Tariq', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
-    { text: 'Usman Tariq', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
-    { text: 'Usman Tariq', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
-    { text: 'Usman Tariq', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
-    { text: 'ICC team rankings', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
-    { text: 'Writers', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
-    { text: 'Ask Cricinfo', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Steven Smith', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Marnus Labuschagne', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Laura Wolvaardt', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Nathan Lyon', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Virat Kohli', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'James Fuller', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Tim Southee', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
 ];
-
 
 export const stories = [
     {
@@ -707,4 +706,92 @@ export const tabDataMatch = [
     { label: 'Photos' },
     { label: 'Playing XI' },
     { label: 'Bet' },
+];
+
+export const tabs = [
+    { name: 'Matches', count: 26 },
+    { name: 'AFG v IRE', count: 1 },
+    { name: 'BPL 2024', count: 1 },
+    { name: 'WPL', count: 2 },
+    { name: 'NZ v AUS', count: 1 },
+    { name: 'WCL 2', count: 1 },
+    { name: 'Sheffield Shield', count: 3 },
+    { name: 'Plunket Shield', count: 3 },
+    { name: 'Durham in ZIM', count: 1 },
+    { name: 'CSA 4-Day DIV1', count: 1 },
+    { name: 'CWC Play-off', count: 3 },
+    { name: 'Nepal Tri-Nation', count: 2 },
+    { name: 'Dang CL', count: 3 },
+    { name: 'Ranji Trophy', count: 2 },
+    { name: 'PSL 2024', count: 2 },
+];
+
+export const carouselItems = [
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/374900/374946.6.jpg',
+        alt: 'MAR 01',
+
+        description: 'India vs England has been a tale of two very good captains',
+    },
+
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
+        alt: 'MAR 01',
+
+        description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
+        alt: 'MAR 01',
+
+        description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
+        alt: 'MAR 01',
+
+        description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
+    },
+];
+
+export const photos = [
+    {
+        id: 1,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_240/lsci/db/PICTURES/CMS/376900/376968.jpg',
+        alt: 'Fortune Barishal won their maiden BPL title',
+        layout: 'small', // Indicative of the photo size or layout style
+    },
+    {
+        id: 2,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_240/lsci/db/PICTURES/CMS/376900/376967.jpg',
+        alt: 'Grace Harris scored her first fifty of the WPL season',
+        layout: 'small',
+    },
+    // Add more photos as needed, varying the layout as desired
+    {
+        id: 3,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_480/lsci/db/PICTURES/CMS/376900/376966.jpg',
+        alt: 'Grace Harris moved to top of run charts on Friday',
+        layout: 'large',
+    },
+    {
+        id: 4,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_480/lsci/db/PICTURES/CMS/376900/376966.jpg',
+        alt: 'Grace Harris moved to top of run charts on Friday',
+        layout: 'small',
+    },
+    {
+        id: 5,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_480/lsci/db/PICTURES/CMS/376900/376966.jpg',
+        alt: 'Grace Harris moved to top of run charts on Friday',
+        layout: 'small',
+    },
+
+    {
+        id: 5,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_480/lsci/db/PICTURES/CMS/376900/376966.jpg',
+        alt: 'Grace Harris moved to top of run charts on Friday',
+        layout: 'large',
+    },
+    // Continue with other photos
 ];

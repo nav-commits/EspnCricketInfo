@@ -8,4 +8,5 @@ export interface CardProps {
     padding?: string;
     showContentTop?: React.ReactNode;
     width?: string;
+    marginBottom?: string;
 }

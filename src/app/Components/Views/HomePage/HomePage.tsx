@@ -14,6 +14,9 @@ import {
     matchHighlights,
     cricketMatches,
     trendingPlayers,
+    tabs,
+    carouselItems,
+    photos,
 } from '@/app/Utils/Data';
 import ImageCarousel from '../../Molecules/ImageCarousel/ImageCarousel';
 import ItemDisplayGrid from '../../Organisms/ItemDisplayGrid/ItemDisplayGrid';
@@ -92,52 +95,6 @@ const HomepageContent: React.FC = () => {
         }
     };
 
-    const tabs = [
-        { name: 'Matches', count: 26 },
-        { name: 'AFG v IRE', count: 1 },
-        { name: 'BPL 2024', count: 1 },
-        { name: 'WPL', count: 2 },
-        { name: 'NZ v AUS', count: 1 },
-        { name: 'WCL 2', count: 1 },
-        { name: 'Sheffield Shield', count: 3 },
-        { name: 'Plunket Shield', count: 3 },
-        { name: 'Durham in ZIM', count: 1 },
-        { name: 'CSA 4-Day DIV1', count: 1 },
-        { name: 'CWC Play-off', count: 3 },
-        { name: 'Nepal Tri-Nation', count: 2 },
-        { name: 'Dang CL', count: 3 },
-        { name: 'Ranji Trophy', count: 2 },
-        { name: 'PSL 2024', count: 2 },
-    ];
-
-    const carouselItems = [
-        {
-            src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/374900/374946.6.jpg',
-            alt: 'MAR 01',
-
-            description: 'India vs England has been a tale of two very good captains',
-        },
-
-        {
-            src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
-            alt: 'MAR 01',
-
-            description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
-        },
-        {
-            src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
-            alt: 'MAR 01',
-
-            description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
-        },
-        {
-            src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
-            alt: 'MAR 01',
-
-            description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
-        },
-    ];
-
     return (
         <>
             <div style={{ backgroundColor: '#0298DB' }}>
@@ -154,6 +111,7 @@ const HomepageContent: React.FC = () => {
                         style={{
                             display: 'flex',
                             gap: '5px',
+                            marginBottom: '20px',
                         }}
                     >
                         {tabs.map((tab, index) => (
@@ -182,68 +140,90 @@ const HomepageContent: React.FC = () => {
                     </div>
                     <Swiper
                         modules={[Navigation, Pagination]}
-                        spaceBetween={5} // Small gap between cards
-                        slidesPerView={4} // Adjust based on your layout requirements
+                        spaceBetween={6}
+                        slidesPerView={4}
                         navigation={true}
                     >
                         {cricketMatches.map((match, index) => (
-                            <SwiperSlide key={index}>
-                                <Card
-                                    width={'290px'}
-                                    showContentBelow={
-                                        <>
-                                            <div>
+                            <SwiperSlide
+                                key={index}
+                                style={{
+                                    padding: '8px',
+                                    background: 'white',
+                                    color: 'black',
+                                    borderRadius: '10px',
+                                }}
+                            >
+                                <div style={{ width: '288px' }}>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'center',
+                                        }}
+                                    >
+                                        <div
+                                            style={{
+                                                fontSize: '12px',
+                                                marginLeft: '5px',
+                                            }}
+                                        >
+                                            {match.stumps}
+                                        </div>
+                                    </div>
+                                    {match.match.teams.map((team, teamIndex) => (
+                                        <div
+                                            key={teamIndex}
+                                            className={liveScoreStyles['team-container']}
+                                            style={{
+                                                display: 'flex',
+                                                justifyContent: 'space-between',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            <div
+                                                className={liveScoreStyles['team-container--inner']}
+                                                style={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                }}
+                                            >
+                                                <Image
+                                                    src={team.flag}
+                                                    alt={`${team.name} Flag`}
+                                                    width={20}
+                                                    height={20}
+                                                    style={{ marginRight: '8px' }}
+                                                />
                                                 <p
-                                                    style={{
-                                                        fontSize: '12px',
-                                                        color: 'rgb(236, 150, 48)',
-                                                        fontWeight: 'bold',
-                                                    }}
+                                                    className={
+                                                        liveScoreStyles['team-container--name']
+                                                    }
+                                                    style={{ fontWeight: 'bold', fontSize: '13px' }}
                                                 >
-                                                    {match.stumps}
-                                                </p>
-                                                <p
-                                                    style={{ fontSize: '12px' }}
-                                                    className={liveScoreStyles['grid-item--header']}
-                                                >
-                                                    {match.match.matchInfo.description}
+                                                    {team.name}
                                                 </p>
                                             </div>
-                                            {match.match.teams.map((team, teamIndex) => (
-                                                <div
-                                                    key={teamIndex}
-                                                    className={liveScoreStyles['team-container']}
-                                                    style={{ fontSize: '12px' }} // Consider moving inline styles to CSS classes for maintainability
-                                                >
-                                                    <div
-                                                        className={
-                                                            liveScoreStyles['team-container--inner']
-                                                        }
-                                                    >
-                                                        <Image
-                                                            src={team.flag}
-                                                            alt={`${team.name} Flag`}
-                                                            width={15}
-                                                            height={15}
-                                                            style={{ marginRight: '8px' }}
-                                                        />
-                                                        <p
-                                                            style={{ fontSize: '12px' }}
-                                                            className={
-                                                                liveScoreStyles[
-                                                                    'team-container--name'
-                                                                ]
-                                                            }
-                                                        >
-                                                            {team.name}
-                                                        </p>
-                                                    </div>
-                                                    <p>{team.score}</p>
-                                                </div>
-                                            ))}
-                                        </>
-                                    }
-                                />
+                                            <div style={{ fontWeight: 'bold', fontSize: '13px' }}>
+                                                {team.score}
+                                            </div>
+                                        </div>
+                                    ))}
+                                    <div
+                                        style={{
+                                            borderTop: '1px solid #eee',
+                                            fontSize: '12px',
+                                            padding: '10px',
+                                            gap: '10px',
+                                            display: 'flex',
+                                        }}
+                                    >
+                                        <span>Schedule</span>
+                                        <span>Table</span>
+                                        <span>Report</span>
+                                        <span>Series</span>
+                                    </div>
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
@@ -385,7 +365,7 @@ const HomepageContent: React.FC = () => {
                                         display: 'flex',
                                         flexWrap: 'wrap',
                                         padding: '10px',
-                                        gap:'10px',
+                                        gap: '10px',
                                         fontSize: '12px',
                                     }}
                                 >
@@ -399,6 +379,7 @@ const HomepageContent: React.FC = () => {
                                 </div>
                             }
                             paddingBottom='10px'
+                            marginBottom='20px'
                         />
 
                         <div className={styles['show-container']}>
@@ -496,6 +477,108 @@ const HomepageContent: React.FC = () => {
                                     </div>
                                 }
                             />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style={{ backgroundColor: 'black', padding: '20px' }}>
+                <div
+                    style={{
+                        marginRight: 'auto',
+                        marginLeft: 'auto',
+                        maxWidth: '1086px',
+                        padding: '40px',
+                    }}
+                >
+                    <div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                color: 'white',
+                            }}
+                        >
+                            <h3 style={{ position: 'relative', right: '30px' }}>Photos</h3>
+                            <h4 style={{ color: 'rgb(3, 169, 245)' }}>See All</h4>
+                        </div>
+                        <div>
+                            <div
+                                className={styles['images-container']}
+                                style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}
+                            >
+                                {/* First two small images stacked in a column */}
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        gap: '10px',
+                                    }}
+                                >
+                                    {photos.slice(0, 2).map((photo) => (
+                                        <Image
+                                            key={photo.id}
+                                            src={photo.src}
+                                            alt={photo.alt}
+                                            width={120} // Adjust based on your responsive design
+                                            height={120}
+                                            className={styles['image-small']}
+                                            style={{ borderRadius: '10px' }}
+                                        />
+                                    ))}
+                                </div>
+
+                                {/* Next large image */}
+                                <div>
+                                    {' '}
+                                    {/* This div ensures the large image is in its own row */}
+                                    <Image
+                                        key={photos[2].id}
+                                        src={photos[2].src}
+                                        alt={photos[2].alt}
+                                        width={420} // Adjust based on your responsive design
+                                        height={280}
+                                        className={styles['image-large']}
+                                        style={{ borderRadius: '10px' }}
+                                    />
+                                </div>
+
+                                {/* Next two small images stacked in a column */}
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        gap: '10px',
+                                    }}
+                                >
+                                    {photos.slice(3, 5).map((photo) => (
+                                        <Image
+                                            key={photo.id}
+                                            src={photo.src}
+                                            alt={photo.alt}
+                                            width={120} // Adjust based on your responsive design
+                                            height={120}
+                                            className={styles['image-small']}
+                                            style={{ borderRadius: '10px' }}
+                                        />
+                                    ))}
+                                </div>
+
+                                {/* Last large image */}
+                                <div>
+                                    {' '}
+                                    {/* This div ensures the last large image is in its own row */}
+                                    <Image
+                                        key={photos[5].id}
+                                        src={photos[5].src}
+                                        alt={photos[5].alt}
+                                        width={430} // Adjust based on your responsive design
+                                        height={300}
+                                        className={styles['image-large']}
+                                        style={{ borderRadius: '10px' }}
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
