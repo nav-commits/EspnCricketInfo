@@ -22,8 +22,9 @@ import ImageCarousel from '../../Molecules/ImageCarousel/ImageCarousel';
 import ItemDisplayGrid from '../../Organisms/ItemDisplayGrid/ItemDisplayGrid';
 import NavBarContent from '../../Organisms/NavBarContent/NavBarContent';
 import Image from 'next/image';
-import liveScoreStyles from '../../Views/LiveScoresPage/LiveScoresPage.module.scss';
+
 import LinkButton from '../../Atoms/LinkButton/LinkButton';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -41,7 +42,25 @@ const HomepageContent: React.FC = () => {
                         src='https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/esci/media/motion/2024/0202/dm_240202_INET_CRIC_indveng_t2d1_zoomedin_nonbranded_global/dm_240202_INET_CRIC_indveng_t2d1_zoomedin_nonbranded_global.jpg'
                         alt='Aus vs WI Highlights'
                         title='Australia takes on West Indies in a thrilling match'
-                        description='A detailed recap of the match between Australia and West Indies.'
+                        description={
+                            <div>
+                                A detailed recap of the match between Australia and West Indies.
+                                <div>
+                                    {links.map((link, index) => (
+                                        <div key={index}>
+                                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                <KeyboardArrowRightIcon
+                                                    style={{ color: '#03a9f4' }}
+                                                />
+                                                <span style={{ fontSize: '12px' }}>
+                                                    {link.linkText}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        }
                         imageVideoIcon={<ImageVideoIcon width='55px' height='55px' />}
                     />
                 );
@@ -52,7 +71,27 @@ const HomepageContent: React.FC = () => {
                         src='https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375209.6.jpg'
                         alt='Ind vs Eng Highlights'
                         title='India battles England in a day full of surprises'
-                        description='Highlights and key moments from the India vs England match.'
+                        description={
+                            <div>
+                                Highlights and key moments from the India vs England match.
+                                <div
+                                    className={`${styles.flex} ${styles.flexCol} ${styles.gapY1} ${styles.mt4}`}
+                                >
+                                    {links.map((link, index) => (
+                                        <div key={index}>
+                                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                <KeyboardArrowRightIcon
+                                                    style={{ color: '#03a9f4' }}
+                                                />
+                                                <span style={{ fontSize: '12px' }}>
+                                                    {link.linkText}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        }
                         imageVideoIcon={<ImageVideoIcon width='55px' height='55px' />}
                     />
                 );
@@ -63,7 +102,27 @@ const HomepageContent: React.FC = () => {
                         src='https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375213.6.jpg'
                         alt='SL vs Afg Highlights'
                         title='Sri Lanka faces Afghanistan in an intense clash'
-                        description='Catch all the action from the Sri Lanka vs Afghanistan game.'
+                        description={
+                            <div>
+                                Catch all the action from the Sri Lanka vs Afghanistan game.
+                                <div
+                                    className={`${styles.flex} ${styles.flexCol} ${styles.gapY1} ${styles.mt4}`}
+                                >
+                                    {links.map((link, index) => (
+                                        <div key={index}>
+                                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                <KeyboardArrowRightIcon
+                                                    style={{ color: '#03a9f4' }}
+                                                />
+                                                <span style={{ fontSize: '12px' }}>
+                                                    {link.linkText}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        }
                         imageVideoIcon={<ImageVideoIcon width='55px' height='55px' />}
                     />
                 );
@@ -74,7 +133,27 @@ const HomepageContent: React.FC = () => {
                         src='https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375100/375190.6.jpg'
                         alt='Ind A vs Lions Highlights'
                         title='India A vs Lions: A Test of Future Stars'
-                        description='Emerging talents from India A and Lions go head-to-head.'
+                        description={
+                            <div>
+                                Emerging talents from India A and Lions go head-to-head.
+                                <div
+                                    className={`${styles.flex} ${styles.flexCol} ${styles.gapY1} ${styles.mt4}`}
+                                >
+                                    {links.map((link, index) => (
+                                        <div key={index}>
+                                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                <KeyboardArrowRightIcon
+                                                    style={{ color: '#03a9f4' }}
+                                                />
+                                                <span style={{ fontSize: '12px' }}>
+                                                    {link.linkText}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        }
                         imageVideoIcon={<ImageVideoIcon width='55px' height='55px' />}
                     />
                 );
@@ -85,7 +164,31 @@ const HomepageContent: React.FC = () => {
                         src='https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_720/lsci/db/PICTURES/CMS/375200/375215.6.jpg'
                         alt='ILT20 Highlights'
                         title="Highlights from the ILT20: Cricket's Newest Extravaganza"
-                        description='The best moments and performances from the inaugural ILT20 league.'
+                        description={
+                            <div>
+                                The best moments and performances from the inaugural ILT20 league..
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        gap: '10px',
+                                    }}
+                                >
+                                    {links.map((link, index) => (
+                                        <div key={index}>
+                                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                <KeyboardArrowRightIcon
+                                                    style={{ color: '#03a9f4' }}
+                                                />
+                                                <span style={{ fontSize: '12px' }}>
+                                                    {link.linkText}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        }
                         imageVideoIcon={<ImageVideoIcon width='55px' height='55px' />}
                     />
                 );
@@ -94,6 +197,32 @@ const HomepageContent: React.FC = () => {
                 return null;
         }
     };
+
+    const links = [
+        {
+            href: '/story/nz-vs-aus-1st-test-glenn-phillips-is-doing-the-job-neil-wagner-used-to-do-for-new-zealand-1423261',
+            title: 'Malcolm: No Wagner, no cry - Phillips is on the job for NZ',
+            linkText: 'Malcolm: No Wagner, no cry - Phillips is on the job for NZ',
+        },
+        // Add more link objects here
+        {
+            href: '/series/australia-in-new-zealand-2023-24-1388188/new-zealand-vs-australia-1st-test-1388226/match-report-3',
+            title: "3rd day report: NZ have hope but Lyon is Australia's ace",
+            linkText: "3rd day report: NZ have hope but Lyon is Australia's ace",
+        },
+        {
+            href: '/story/ind-vs-eng-1st-test-2021-22-1249382',
+            title: 'Kohli: We are not looking to survive, we are looking to win',
+            linkText: 'Kohli: We are not looking to survive, we are looking to win',
+        },
+        {
+            href: '/story/ind-vs-eng-1st-test-2021-22-1249382',
+            title: 'Kohli: We are not looking to survive, we are looking to win',
+            linkText: 'Kohli: We are not looking to survive, we are looking to win',
+        },
+        
+        // Continue adding links as needed
+    ];
 
     return (
         <>
@@ -141,122 +270,99 @@ const HomepageContent: React.FC = () => {
                     </div>
                     <Swiper
                         modules={[Navigation, Pagination]}
-                        spaceBetween={6}
-                        slidesPerView={4}
+                        spaceBetween={6} // Reduced space between slides for a closer appearance
+                        slidesPerView={4} // Adjust this value as needed to fit the screen size
                         navigation={true}
+                        style={{
+                            padding: '2px', // Reduce padding for a tighter layout
+                        }}
                     >
                         {cricketMatches.map((match, index) => (
                             <SwiperSlide
                                 key={index}
                                 style={{
-                                    padding: '8px',
+                                    padding: '4px',
                                     background: 'white',
                                     color: 'black',
                                     borderRadius: '10px',
+                                    height: '134px',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'space-between',
                                 }}
                             >
-                                <>
-                                    <div
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        fontSize: '12px',
+                                    }}
+                                >
+                                    <span
                                         style={{
-                                            display: 'flex',
-                                            gap:'4px',
-                                            alignItems: 'center',
+                                            fontWeight: 'bold',
+                                            color: 'rgb(236, 150, 48)',
+                                            padding: '5px',
                                         }}
                                     >
-                                        <p
-                                            style={{
-                                                fontSize: '12px',
-                                                marginLeft: '4px',
-                                                fontWeight: 'bold',
-                                                color: 'rgb(236, 150, 48)',
-                                            }}
-                                        >
-                                            {match.stumps}
-                                        </p>
-
-                                        <p
-                                            style={{
-                                                fontSize: '10px',
-                                                marginLeft: '5px',
-                                            }}
-                                        >
-                                            {match?.match?.matchInfo?.description}
-                                        </p>
+                                        {match.stumps}
+                                    </span>
+                                    <span
+                                        style={{
+                                            marginLeft: '5px',
+                                            fontSize: '10px',
+                                        }}
+                                    >
+                                        • {match?.match?.matchInfo?.description}
+                                    </span>
+                                </div>
+                                {match.match.teams.map((team, teamIndex) => (
+                                    <div
+                                        key={teamIndex}
+                                        style={{
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'center',
+                                            fontSize: '13px',
+                                        }}
+                                    >
+                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                            <Image
+                                                src={team.flag}
+                                                alt={`${team.name} Flag`}
+                                                width={20}
+                                                height={20}
+                                                style={{ marginRight: '8px' }}
+                                            />
+                                            <span style={{ fontWeight: 'bold' }}>{team.name}</span>
+                                        </div>
+                                        <span style={{ fontWeight: 'bold' }}>{team.score}</span>
                                     </div>
-                                    {match.match.teams.map((team, teamIndex) => (
-                                        <div key={teamIndex}>
-                                            <div
-                                                className={liveScoreStyles['team-container']}
-                                                style={{
-                                                    display: 'flex',
-                                                    justifyContent: 'space-between',
-                                                    alignItems: 'center',
-                                                }}
-                                            >
-                                                <div
-                                                    className={
-                                                        liveScoreStyles['team-container--inner']
-                                                    }
-                                                    style={{
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                    }}
-                                                >
-                                                    <Image
-                                                        src={team.flag}
-                                                        alt={`${team.name} Flag`}
-                                                        width={20}
-                                                        height={20}
-                                                        style={{ marginRight: '8px' }}
-                                                    />
-                                                    <p
-                                                        className={
-                                                            liveScoreStyles['team-container--name']
-                                                        }
-                                                        style={{
-                                                            fontWeight: 'bold',
-                                                            fontSize: '13px',
-                                                        }}
-                                                    >
-                                                        {team.name}
-                                                    </p>
-                                                </div>
-                                                <div
-                                                    style={{ fontWeight: 'bold', fontSize: '13px' }}
-                                                >
-                                                    {team.score}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                    <>
-                                        {match.textUnderScore && (
-                                            <div
-                                                style={{
-                                                    fontSize: '12px', // Smaller font size for the additional text
-                                                    marginTop: '4px', // Margin top to separate it from the score line
-                                                    marginBottom: '5px',
-                                                }}
-                                            >
-                                                {match.textUnderScore}
-                                            </div>
-                                        )}
-                                        <div
-                                            style={{
-                                                borderTop: '1px solid #eee',
-                                                fontSize: '12px',
-                                                paddingTop: '6px',
-                                                gap: '10px',
-                                                display: 'flex',
-                                            }}
-                                        >
-                                            <span>Schedule</span>
-                                            <span>Table</span>
-                                            <span>Report</span>
-                                            <span>Series</span>
-                                        </div>
-                                    </>
-                                </>
+                                ))}
+                                {match.textUnderScore && (
+                                    <div
+                                        style={{
+                                            fontSize: '12px',
+                                            marginTop: '4px',
+                                        }}
+                                    >
+                                        {match.textUnderScore}
+                                    </div>
+                                )}
+                                <div
+                                    style={{
+                                        borderTop: '1px solid #eee',
+                                        paddingTop: '6px',
+                                        display: 'flex',
+                                        gap: '10px',
+                                        fontSize: '12px',
+                                    }}
+                                >
+                                    <span>Schedule</span>
+                                    <span>Table</span>
+                                    <span>Report</span>
+                                    <span>Series</span>
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
