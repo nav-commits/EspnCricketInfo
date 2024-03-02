@@ -44,7 +44,37 @@ const HomepageContent: React.FC = () => {
                         title='Australia takes on West Indies in a thrilling match'
                         description={
                             <div>
-                                A detailed recap of the match between Australia and West Indies.
+                                <div className={styles.liveScoreContainer}>
+                                    <div className={styles.scoreDetails}>
+                                        <div className={styles.liveIndicator}></div>
+                                        <div>
+                                            <span className={styles.innings}>2nd Inn</span>
+                                            <span
+                                                className={`${styles.teamName} ${styles.fontMedium}`}
+                                            >
+                                                NZ
+                                            </span>
+                                            <span className={styles.score}>179 & 115/3</span>
+                                            <span className={styles.overDetails}>
+                                                (45 ov, T:369)
+                                            </span>
+                                            <span
+                                                className={`${styles.versus} ${styles.textTypoMid3}`}
+                                            >
+                                                vs
+                                            </span>
+                                            <span
+                                                className={`${styles.otherTeamName} ${styles.fontMedium}`}
+                                            >
+                                                AUS
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <KeyboardArrowRightIcon
+                                        style={{ color: '#03a9f4', fontSize: '16px' }}
+                                    />
+                                </div>
+                                
                                 <div>
                                     {links.map((link, index) => (
                                         <div key={index}>
@@ -73,10 +103,37 @@ const HomepageContent: React.FC = () => {
                         title='India battles England in a day full of surprises'
                         description={
                             <div>
-                                Highlights and key moments from the India vs England match.
-                                <div
-                                    className={`${styles.flex} ${styles.flexCol} ${styles.gapY1} ${styles.mt4}`}
-                                >
+                                <div className={styles.liveScoreContainer}>
+                                    <div className={styles.scoreDetails}>
+                                        <div className={styles.liveIndicator}></div>
+                                        <div>
+                                            <span className={styles.innings}>2nd Inn</span>
+                                            <span
+                                                className={`${styles.teamName} ${styles.fontMedium}`}
+                                            >
+                                                NZ
+                                            </span>
+                                            <span className={styles.score}>179 & 115/3</span>
+                                            <span className={styles.overDetails}>
+                                                (45 ov, T:369)
+                                            </span>
+                                            <span
+                                                className={`${styles.versus} ${styles.textTypoMid3}`}
+                                            >
+                                                vs
+                                            </span>
+                                            <span
+                                                className={`${styles.otherTeamName} ${styles.fontMedium}`}
+                                            >
+                                                AUS
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <KeyboardArrowRightIcon
+                                        style={{ color: '#03a9f4', fontSize: '16px' }}
+                                    />
+                                </div>
+                                <div>
                                     {links.map((link, index) => (
                                         <div key={index}>
                                             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -104,10 +161,37 @@ const HomepageContent: React.FC = () => {
                         title='Sri Lanka faces Afghanistan in an intense clash'
                         description={
                             <div>
-                                Catch all the action from the Sri Lanka vs Afghanistan game.
-                                <div
-                                    className={`${styles.flex} ${styles.flexCol} ${styles.gapY1} ${styles.mt4}`}
-                                >
+                                <div className={styles.liveScoreContainer}>
+                                    <div className={styles.scoreDetails}>
+                                        <div className={styles.liveIndicator}></div>
+                                        <div>
+                                            <span className={styles.innings}>2nd Inn</span>
+                                            <span
+                                                className={`${styles.teamName} ${styles.fontMedium}`}
+                                            >
+                                                NZ
+                                            </span>
+                                            <span className={styles.score}>179 & 115/3</span>
+                                            <span className={styles.overDetails}>
+                                                (45 ov, T:369)
+                                            </span>
+                                            <span
+                                                className={`${styles.versus} ${styles.textTypoMid3}`}
+                                            >
+                                                vs
+                                            </span>
+                                            <span
+                                                className={`${styles.otherTeamName} ${styles.fontMedium}`}
+                                            >
+                                                AUS
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <KeyboardArrowRightIcon
+                                        style={{ color: '#03a9f4', fontSize: '16px' }}
+                                    />
+                                </div>
+                                <div>
                                     {links.map((link, index) => (
                                         <div key={index}>
                                             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -135,10 +219,37 @@ const HomepageContent: React.FC = () => {
                         title='India A vs Lions: A Test of Future Stars'
                         description={
                             <div>
-                                Emerging talents from India A and Lions go head-to-head.
-                                <div
-                                    className={`${styles.flex} ${styles.flexCol} ${styles.gapY1} ${styles.mt4}`}
-                                >
+                                <div className={styles.liveScoreContainer}>
+                                    <div className={styles.scoreDetails}>
+                                        <div className={styles.liveIndicator}></div>
+                                        <div>
+                                            <span className={styles.innings}>2nd Inn</span>
+                                            <span
+                                                className={`${styles.teamName} ${styles.fontMedium}`}
+                                            >
+                                                NZ
+                                            </span>
+                                            <span className={styles.score}>179 & 115/3</span>
+                                            <span className={styles.overDetails}>
+                                                (45 ov, T:369)
+                                            </span>
+                                            <span
+                                                className={`${styles.versus} ${styles.textTypoMid3}`}
+                                            >
+                                                vs
+                                            </span>
+                                            <span
+                                                className={`${styles.otherTeamName} ${styles.fontMedium}`}
+                                            >
+                                                AUS
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <KeyboardArrowRightIcon
+                                        style={{ color: '#03a9f4', fontSize: '16px' }}
+                                    />
+                                </div>
+                                <div>
                                     {links.map((link, index) => (
                                         <div key={index}>
                                             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -166,7 +277,36 @@ const HomepageContent: React.FC = () => {
                         title="Highlights from the ILT20: Cricket's Newest Extravaganza"
                         description={
                             <div>
-                                The best moments and performances from the inaugural ILT20 league..
+                                <div className={styles.liveScoreContainer}>
+                                    <div className={styles.scoreDetails}>
+                                        <div className={styles.liveIndicator}></div>
+                                        <div>
+                                            <span className={styles.innings}>2nd Inn</span>
+                                            <span
+                                                className={`${styles.teamName} ${styles.fontMedium}`}
+                                            >
+                                                NZ
+                                            </span>
+                                            <span className={styles.score}>179 & 115/3</span>
+                                            <span className={styles.overDetails}>
+                                                (45 ov, T:369)
+                                            </span>
+                                            <span
+                                                className={`${styles.versus} ${styles.textTypoMid3}`}
+                                            >
+                                                vs
+                                            </span>
+                                            <span
+                                                className={`${styles.otherTeamName} ${styles.fontMedium}`}
+                                            >
+                                                AUS
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <KeyboardArrowRightIcon
+                                        style={{ color: '#03a9f4', fontSize: '16px' }}
+                                    />
+                                </div>
                                 <div
                                     style={{
                                         display: 'flex',

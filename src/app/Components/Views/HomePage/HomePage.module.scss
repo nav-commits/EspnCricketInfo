@@ -213,3 +213,66 @@
     /* Enable scrolling despite the scrollbar being hidden */
     overflow-y: auto;
 }
+
+
+.liveScoreContainer {
+    background-color: #f0f4f8;
+    /* Example background color, adjust as needed */
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.liveIndicator {
+    animation: pulse 1.5s infinite;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #ff4d4f;
+    /* Adjust the color as needed */
+    margin-right: 8px;
+}
+
+.scoreDetails {
+    display: flex;
+    align-items: center;
+}
+
+.innings {
+    background-color: rgba(0, 123, 255, 0.2);
+    /* Example color, adjust as needed */
+    padding: 2px 4px;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.teamName,
+.score,
+.versus,
+.otherTeamName {
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.overDetails {
+    font-size: 10px;
+}
+
+/* Add keyframes for the pulse effect */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
