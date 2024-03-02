@@ -1,0 +1,54 @@
+
+
+    .grid-item--description {
+        font-size: 12px;
+        color: rgb(150, 150, 150);
+    }
+
+    .grid-item--header {
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(236, 150, 48);
+    }
+
+    .grid-item--match-day {
+        margin-top: 20px;
+       
+    }
+
+    .grid-item--content {
+        font-weight: 800;
+        font-weight: 13px;
+
+    }
+
+.team-container {
+    display: flex;
+    justify-content: space-between;
+
+    .team-container--inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .team-container--name {
+        font-size: 15px;
+    }
+
+    .team-container--flag {
+        border-radius: 5px;
+        margin-right: 20px;
+    }
+}
+
+.center__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1080px;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+}

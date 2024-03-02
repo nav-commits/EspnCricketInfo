@@ -4,8 +4,8 @@ type TabData = {
 };
 
 export interface TabsProps {
-    tabs: TabData[];
-    onTabSelect: (label: string) => void;
+    tabs?: TabData[];
+    onTabSelect?: (label: string) => void;
     borderBottom?: string;
     handleTabClick?: (tabName: string) => void;
     currentTab?: boolean;

@@ -5,19 +5,24 @@ import { CardProps } from './Card.types';
 const Card: React.FC<CardProps> = ({
     headerText,
     tabs,
-    showContent,
+    showContentBelow,
     paddingBottom,
     cardSize,
     padding,
+    showContentTop,
+    marginBottom,
+    width
+   
 }) => {
     return (
         <div
             className={`${styles.card__container} ${cardSize ? styles[cardSize] : ''}`}
-            style={{ paddingBottom, padding: padding }}
+            style={{ paddingBottom, padding: padding, marginBottom: marginBottom, width: width}}
         >
+            {showContentTop && showContentTop}
             {headerText && headerText}
             {tabs && tabs}
-            {typeof showContent === 'function' ? showContent() : showContent}
+            {typeof showContentBelow === 'function' ? showContentBelow() : showContentBelow}
         </div>
     );
 };

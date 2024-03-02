@@ -16,7 +16,7 @@ const MatchHighlight: React.FC<MatchHighlightProps> = ({
         {title && description && (
             <div>
                 <h2>{title}</h2>
-                <p>{description}</p>
+                {description}
             </div>
         )}
         <div className={styles['match__container--icon']}>{imageVideoIcon}</div>

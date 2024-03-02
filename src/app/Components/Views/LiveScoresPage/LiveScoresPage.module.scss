@@ -27,6 +27,8 @@
     padding-right: 15px;
     border-top: 1px solid rgb(237, 238, 240);
     font-size: 12px;
+    text-decoration: none;
+    color: black;
 
     .grid-item--description {
         font-size: 10.5px;
@@ -37,7 +39,6 @@
         font-size: 12px;
         font-weight: bold;
         color: rgb(236, 150, 48);
-
     }
 
     .grid-item--match-day {

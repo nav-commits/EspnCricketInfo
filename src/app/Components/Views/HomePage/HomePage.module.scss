@@ -1,4 +1,5 @@
 @import '../../../styles/main.scss';
+
 .center__container {
     display: flex;
     flex-direction: column;
@@ -94,12 +95,12 @@
         display: none;
     }
 
-    .scroll-container > div > * {
+    .scroll-container>div>* {
         flex: 0 0 auto;
         margin-right: 10px;
     }
 
-    .scroll-container > div > :last-child {
+    .scroll-container>div> :last-child {
         margin-right: 0;
     }
 }
@@ -151,4 +152,64 @@
     .grid-item:nth-child(odd) {
         border-right: none;
     }
+
+    .scores__tab-container {
+        display: none;
+    }
+}
+
+/* Base styles */
+.image-small {
+    border-radius: 10px;
+    height: 120px;
+    width: 120px;
+}
+
+.image-large {
+    border-radius: 10px;
+    height: 260px;
+    width: 440px;
+}
+
+/* Flex container for images */
+.images-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .image-small,
+    .image-large {
+        width: 100%;
+        /* Make images full width on smaller screens */
+        max-width: 120px;
+        /* Limiting size for small images */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+    .image-large {
+        max-width: 400px;
+        /* Adjusting max-width for large images for consistency */
+    }
+}
+
+.hide-scrollbar {
+
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+
+    /* Enable scrolling despite the scrollbar being hidden */
+    overflow-y: auto;
 }

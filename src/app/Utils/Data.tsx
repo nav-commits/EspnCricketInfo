@@ -18,6 +18,20 @@ export const linkButtons = [
     { text: 'Ask Cricinfo', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
 ];
 
+export const trendingPlayers = [
+    {
+        text: 'Cameron Green',
+        icon: <KeyboardArrowRightOutlinedIcon fontSize='small' />,
+    },
+    { text: 'Steven Smith', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Marnus Labuschagne', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Laura Wolvaardt', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Nathan Lyon', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Virat Kohli', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'James Fuller', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+    { text: 'Tim Southee', icon: <KeyboardArrowRightOutlinedIcon fontSize='small' /> },
+];
+
 export const stories = [
     {
         id: 1,
@@ -165,6 +179,25 @@ export const slides = [
     },
 ];
 
+export const slidesTwo = [
+    {
+        imageUrl: '10',
+        text: 'Test hundreds for Joe Root against India are the most by any batter.',
+    },
+    {
+        imageUrl: '10',
+        text: 'Test hundreds for Joe Root against India are the most by any batter.',
+    },
+    {
+        imageUrl: '10',
+        text: 'Test hundreds for Joe Root against India are the most by any batter.',
+    },
+    {
+        imageUrl: '10',
+        text: 'Test hundreds for Joe Root against India are the most by any batter.',
+    },
+];
+
 export const dataArray = [
     {
         imgSrc: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_160/lsci/db/PICTURES/CMS/374700/374703.6.jpg',
@@ -250,6 +283,7 @@ export const chips = [
 
 export const cricketMatches = [
     {
+        id: 1,
         stumps: 'Live',
         match: {
             matchInfo: {
@@ -267,11 +301,13 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Series Home',
         day: 'Gladiators chose to field.',
         label: [{ label: 'Men' }, { label: 'Domestic' }, { label: 'T20s' }],
     },
     {
+        id: 2,
         stumps: 'Today, 11:00PM',
         match: {
             matchInfo: {
@@ -291,12 +327,14 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Preview News',
         day: 'Match yet to begin',
         label: [{ label: "Int'l" }, { label: 'Tests' }, { label: 'Men' }],
     },
 
     {
+        id: 3,
         stumps: 'Result',
         match: {
             matchInfo: {
@@ -315,11 +353,13 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Summary Series Home',
         day: 'Bahrain won by 109 runs',
         label: [{ label: 'Men' }],
     },
     {
+        id: 4,
         stumps: 'Result',
         match: {
             matchInfo: {
@@ -338,12 +378,14 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Report, Photos, Videos',
         day: 'N/A',
         label: [{ label: 'Men' }, { label: 'Domestic' }],
     },
 
     {
+        id: 5,
         stumps: 'Live',
         match: {
             matchInfo: {
@@ -361,11 +403,147 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Day 3 - New Zealand need 258 runs.',
         additionalContent: 'Series Finale',
         day: 'Aussies chose to bat.',
         label: [{ label: 'Men' }, { label: "Int'l" }, { label: 'T20' }],
+        commentary: [
+            {
+                over: 84,
+                ball: 0.6,
+                bowler: "O'Rourke",
+                batsman: 'Green',
+                runs: 0,
+                description:
+                    "Full outside off, left alone, and he'll be able to come back tomorrow",
+                is_boundary: false,
+                is_wicket: false,
+            },
+            {
+                over: 84,
+                ball: 0.5,
+                bowler: "O'Rourke",
+                batsman: 'Green',
+                runs: 4,
+                description:
+                    "He's done it! Leans back and carves it away through backward point from outside off. Lets our a roar and celebrates. His second Test hundred. A fantastic knock in challenging conditions",
+                is_boundary: true,
+                is_wicket: false,
+            },
+            {
+                over: 84,
+                ball: 0.4,
+                bowler: "O'Rourke",
+                batsman: 'Green',
+                runs: 0,
+                description: 'Chopped down into the pitch outside off',
+                is_boundary: false,
+                is_wicket: false,
+            },
+            {
+                over: 84,
+                ball: 0.3,
+                bowler: "O'Rourke",
+                batsman: 'Green',
+                runs: 4,
+                description:
+                    "He still finds the rope! That's a great shot, short outside off, flayed through the off side and he's on 99",
+                is_boundary: true,
+                is_wicket: false,
+            },
+            {
+                over: 84,
+                ball: 0.2,
+                bowler: "O'Rourke",
+                batsman: 'Green',
+                runs: 0,
+                description:
+                    "A huge heave! Clears the front leg and aims for the hills, doesn't make contact",
+                is_boundary: false,
+                is_wicket: false,
+            },
+            {
+                over: 84,
+                ball: 0.1,
+                bowler: "O'Rourke",
+                batsman: 'Green',
+                runs: 4,
+                description:
+                    'Takes him on! Just wide of mid-on. Green clubs it down the ground, evades a diving Kuggeleijn',
+                is_boundary: true,
+                is_wicket: false,
+            },
+        ],
+        summary: {
+            stumps_day: 1,
+            runs: 12,
+            wickets: 0,
+            overs_completed: 84,
+            current_run_rate: null,
+            batting_team: 'Australia',
+            bowling_team: 'New Zealand',
+            batsman_stats: [
+                {
+                    name: 'Cameron Green',
+                    runs: 100,
+                    balls: null,
+                    fours: null,
+                    sixes: null,
+                    centuries: 1,
+                    half_centuries: null,
+                },
+            ],
+            bowler_stats: [
+                {
+                    name: "Will O'Rourke",
+                    overs: null,
+                    runs_given: 12,
+                    wickets_taken: 0,
+                },
+            ],
+            match_context:
+                "End of Day 1, absorbing cricket with final over drama as Cameron Green scores a century. Australia likely happier. Good platforms by Smith, Khawaja, and support by Mitch Marsh. Matt Henry and Will O'Rourke noted performances for New Zealand.",
+        },
+        end_of_over_summary: {
+            over: 85,
+            runs: 12,
+            total_runs: 279,
+            wickets: 9,
+            current_run_rate: 3.28,
+            batsman_at_crease: 'Cameron Green',
+            runs_scored_by_batsman_at_crease: 103,
+            balls_faced_by_batsman_at_crease: 155,
+            fours_by_batsman_at_crease: 16,
+            bowler_stats_over_one: 'William O’Rourke',
+            bowler_number_one: '20-8-59-2',
+            bowler_number_two: '20-6-54-3',
+            bowler_stats_over_two: 'Matt Henry 20-6-54-3',
+        },
+        match_summary: {
+            day_summary:
+                "That's stumps on the opening day. Absorbing cricket from start to finish capped by the final-over drama of Cameron Green bringing up a superb century. Feels like Australia will be the happier side overall. There's plenty in this pitch although, yes, it can flatten out here. They were put into bat by Tim Southee. Steven Smith and Usman Khawaja laid a good platform against bowling that was a little shorter, but either side of lunch New Zealand took charge. Mitch Marsh helped Green steady things before the latter took over with the lower order. Matt Henry the pick of the attack for New Zealand while Will O'Rourke was also good.",
+            player_quotes: [
+                {
+                    player: 'Cameron Green',
+                    quote: 'Obviously feels really good. Mainly with where we are as a team. It was a pretty tough wicket out there and I felt like the boys played pretty well. Just one of those days. Someone just needed to bat through so glad it was me. I sort of felt like in the 20th over it started to come back even more, than maybe the first 20. Nice to stick out there and hopefully put a semi-competitive total on the board.',
+                },
+            ],
+            viewer_comments: [
+                {
+                    commenter: 'KJ',
+                    comment:
+                        "All in all a good days cricket for the neutral but disappointing for NZ. They had Australia under pressure at times but couldn't be ruthless and finish the job. Australia won't be so kind. Australia well ahead now.",
+                },
+                {
+                    commenter: 'Jason mc',
+                    comment:
+                        'Sent in on a bit of an uneven track. Would take 279. Not sure what Cummins would have done of won the toss. Interest will be in the pitch 2nd day. Then we find out whether 279 is good or bad. Well poised overnight.',
+                },
+            ],
+        },
     },
     {
+        id: 6,
         stumps: 'Today, 2:00PM',
         match: {
             matchInfo: {
@@ -386,11 +564,13 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Match Report',
         day: 'Match ended',
         label: [{ label: "Int'l" }, { label: 'ODIs' }, { label: 'Men' }],
     },
     {
+        id: 7,
         stumps: 'Delayed',
         match: {
             matchInfo: {
@@ -407,11 +587,13 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Rain Delay',
         day: 'Match delayed due to rain.',
         label: [{ label: 'Men' }, { label: "Int'l" }, { label: 'T20' }],
     },
     {
+        id: 8,
         stumps: 'Result',
         match: {
             matchInfo: {
@@ -430,11 +612,13 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Match Summary',
         day: 'Bangladesh won by 130 runs',
         label: [{ label: 'Men' }, { label: 'ODIs' }],
     },
     {
+        id: 9,
         stumps: 'Result',
         match: {
             matchInfo: {
@@ -453,11 +637,13 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Full Scorecard',
         day: 'Afghanistan won by 3 wickets',
         label: [{ label: 'Men' }, { label: 'ODIs' }],
     },
     {
+        id: 10,
         stumps: 'Live',
         match: {
             matchInfo: {
@@ -477,11 +663,13 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Live Commentary',
         day: 'Day 4 in progress',
         label: [{ label: "Int'l" }, { label: 'Tests' }, { label: 'Men' }],
     },
     {
+        id: 11,
         stumps: 'Today, 9:00AM',
         match: {
             matchInfo: {
@@ -498,6 +686,7 @@ export const cricketMatches = [
                 },
             ],
         },
+        textUnderScore: 'Top Performer: Player XYZ',
         additionalContent: 'Match Preview',
         day: 'Match yet to begin',
         label: [{ label: 'Men' }, { label: "Int'l" }, { label: 'T20' }],
@@ -517,3 +706,103 @@ export const disableRules: { [key: string]: string[] } = {
     Youth: ['Domestic', 'Others', 'Women', 'FC', 'List A'],
     Women: ['Men', 'Youth', 'FC', 'List A'],
 };
+
+export const tabDataMatch = [
+    { label: 'Live' },
+    { label: 'Scoreboard' },
+    { label: 'Report' },
+    { label: 'Commentary' },
+    { label: 'Live Stats' },
+    { label: 'News' },
+    { label: 'Photos' },
+    { label: 'Playing XI' },
+    { label: 'Bet' },
+];
+
+export const tabs = [
+    { name: 'Matches', count: 26 },
+    { name: 'AFG v IRE', count: 1 },
+    { name: 'BPL 2024', count: 1 },
+    { name: 'WPL', count: 2 },
+    { name: 'NZ v AUS', count: 1 },
+    { name: 'WCL 2', count: 1 },
+    { name: 'Sheffield Shield', count: 3 },
+    { name: 'Plunket Shield', count: 3 },
+    { name: 'Durham in ZIM', count: 1 },
+    { name: 'CSA 4-Day DIV1', count: 1 },
+    { name: 'CWC Play-off', count: 3 },
+    { name: 'Nepal Tri-Nation', count: 2 },
+    { name: 'Dang CL', count: 3 },
+    { name: 'Ranji Trophy', count: 2 },
+    { name: 'PSL 2024', count: 2 },
+];
+
+export const carouselItems = [
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/374900/374946.6.jpg',
+        alt: 'MAR 01',
+
+        description: 'India vs England has been a tale of two very good captains',
+    },
+
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
+        alt: 'MAR 01',
+
+        description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
+        alt: 'MAR 01',
+
+        description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
+    },
+    {
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/243500/243599.3.jpg',
+        alt: 'MAR 01',
+
+        description: 'Ask Steven: Who has scored the most Test hundreds in a calendar year?',
+    },
+];
+
+export const photos = [
+    {
+        id: 1,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_240/lsci/db/PICTURES/CMS/376900/376968.jpg',
+        alt: 'Fortune Barishal won their maiden BPL title',
+        layout: 'small', // Indicative of the photo size or layout style
+    },
+    {
+        id: 2,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_240/lsci/db/PICTURES/CMS/376900/376967.jpg',
+        alt: 'Grace Harris scored her first fifty of the WPL season',
+        layout: 'small',
+    },
+    // Add more photos as needed, varying the layout as desired
+    {
+        id: 3,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_480/lsci/db/PICTURES/CMS/376900/376966.jpg',
+        alt: 'Grace Harris moved to top of run charts on Friday',
+        layout: 'large',
+    },
+    {
+        id: 4,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_480/lsci/db/PICTURES/CMS/376900/376966.jpg',
+        alt: 'Grace Harris moved to top of run charts on Friday',
+        layout: 'small',
+    },
+    {
+        id: 5,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_480/lsci/db/PICTURES/CMS/376900/376966.jpg',
+        alt: 'Grace Harris moved to top of run charts on Friday',
+        layout: 'small',
+    },
+
+    {
+        id: 5,
+        src: 'https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_480/lsci/db/PICTURES/CMS/376900/376966.jpg',
+        alt: 'Grace Harris moved to top of run charts on Friday',
+        layout: 'large',
+    },
+    // Continue with other photos
+];
