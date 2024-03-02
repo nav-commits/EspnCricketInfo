@@ -113,6 +113,7 @@ const HomepageContent: React.FC = () => {
                             gap: '5px',
                             marginBottom: '20px',
                         }}
+                        className={styles['hide-scrollbar']}
                     >
                         {tabs.map((tab, index) => (
                             <div
@@ -154,76 +155,108 @@ const HomepageContent: React.FC = () => {
                                     borderRadius: '10px',
                                 }}
                             >
-                                <div style={{ width: '288px' }}>
+                                <>
                                     <div
                                         style={{
                                             display: 'flex',
-                                            justifyContent: 'space-between',
+                                            gap:'4px',
                                             alignItems: 'center',
                                         }}
                                     >
-                                        <div
+                                        <p
                                             style={{
                                                 fontSize: '12px',
-                                                marginLeft: '5px',
+                                                marginLeft: '4px',
+                                                fontWeight: 'bold',
+                                                color: 'rgb(236, 150, 48)',
                                             }}
                                         >
                                             {match.stumps}
-                                        </div>
-                                    </div>
-                                    {match.match.teams.map((team, teamIndex) => (
-                                        <div
-                                            key={teamIndex}
-                                            className={liveScoreStyles['team-container']}
+                                        </p>
+
+                                        <p
                                             style={{
-                                                display: 'flex',
-                                                justifyContent: 'space-between',
-                                                alignItems: 'center',
+                                                fontSize: '10px',
+                                                marginLeft: '5px',
                                             }}
                                         >
+                                            {match?.match?.matchInfo?.description}
+                                        </p>
+                                    </div>
+                                    {match.match.teams.map((team, teamIndex) => (
+                                        <div key={teamIndex}>
                                             <div
-                                                className={liveScoreStyles['team-container--inner']}
+                                                className={liveScoreStyles['team-container']}
                                                 style={{
                                                     display: 'flex',
+                                                    justifyContent: 'space-between',
                                                     alignItems: 'center',
                                                 }}
                                             >
-                                                <Image
-                                                    src={team.flag}
-                                                    alt={`${team.name} Flag`}
-                                                    width={20}
-                                                    height={20}
-                                                    style={{ marginRight: '8px' }}
-                                                />
-                                                <p
+                                                <div
                                                     className={
-                                                        liveScoreStyles['team-container--name']
+                                                        liveScoreStyles['team-container--inner']
                                                     }
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                    }}
+                                                >
+                                                    <Image
+                                                        src={team.flag}
+                                                        alt={`${team.name} Flag`}
+                                                        width={20}
+                                                        height={20}
+                                                        style={{ marginRight: '8px' }}
+                                                    />
+                                                    <p
+                                                        className={
+                                                            liveScoreStyles['team-container--name']
+                                                        }
+                                                        style={{
+                                                            fontWeight: 'bold',
+                                                            fontSize: '13px',
+                                                        }}
+                                                    >
+                                                        {team.name}
+                                                    </p>
+                                                </div>
+                                                <div
                                                     style={{ fontWeight: 'bold', fontSize: '13px' }}
                                                 >
-                                                    {team.name}
-                                                </p>
-                                            </div>
-                                            <div style={{ fontWeight: 'bold', fontSize: '13px' }}>
-                                                {team.score}
+                                                    {team.score}
+                                                </div>
                                             </div>
                                         </div>
                                     ))}
-                                    <div
-                                        style={{
-                                            borderTop: '1px solid #eee',
-                                            fontSize: '12px',
-                                            padding: '10px',
-                                            gap: '10px',
-                                            display: 'flex',
-                                        }}
-                                    >
-                                        <span>Schedule</span>
-                                        <span>Table</span>
-                                        <span>Report</span>
-                                        <span>Series</span>
-                                    </div>
-                                </div>
+                                    <>
+                                        {match.textUnderScore && (
+                                            <div
+                                                style={{
+                                                    fontSize: '12px', // Smaller font size for the additional text
+                                                    marginTop: '4px', // Margin top to separate it from the score line
+                                                    marginBottom: '5px',
+                                                }}
+                                            >
+                                                {match.textUnderScore}
+                                            </div>
+                                        )}
+                                        <div
+                                            style={{
+                                                borderTop: '1px solid #eee',
+                                                fontSize: '12px',
+                                                paddingTop: '6px',
+                                                gap: '10px',
+                                                display: 'flex',
+                                            }}
+                                        >
+                                            <span>Schedule</span>
+                                            <span>Table</span>
+                                            <span>Report</span>
+                                            <span>Series</span>
+                                        </div>
+                                    </>
+                                </>
                             </SwiperSlide>
                         ))}
                     </Swiper>
