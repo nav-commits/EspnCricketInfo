@@ -708,15 +708,15 @@ export const disableRules: { [key: string]: string[] } = {
 };
 
 export const tabDataMatch = [
-    { label: 'Live' },
+    { label: 'Summary' },
     { label: 'Scoreboard' },
     { label: 'Report' },
     { label: 'Commentary' },
-    { label: 'Live Stats' },
+    { label: 'Stats' },
+    { label: 'Tables' },
     { label: 'News' },
+    { label: 'Videos' },
     { label: 'Photos' },
-    { label: 'Playing XI' },
-    { label: 'Bet' },
 ];
 
 export const tabs = [
