@@ -50,7 +50,7 @@ const Match: React.FC<MatchProps> = ({ searchParams }) => {
     };
     const renderTabContent = () => {
         switch (selectedLabel) {
-            case 'Live':
+            case 'Summary':
                 return (
                     <div>
                         <p>live</p>
@@ -106,7 +106,6 @@ const Match: React.FC<MatchProps> = ({ searchParams }) => {
                                                 gap: '4px',
                                             }}
                                         >
-                                        
                                             {item.label}
                                             <i style={{ fontSize: '20px' }}>{item.icon}</i>{' '}
                                         </span>
@@ -267,7 +266,7 @@ const Match: React.FC<MatchProps> = ({ searchParams }) => {
                                                     justifyContent: 'center',
                                                     width: '40px',
                                                     height: '40px',
-                                                    borderRadius: '50%',
+                                                    borderRadius: '5px',
                                                     backgroundColor: comment.highlight
                                                         ? '#4CAF50'
                                                         : '#f0f0f0', // green for highlights, otherwise translucent
@@ -316,7 +315,13 @@ const Match: React.FC<MatchProps> = ({ searchParams }) => {
                         </div>
                     </>
                 );
-            case 'Live Stats':
+            case 'Stats':
+                return (
+                    <div>
+                        <p>live</p>
+                    </div>
+                );
+            case 'Tables':
                 return (
                     <div>
                         <p>live</p>
@@ -328,20 +333,14 @@ const Match: React.FC<MatchProps> = ({ searchParams }) => {
                         <p>live</p>
                     </div>
                 );
-            case 'Photos':
-                return (
-                    <div>
-                        <p>live</p>
-                    </div>
-                );
 
-            case 'Playing XI':
+            case 'Videos':
                 return (
                     <div>
                         <p>live</p>
                     </div>
                 );
-            case 'Bet':
+            case 'Photos':
                 return (
                     <div>
                         <p>live</p>
@@ -361,63 +360,176 @@ const Match: React.FC<MatchProps> = ({ searchParams }) => {
                         <>
                             <div
                                 style={{
-                                    borderBottom: '1px solid rgb(237, 238, 240)',
-                                    padding: '20px',
+                                    fontSize: '0.875rem',
                                 }}
                             >
                                 <div>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'center',
+                                        }}
+                                    >
+                                        <div
+                                            style={{
+                                                color: 'rbg(108, 109, 111)',
+                                                padding: '0.5rem',
+                                                paddingLeft: '1rem',
+                                                paddingRight: '1rem',
+                                            }}
+                                        >
+                                            <p>
+                                                <b>RESULT</b>
+                                            </p>
+                                            <p>
+                                                1st Test, Wellington, February 29 - March 03, 2024
+                                            </p>
+                                        </div>
+                                    </div>
                                     <div>
-                                        <p className={styles['grid-item--header']}>
-                                            {searchParams.name}
-                                        </p>
-                                        <p className={styles['grid-item--description']}>
-                                            {searchParams.description}
-                                        </p>
-                                    </div>
-                                    <div className={styles['team-container']}>
-                                        <div className={styles['team-container--inner']}>
-                                            <Image
-                                                src={searchParams.flag}
-                                                alt={'Team Flag'}
-                                                width={40}
-                                                height={40}
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                marginBottom: '0.25rem',
+                                            }}
+                                        >
+                                            {/* Team 1 Score */}
+                                            <div
+                                                className='ci-team-score'
                                                 style={{
-                                                    marginRight: '8px',
+                                                    display: 'flex',
+                                                    justifyContent: 'space-between',
+                                                    alignItems: 'center',
+                                                    marginBottom: '0.25rem',
+                                                    borderTop: '1px solid #ccc',
                                                 }}
-                                            />
+                                            >
+                                                <div
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        minWidth: 0,
+                                                        marginRight: '1.0rem',
+                                                        paddingTop: '0.25rem',
+                                                        paddingLeft: '0.5rem',
+                                                        paddingRight: '0.5rem',
+                                                    }}
+                                                >
+                                                    <Image
+                                                        src={searchParams.flag}
+                                                        alt={'Team Flag'}
+                                                        width={30}
+                                                        height={30}
+                                                        style={{
+                                                            marginRight: '8px',
+                                                        }}
+                                                    />
 
-                                            <p className={styles['team-container--name']}>
-                                                {searchParams.team1}
-                                            </p>
-                                        </div>
-                                        <p>{searchParams.score1}</p>
-                                    </div>
+                                                    <span
+                                                        style={{
+                                                            fontSize: 'larger',
+                                                            fontWeight: 'bold',
 
-                                    <div className={styles['team-container']}>
-                                        <div className={styles['team-container--inner']}>
-                                            <Image
-                                                src={searchParams.flag2}
-                                                alt={'Team Flag Two'}
-                                                width={40}
-                                                height={40}
+                                                            display: 'block',
+                                                            overflow: 'hidden',
+
+                                                            whiteSpace: 'nowrap',
+                                                        }}
+                                                    >
+                                                        {searchParams.team1}
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    style={{
+                                                        textAlign: 'right',
+                                                        whiteSpace: 'nowrap',
+
+                                                        paddingLeft: '0.5rem',
+                                                        paddingRight: '0.5rem',
+                                                    }}
+                                                >
+                                                    <strong>
+                                                        383<span>&nbsp;&amp;&nbsp;</span>
+                                                    </strong>
+                                                    <strong>164</strong>
+                                                </div>
+                                            </div>
+                                            {/* Team 2 Score */}
+                                            <div
+                                                className='ci-team-score'
                                                 style={{
-                                                    marginRight: '8px',
-                                                }}
-                                            />
+                                                    display: 'flex',
+                                                    justifyContent: 'space-between',
+                                                    alignItems: 'center',
+                                                    opacity: 0.5,
+                                                    marginBottom: '0.25rem',
 
-                                            <p className={styles['team-container--name']}>
-                                                {searchParams.team2}
-                                            </p>
+                                                    paddingLeft: '0.5rem',
+                                                    paddingRight: '0.5rem',
+                                                }}
+                                            >
+                                                <div
+                                                    style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        minWidth: 0,
+                                                        marginRight: '0.25rem',
+                                                    }}
+                                                >
+                                                    <Image
+                                                        src={searchParams.flag2}
+                                                        alt={'Team Flag Two'}
+                                                        width={30}
+                                                        height={30}
+                                                        style={{
+                                                            marginRight: '8px',
+                                                        }}
+                                                    />
+
+                                                    <span
+                                                        style={{
+                                                            fontSize: 'larger',
+                                                            fontWeight: 'bold',
+                                                            color: 'currentColor',
+                                                            display: 'block',
+                                                            overflow: 'hidden',
+
+                                                            whiteSpace: 'nowrap',
+                                                        }}
+                                                    >
+                                                        {searchParams.team2}
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    style={{
+                                                        textAlign: 'right',
+                                                        whiteSpace: 'nowrap',
+                                                    }}
+                                                >
+                                                    <span style={{ marginRight: '0.125rem' }}>
+                                                        (T:369)
+                                                    </span>
+                                                    <strong>
+                                                        179<span>&nbsp;&amp;&nbsp;</span>
+                                                    </strong>
+                                                    <strong>196</strong>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <p>{searchParams.score2}</p>
                                     </div>
-                                </div>
-                                <div>
-                                    <p className={styles['grid-item--match-day']}>
-                                        {searchParams.day}
-                                    </p>
-                                    <p className={styles['grid-item--content']}>
-                                        {searchParams.additionalContent}
+                                    <p
+                                        style={{
+                                            fontSize: 'smaller',
+                                            fontWeight: 'medium',
+                                            overflow: 'hidden',
+                                            textOverflow: 'ellipsis',
+                                            padding: '8px',
+                                            borderBottom: '1px solid #ccc',
+                                        }}
+                                    >
+                                        <span>Australia won by 172 runs</span>
                                     </p>
                                 </div>
                             </div>
